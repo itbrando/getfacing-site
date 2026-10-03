@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Facings gets your products picked, sold right and bought through ChatGPT, Gemini, Perplexity and the new AI shopping agents, and proves it in your orders.">
+<title>Facings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a store aisle — the hero shows the shelf an AI builds, findings hang as shelf tags, then the three-step service and outcome pricing */
+:root {
+  --paper: #eef1f3;
+  --surface: #ffffff;
+  --ink: #14202b;
+  --muted: #566573;
+  --line: #d3dbe1;
+  --accent: #0d6b63;
+  --accent-soft: #e2f1ef;
+  --tag: #f3cd36;
+  --tag-ink: #201b07;
+  --ghost: #9aa7b2;
+  --display: "Big Shoulders Display", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --step--1: 0.84rem;
+  --step-0: 1rem;
+  --step-1: 1.2rem;
+  --step-2: 1.6rem;
+  --step-3: clamp(2.2rem, 5vw, 3.4rem);
+  --step-4: clamp(2.8rem, 7.5vw, 5.2rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e151b; --surface: #15202a; --ink: #e7edf1; --muted: #9eabb7; --line: #26343f;
+    --accent: #3fb6a8; --accent-soft: #15302d; --tag: #f0c930; --tag-ink: #201b07; --ghost: #5d6b77;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e151b; --surface: #15202a; --ink: #e7edf1; --muted: #9eabb7; --line: #26343f;
+  --accent: #3fb6a8; --accent-soft: #15302d; --tag: #f0c930; --tag-ink: #201b07; --ghost: #5d6b77;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--body); font-size: var(--step-0);
+  line-height: 1.55; margin: 0;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--tag); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: 0.005em; line-height: 0.98; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow { font-family: var(--mono); font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* masthead */
+.mast { display: flex; justify-content: space-between; align-items: center; padding-block: 22px; border-bottom: 2px solid var(--ink); gap: 16px; flex-wrap: wrap; }
+.logo { font-family: var(--display); font-weight: 800; font-size: 1.7rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.logo span { color: var(--accent); }
+.mast nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: var(--step--1); }
+.mast nav a { color: var(--ink); text-decoration: none; }
+.mast nav a:hover { color: var(--accent); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; padding-block: 56px 48px; align-items: center; }
+.hero > * { min-width: 0; }
+.hero h1 { font-size: var(--step-4); text-transform: uppercase; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: var(--step-1); color: var(--muted); max-width: 34em; margin-top: 22px; }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 28px; }
+.btn { font: 600 var(--step-0)/1 var(--body); background: var(--ink); color: var(--paper); border: 0; border-radius: 4px; padding: 14px 20px; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--accent); }
+.note { font-size: var(--step--1); color: var(--muted); }
+
+/* the AI shelf mock */
+.shelf { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: grid; gap: 14px; box-shadow: 0 12px 30px -18px rgba(20, 32, 43, 0.45); }
+.bubble { background: var(--paper); border-radius: 8px; padding: 12px 14px; font-size: 0.95rem; }
+.bubble b { font-weight: 600; }
+.card { border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; display: grid; gap: 8px; }
+.card .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.card .name { font-weight: 600; }
+.price { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.seller { display: inline-flex; align-items: center; gap: 8px; font-size: var(--step--1); }
+.chip { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 3px; padding: 3px 7px; background: var(--tag); color: var(--tag-ink); }
+.others { border-top: 1px dashed var(--line); padding-top: 10px; display: grid; gap: 6px; font-size: var(--step--1); }
+.others .row { display: flex; justify-content: space-between; gap: 12px; }
+.mine { color: var(--ink); font-weight: 600; }
+.lost { color: var(--muted); font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.caption { font-size: 0.78rem; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .chip { animation: settle 900ms ease-out 400ms both; }
+  @keyframes settle { from { transform: translateY(-6px); opacity: 0.4; } to { transform: none; opacity: 1; } }
+}
+
+/* findings as shelf tags */
+.section { padding-block: 56px; border-top: 1px solid var(--line); }
+.section h2 { font-size: var(--step-3); text-transform: uppercase; }
+.section .intro { color: var(--muted); max-width: 40em; margin-top: 12px; }
+.tags { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.tag { position: relative; background: var(--tag); color: var(--tag-ink); border-radius: 4px 4px 4px 4px; padding: 18px 16px 16px; display: grid; gap: 8px; align-content: start; }
+.tag::before { content: ""; position: absolute; top: 12px; right: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--paper); }
+.tag .num { font-family: var(--display); font-weight: 800; font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.tag .what { font-size: 0.95rem; line-height: 1.4; }
+.tag .unit { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; }
+.source { font-size: 0.8rem; color: var(--muted); margin-top: 16px; max-width: 60em; }
+
+/* why it happens */
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 32px; }
+.why > div { display: grid; gap: 8px; align-content: start; }
+.why h3 { font-size: var(--step-2); }
+.why p { color: var(--muted); }
+
+/* the service: a real sequence */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.step { padding: 24px; display: grid; gap: 10px; align-content: start; }
+.step + .step { border-left: 1px solid var(--line); }
+.step .n { font-family: var(--mono); font-size: var(--step--1); color: var(--accent); letter-spacing: 0.06em; }
+.step h3 { font-size: var(--step-2); text-transform: uppercase; }
+.step ul { margin: 0; padding-left: 18px; color: var(--muted); display: grid; gap: 6px; }
+
+/* outcome pricing */
+.offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.offer { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+.offer h3 { font-size: var(--step-2); }
+.offer .term { font-family: var(--mono); font-size: var(--step--1); color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+.offer p { color: var(--muted); }
+.promise { margin-top: 20px; background: var(--accent-soft); border-radius: 8px; padding: 16px 18px; }
+
+/* edge */
+.edge { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 40px; margin-top: 28px; }
+.edge > div { display: grid; gap: 6px; }
+.edge h3 { font-size: var(--step-1); font-family: var(--body); font-weight: 600; line-height: 1.3; }
+.edge p { color: var(--muted); }
+
+/* closing call */
+.close { padding-block: 56px 64px; border-top: 2px solid var(--ink); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: end; }
+.close > * { min-width: 0; }
+.close h2 { font-size: var(--step-3); text-transform: uppercase; }
+.close p { color: var(--muted); margin-top: 12px; max-width: 34em; }
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: grid; gap: 10px; }
+.addr { font-family: var(--mono); font-size: 1.05rem; user-select: all; overflow-wrap: anywhere; }
+.copied { font-size: var(--step--1); color: var(--accent); min-height: 1.2em; }
+footer { border-top: 1px solid var(--line); padding-block: 20px 28px; font-size: 0.8rem; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .hero, .close { grid-template-columns: 1fr; }
+  .tags { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .why, .steps { grid-template-columns: 1fr; }
+  .step + .step { border-left: 0; border-top: 1px solid var(--line); }
+  .offers, .edge { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .tags { grid-template-columns: 1fr; }
+  .wrap { padding-inline: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="logo">Facing<span>s</span></div>
+    <nav aria-label="Sections">
+      <a href="#findings">What we see</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#start">Free shelf check</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">AI shopping, from the brand's side</p>
+      <h1 style="margin-top:14px">AI recommends your product. <em>Then a retailer gets the sale.</em></h1>
+      <p class="lede">Facings gets your products picked, sold right and bought through ChatGPT, Gemini, Perplexity and the new shopping agents, and proves it in your orders. We do the work. You pay for results.</p>
+      <div class="cta-row">
+        <a class="btn" href="#start">Get a free AI shelf check</a>
+        <span class="note">Send three products. We send back what every AI shows for them.</span>
+      </div>
+    </div>
+    <figure class="shelf" style="margin:0" aria-label="Illustration of an AI shopping answer">
+      <div class="bubble"><b>My first choice:</b> the TrailLite 2. It's the lightest freestanding tent here and the best value for two people.</div>
+      <div class="card">
+        <div class="row"><span class="name">TrailLite 2 Tent</span><span class="price">$319.00</span></div>
+        <div class="row"><span class="seller">Sold by <strong>A big retailer</strong></span><span class="chip">Buy button</span></div>
+        <div class="others">
+          <div class="row"><span class="mine">Your store</span><span class="price">$319.00</span></div>
+          <div class="row"><span class="lost">Same price · not chosen</span><span class="lost">2 more sellers</span></div>
+        </div>
+      </div>
+      <figcaption class="caption">Illustration. The pattern is real: we record it every day in ChatGPT's shopping cards.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="findings">
+    <p class="eyebrow">What we see every day</p>
+    <h2 style="margin-top:10px">The AI shelf has a buy button, and brands rarely hold it</h2>
+    <p class="intro">We ask ChatGPT, Gemini, Perplexity and Grok the questions real shoppers ask, every day, and record what they recommend, which products get a buy button, and who the seller is.</p>
+    <div class="tags">
+      <div class="tag"><span class="unit">ChatGPT product cards</span><span class="num">~9 in 10</span><span class="what">name a retailer as the seller, not the brand.</span></div>
+      <div class="tag"><span class="unit">Same product, same price</span><span class="num">14</span><span class="what">times a retailer took the buy button while the brand's own store listed it at the same price.</span></div>
+      <div class="tag"><span class="unit">Seller offers</span><span class="num">11–25%</span><span class="what">link to the wrong product or variant.</span></div>
+      <div class="tag"><span class="unit">ChatGPT answers</span><span class="num">30–60%</span><span class="what">name a product that gets no buy button.</span></div>
+    </div>
+    <p class="source">Source: Facings daily panel of the consumer apps, outdoor gear and beauty, September 30 to October 2, 2026. Early data. Ranges show the two categories. We update these figures as the panel grows.</p>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Why it happens</p>
+    <h2 style="margin-top:10px">Two systems decide what shoppers see</h2>
+    <div class="why">
+      <div><h3>The answer comes from the web</h3><p>AI writes its recommendation from reviews, forums and brand pages. That's how your product gets named.</p></div>
+      <div><h3>The buy button comes from feeds</h3><p>In our data the chosen seller nearly always comes through a merchant product feed, and the cheapest offer wins only about half the time.</p></div>
+      <div><h3>Agents read structured data</h3><p>In our lab tests, an AI stopped picking a leading product once its specs and weight were removed from the product data.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <p class="eyebrow">How Facings works</p>
+    <h2 style="margin-top:10px">Watch, fix, prove</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="n">Step 1</span>
+        <h3>Watch</h3>
+        <ul>
+          <li>Your shoppers' real questions, asked in every AI app, every day</li>
+          <li>Who gets recommended, who gets the buy button, at what price</li>
+          <li>Wrong products, sold-out picks and resellers</li>
+        </ul>
+      </div>
+      <div class="step">
+        <span class="n">Step 2</span>
+        <h3>Fix</h3>
+        <ul>
+          <li>Your products in every agent's product feed</li>
+          <li>Barcodes and identifiers so AI stops mixing up your products</li>
+          <li>Specs and weights as structured fields</li>
+          <li>Restock signals and corrected retailer listings</li>
+        </ul>
+      </div>
+      <div class="step">
+        <span class="n">Step 3</span>
+        <h3>Prove</h3>
+        <ul>
+          <li>AI-driven orders from your own Shopify data</li>
+          <li>Before and after every fix, every month</li>
+          <li>Measured with the agents' own tracking tags</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <p class="eyebrow">Pricing</p>
+    <h2 style="margin-top:10px">You pay for results</h2>
+    <div class="offers">
+      <div class="offer">
+        <span class="term">Two weeks</span>
+        <h3>AI shelf audit</h3>
+        <p>What every AI shows for your key products, the fixes we'd make, and the first fixes made. From $3,000.</p>
+      </div>
+      <div class="offer">
+        <span class="term">Monthly</span>
+        <h3>AI channel management</h3>
+        <p>Daily monitoring, ongoing fixes and a monthly orders report. A monthly fee plus a share of AI-driven revenue above your starting baseline.</p>
+      </div>
+    </div>
+    <p class="promise">We agree your baseline and how AI orders are counted before we change anything. We earn more only when your AI-driven sales grow.</p>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Why Facings</p>
+    <h2 style="margin-top:10px">We see what your shoppers see</h2>
+    <div class="edge">
+      <div><h3>The real apps, every day</h3><p>We capture the consumer apps, buy buttons and seller lists included. The developer APIs show something different.</p></div>
+      <div><h3>Tested, not guessed</h3><p>We run controlled tests on what makes an AI pick a product, and we learn from every brand we work with.</p></div>
+      <div><h3>Proven in orders</h3><p>Results are AI-driven orders and revenue, not a visibility score.</p></div>
+      <div><h3>On your side across every agent</h3><p>Each platform shows only its own shelf. We show and fix all of them.</p></div>
+    </div>
+  </section>
+
+  <section class="close" id="start">
+    <div>
+      <h2>Start with a free AI shelf check</h2>
+      <p>Tell us your three most important products. Within a few days we'll send a one-page report on what ChatGPT, Gemini, Perplexity and Grok show for them, and who gets the sale.</p>
+    </div>
+    <div class="contact">
+      <span class="eyebrow">Email</span>
+      <span class="addr" id="addr">hello@getfacing.ai</span>
+      <button class="btn" type="button" id="copy">Copy address</button>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <footer>
+    <span>Facings · getfacing.ai</span>
+    <span>Not affiliated with OpenAI, Google, Perplexity, xAI or Meta.</span>
+  </footer>
+</div>
+
+<script>
+document.getElementById("copy").addEventListener("click", function () {
+  var text = document.getElementById("addr").textContent.trim();
+  var done = document.getElementById("copied");
+  function select() {
+    var r = document.createRange(); r.selectNodeContents(document.getElementById("addr"));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    done.textContent = "Selected. Press Cmd+C or Ctrl+C to copy.";
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () { done.textContent = "Copied."; }, select);
+  } else { select(); }
+});
+</script>
+</body>
+</html>
