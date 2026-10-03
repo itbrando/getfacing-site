@@ -75,21 +75,33 @@ p { margin: 0; }
 .lede { font-size: 1.2rem; color: var(--muted); max-width: 34em; }
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* example scan */
-.dash { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; margin: 0 0 16px; }
-.dash-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 18px; border-bottom: 1px solid var(--line); background: var(--bg-2); flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); }
-.dash-top b { color: var(--ink); font-weight: 600; }
-.dash-body { padding: 8px 18px 14px; }
-.run { display: grid; grid-template-columns: 8em 1fr auto; gap: 14px; align-items: center; padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+/* scan readout */
+.dash { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+.dash-top { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--bg-2); flex-wrap: wrap; }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); display: block; }
+.dash-top .t { font-size: var(--fs-sm); color: var(--muted); }
+.dash-top .t b { color: var(--ink); font-weight: 600; }
+.dash-body { padding: 20px; display: grid; gap: 18px; }
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.kpi { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 6px; }
+.kpi .v { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.dash-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
+.dash-grid > * { min-width: 0; }
+.cardlet { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; }
+.cardlet h4 { margin: 0; font-size: var(--fs-sm); font-weight: 600; }
+.run { display: grid; grid-template-columns: 7.6em 1fr auto; gap: 10px; align-items: center; font-size: var(--fs-sm); padding-block: 6px; border-bottom: 1px solid var(--line); }
 .run:last-child { border-bottom: 0; }
 .run > * { min-width: 0; }
 .run .who { font-weight: 600; }
 .run .act { color: var(--muted); }
-.tag { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
+.tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
 .tag.ok { background: var(--accent-soft); color: var(--accent-ink); }
 .tag.bad { background: var(--coral-soft); color: var(--coral); }
 .tag.warn { background: var(--amber-soft); color: var(--amber); }
-.caption { font-size: 0.78rem; color: var(--muted); }
+.blockers { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: var(--fs-sm); color: var(--ink-2); }
+.blockers b { font-weight: 600; color: var(--ink); }
+.dash-note { font-size: var(--fs-xs); color: var(--muted); text-align: right; padding: 0 20px 14px; }
 
 .agents-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 28px; padding-block: 28px; border-block: 1px solid var(--line); margin-top: 40px; }
 .agents-row b { font-weight: 600; color: var(--ink-2); }
@@ -134,12 +146,12 @@ footer { padding-block: 32px 40px; display: flex; justify-content: space-between
 
 @media (max-width: 900px) {
   .questions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .steps, .stats, .final { grid-template-columns: 1fr; }
+  .steps, .stats, .final, .dash-grid { grid-template-columns: 1fr; }
   .final { padding: 32px; }
 }
 @media (max-width: 540px) {
   .wrap { padding-inline: 16px; }
-  .questions { grid-template-columns: 1fr; }
+  .questions, .kpis { grid-template-columns: 1fr; }
   .run { grid-template-columns: 1fr auto; }
   .run .act { grid-column: 1 / -1; grid-row: 2; }
   .section { padding-block: 60px; }
@@ -164,16 +176,37 @@ footer { padding-block: 32px 40px; display: flex; justify-content: space-between
     </div>
   </section>
 
-  <figure class="dash" aria-label="Example agent scan">
-    <div class="dash-top"><span><b>Agent scan</b> · yourstore.com</span><span>7 of 12 runs reached checkout</span></div>
-    <div class="dash-body">
-      <div class="run"><span class="who">Meta Muse</span><span class="act">Found the product, picked size M, reached checkout</span><span class="tag ok">Checkout</span></div>
-      <div class="run"><span class="who">OpenAI dots</span><span class="act">Stopped by a bot check on the product page</span><span class="tag bad">Blocked</span></div>
-      <div class="run"><span class="who">Grok</span><span class="act">Added the wrong size</span><span class="tag warn">Wrong item</span></div>
-      <div class="run"><span class="who">Instinct</span><span class="act">Set up the order for checkout</span><span class="tag ok">Checkout</span></div>
+  <figure class="dash" style="margin:0" aria-label="Illustration of a Facing.ai agent scan with example results">
+    <div class="dash-top">
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="t"><b>Agent scan</b> · yourstore.com · 4 agents · 12 runs</span>
     </div>
+    <div class="dash-body">
+      <div class="kpis">
+        <div class="kpi"><span class="label">Reached checkout</span><span class="v">7 of 12</span></div>
+        <div class="kpi"><span class="label">Blockers found</span><span class="v">3</span></div>
+        <div class="kpi"><span class="label">Instant checks passed</span><span class="v">8 of 10</span></div>
+      </div>
+      <div class="dash-grid">
+        <div class="cardlet">
+          <h4>Task: find your best-seller in size M and get it ready to buy</h4>
+          <div class="run"><span class="who">Meta Muse</span><span class="act">Found it, picked M, reached checkout</span><span class="tag ok">Checkout</span></div>
+          <div class="run"><span class="who">OpenAI dots</span><span class="act">Stopped by a bot check on the product page</span><span class="tag bad">Blocked</span></div>
+          <div class="run"><span class="who">Grok Bot</span><span class="act">Added size L: sizes weren't in the product data</span><span class="tag warn">Wrong size</span></div>
+          <div class="run"><span class="who">Instinct</span><span class="act">Order set up for Shop Pay</span><span class="tag ok">Checkout</span></div>
+        </div>
+        <div class="cardlet">
+          <h4>Top blockers</h4>
+          <ol class="blockers">
+            <li><b>Bot protection challenges agent browsers.</b> Let verified agents through.</li>
+            <li><b>Sizes and colors aren't in your product data.</b> Agents guess.</li>
+            <li><b>4 in 10 products have no barcode.</b> Agents can't match them across stores.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <figcaption class="dash-note">Illustration with example results</figcaption>
   </figure>
-  <p class="caption">Example results.</p>
 
   <div class="agents-row">
     <span class="label">Agents we run</span>
