@@ -167,6 +167,12 @@ td.yes { color: var(--accent-ink); font-weight: 600; }
 td.no { color: var(--muted); }
 th.us, td.us { background: var(--accent-soft); }
 
+/* differentiators */
+.diffs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.diff-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: grid; gap: 8px; align-content: start; }
+.diff-card h3 { font-size: var(--fs-xl); }
+.diff-card p { color: var(--muted); }
+
 /* research */
 .research { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .finding { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: grid; gap: 10px; align-content: start; }
@@ -203,7 +209,7 @@ footer { padding-block: 36px 44px; display: flex; justify-content: space-between
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature, .feature.wide { grid-column: span 1; }
-  .steps, .research { grid-template-columns: 1fr; }
+  .steps, .research, .diffs { grid-template-columns: 1fr; }
   .final { padding: 36px; }
 }
 @media (max-width: 560px) {
@@ -387,18 +393,13 @@ footer { padding-block: 36px 44px; display: flex; justify-content: space-between
       <h2>Beyond mentions</h2>
       <p>Visibility is the start. Marketers need to know what AI gets right, what it gets wrong, and what it's worth.</p>
     </div>
-    <div class="table-wrap">
-      <table>
-        <tr><th>Capability</th><th>Typical AI visibility tools</th><th class="us">Facing.ai</th></tr>
-        <tr><td>Brand mentions and share of voice</td><td class="yes">Yes</td><td class="us yes">Yes</td></tr>
-        <tr><td>Sources and citations</td><td class="yes">Yes</td><td class="us yes">Yes</td></tr>
-        <tr><td>Product-level shopping results</td><td class="no">Some</td><td class="us yes">Yes</td></tr>
-        <tr><td>Revenue from AI, by assistant</td><td class="no">No</td><td class="us yes">Yes</td></tr>
-        <tr><td>Accuracy alerts: price, stock, product</td><td class="no">No</td><td class="us yes">Yes</td></tr>
-        <tr><td>AI shopping agents that buy</td><td class="no">No</td><td class="us yes">Yes</td></tr>
-        <tr><td>Recommendations tested for lift</td><td class="no">No</td><td class="us yes">Yes</td></tr>
-      </table>
+    <div class="diffs">
+      <div class="diff-card"><h3>Every assistant and buying agent</h3><p>Shopping results across ChatGPT, Gemini, Perplexity, Grok and the agents that buy, not just one app.</p></div>
+      <div class="diff-card"><h3>Orders, not just sessions</h3><p>AI-driven orders matched to the product, the assistant and the store that made the sale.</p></div>
+      <div class="diff-card"><h3>A live catalog check</h3><p>Every answer checked against your current prices, stock and variants, with alerts when AI gets them wrong.</p></div>
+      <div class="diff-card"><h3>Recommendations with proof</h3><p>Fixes ranked by the lift measured in controlled experiments, with the confidence behind every number.</p></div>
     </div>
+    <p class="fine">Facing.ai is in early access, and some capabilities are still rolling out.</p>
   </div>
 </section>
 
