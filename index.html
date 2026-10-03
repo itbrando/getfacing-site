@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Facing.ai: AI visibility you can tie to revenue. See how ChatGPT, Gemini, Perplexity and AI shopping agents recommend your brand and products, and what it is worth in orders.">
+<meta name="description" content="See how AI agents shop your store. Facing.ai sends real AI shopping agents through your store and shows you where you are losing their sales.">
+<link rel="canonical" href="https://getfacing.ai/">
+<meta property="og:title" content="Facing.ai: see how AI agents shop your store">
+<meta property="og:description" content="Real AI shopping agents shop your store. See where you are losing their sales.">
+<meta property="og:url" content="https://getfacing.ai/">
 <title>Facing.ai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a calm marketing-SaaS page on warm off-white. Hero pairs the promise with a product dashboard; then coverage, the market in numbers, a feature grid, how it works, a comparison, our research, FAQ and a demo call */
+/* Layout: calm marketing-SaaS page on warm off-white. The hero pairs the promise with an agent-scan readout; then coverage, what the scan checks, the scan-fix-track loop, the market, the product grid, our research, FAQ and the scan request */
 :root {
   --bg: #f7f4ee;
   --bg-2: #f0ebe1;
@@ -23,7 +27,8 @@
   --accent-soft: #e3f0ea;
   --coral: #b44a24;
   --coral-soft: #f8e6dd;
-  --bar-2: #d9cdb6;
+  --amber: #8a5a00;
+  --amber-soft: #f6ead0;
   --shadow: 0 1px 2px rgba(27, 26, 23, 0.04), 0 8px 24px -12px rgba(27, 26, 23, 0.12);
   --sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -40,14 +45,16 @@
   :root:not([data-theme="light"]) {
     --bg: #141310; --bg-2: #1a1915; --surface: #1f1e1a; --ink: #f3f0e8; --ink-2: #d9d5cb; --muted: #a49f94;
     --line: #2e2c26; --accent: #43c49b; --accent-ink: #6bd6b2; --accent-soft: #163329; --coral: #e58a66;
-    --coral-soft: #3a2219; --bar-2: #4a4538; --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+    --coral-soft: #3a2219; --amber: #e2b04a; --amber-soft: #352a12;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #141310; --bg-2: #1a1915; --surface: #1f1e1a; --ink: #f3f0e8; --ink-2: #d9d5cb; --muted: #a49f94;
   --line: #2e2c26; --accent: #43c49b; --accent-ink: #6bd6b2; --accent-soft: #163329; --coral: #e58a66;
-  --coral-soft: #3a2219; --bar-2: #4a4538; --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+  --coral-soft: #3a2219; --amber: #e2b04a; --amber-soft: #352a12;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -78,52 +85,66 @@ p { margin: 0; }
 
 /* hero */
 .hero { padding-block: 56px 72px; display: grid; gap: 48px; }
-.hero-copy { max-width: 760px; display: grid; gap: 22px; justify-items: start; }
+.hero-copy { max-width: 780px; display: grid; gap: 22px; justify-items: start; }
 .hero h1 { font-size: var(--fs-hero); letter-spacing: -0.035em; }
 .hero h1 span { color: var(--accent); }
 .lede { font-size: var(--fs-lg); color: var(--muted); max-width: 40em; }
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* dashboard mock */
+/* scan readout */
 .dash { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
-.dash-top { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+.dash-top { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--bg-2); flex-wrap: wrap; }
 .dots { display: flex; gap: 6px; }
 .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); display: block; }
 .dash-top .t { font-size: var(--fs-sm); color: var(--muted); }
 .dash-top .t b { color: var(--ink); font-weight: 600; }
 .dash-body { padding: 20px; display: grid; gap: 18px; }
-.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .kpi { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 6px; }
 .kpi .v { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.delta { font-size: var(--fs-xs); font-weight: 500; font-variant-numeric: tabular-nums; }
-.delta.up { color: var(--accent); }
-.delta.warn { color: var(--coral); }
-.dash-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12px; }
+.dash-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
 .dash-grid > * { min-width: 0; }
 .cardlet { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; }
 .cardlet h4 { margin: 0; font-size: var(--fs-sm); font-weight: 600; }
-.chart svg { width: 100%; height: auto; display: block; }
-.axis { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
-.bars { display: grid; gap: 9px; }
-.bar { display: grid; grid-template-columns: 7.4em 1fr 2.8em; gap: 10px; align-items: center; font-size: var(--fs-sm); }
-.bar .track { height: 8px; border-radius: 99px; background: var(--bg-2); overflow: hidden; }
-.bar .fill { height: 100%; border-radius: 99px; background: var(--accent); }
-.bar .num { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.run { display: grid; grid-template-columns: 7.6em 1fr auto; gap: 10px; align-items: center; font-size: var(--fs-sm); padding-block: 6px; border-bottom: 1px solid var(--line); }
+.run:last-child { border-bottom: 0; }
+.run > * { min-width: 0; }
+.run .who { font-weight: 600; }
+.run .step { color: var(--muted); }
+.tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
+.tag.ok { background: var(--accent-soft); color: var(--accent-ink); }
+.tag.bad { background: var(--coral-soft); color: var(--coral); }
+.tag.warn { background: var(--amber-soft); color: var(--amber); }
+.blockers { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: var(--fs-sm); color: var(--ink-2); }
+.blockers b { font-weight: 600; color: var(--ink); }
 .dash-note { font-size: var(--fs-xs); color: var(--muted); text-align: right; padding: 0 20px 14px; }
 
 /* coverage strip */
 .coverage { border-block: 1px solid var(--line); padding-block: 26px; display: grid; gap: 14px; }
 .coverage .row { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center; }
 .coverage .name { font-weight: 600; color: var(--ink-2); letter-spacing: -0.01em; }
-.coverage .soon { color: var(--muted); font-weight: 500; }
-.coverage .soon small { font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.04em; margin-left: 6px; color: var(--muted); }
 
 /* sections */
 .section { padding-block: 88px; }
 .section.alt { background: var(--bg-2); }
-.head { display: grid; gap: 14px; max-width: 720px; margin-bottom: 40px; }
+.head { display: grid; gap: 14px; max-width: 740px; margin-bottom: 40px; }
 .head h2 { font-size: var(--fs-2xl); }
 .head p { color: var(--muted); font-size: var(--fs-lg); }
+
+/* what the scan checks */
+.checks { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.checks.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.chk { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: grid; gap: 8px; align-content: start; }
+.chk .n { font-family: var(--mono); font-size: var(--fs-xs); color: var(--accent); }
+.chk h3 { font-size: var(--fs-lg); letter-spacing: -0.015em; }
+.chk p { color: var(--muted); font-size: var(--fs-sm); }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.step { border-top: 2px solid var(--ink); padding-top: 18px; display: grid; gap: 10px; align-content: start; }
+.step .n { font-family: var(--mono); font-size: var(--fs-xs); color: var(--accent); letter-spacing: 0.06em; }
+.step h3 { font-size: var(--fs-xl); }
+.step p { color: var(--muted); }
 
 /* stats */
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -143,29 +164,6 @@ p { margin: 0; }
 .feature p { color: var(--muted); }
 .feature .icon { width: 34px; height: 34px; border-radius: 9px; background: var(--accent-soft); display: grid; place-items: center; }
 .feature .icon svg { width: 18px; height: 18px; }
-.sov { display: flex; height: 12px; border-radius: 99px; overflow: hidden; margin-top: 8px; }
-.sov span { display: block; height: 100%; }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: var(--fs-xs); color: var(--muted); }
-.legend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: 1px; }
-.mini { display: flex; align-items: baseline; gap: 12px; margin-top: 6px; }
-.mini .v { font-size: 1.7rem; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-
-/* steps */
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: s; }
-.step { border-top: 2px solid var(--ink); padding-top: 18px; display: grid; gap: 10px; align-content: start; }
-.step .n { font-family: var(--mono); font-size: var(--fs-xs); color: var(--accent); letter-spacing: 0.06em; }
-.step h3 { font-size: var(--fs-xl); }
-.step p { color: var(--muted); }
-
-/* comparison */
-.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
-table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: var(--fs-base); }
-th, td { text-align: left; padding: 14px 20px; border-bottom: 1px solid var(--line); }
-th { font-family: var(--mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-weight: 500; background: var(--bg-2); }
-tr:last-child td { border-bottom: 0; }
-td.yes { color: var(--accent-ink); font-weight: 600; }
-td.no { color: var(--muted); }
-th.us, td.us { background: var(--accent-soft); }
 
 /* differentiators */
 .diffs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
@@ -204,8 +202,9 @@ details p { color: var(--muted); padding-bottom: 16px; }
 footer { padding-block: 36px 44px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: var(--fs-sm); color: var(--muted); }
 
 @media (max-width: 980px) {
-  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .dash-grid, .final { grid-template-columns: 1fr; }
+  .checks, .checks.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature, .feature.wide { grid-column: span 1; }
@@ -214,8 +213,10 @@ footer { padding-block: 36px 44px; display: flex; justify-content: space-between
 }
 @media (max-width: 560px) {
   .wrap { padding-inline: 16px; }
-  .stats, .features { grid-template-columns: 1fr; }
+  .kpis, .checks, .checks.four, .stats, .features { grid-template-columns: 1fr; }
   .agents { grid-template-columns: 1fr; }
+  .run { grid-template-columns: 1fr auto; }
+  .run .step { grid-column: 1 / -1; grid-row: 2; }
   .nav-links a:not(.btn) { display: none; }
   .section { padding-block: 64px; }
   .final { padding: 26px; }
@@ -227,81 +228,102 @@ footer { padding-block: 36px 44px; display: flex; justify-content: space-between
   <header class="nav">
     <a class="brand" href="#top" aria-label="Facing.ai home"><span class="mark" aria-hidden="true"></span>Facing.ai</a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#product">Product</a>
+      <a href="#scan">Agent scan</a>
       <a href="#how">How it works</a>
-      <a href="#why">Why Facing.ai</a>
+      <a href="#product">Product</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-primary" href="#demo">Book a demo</a>
+      <a class="btn btn-primary" href="#start">Get a free agent scan</a>
     </nav>
   </header>
 
   <section class="hero" id="top">
     <div class="hero-copy">
-      <span class="pill"><b>Early access</b> Now tracking AI shopping agents</span>
-      <h1>AI visibility you can <span>tie to revenue</span>.</h1>
-      <p class="lede">Facing.ai shows how ChatGPT, Gemini, Perplexity and the new AI shopping agents recommend your brand and products, catches what they get wrong, and connects it all to the orders they drive.</p>
+      <span class="pill"><b>Early access</b> Real AI agents, on your store</span>
+      <h1>See how AI agents <span>shop your store</span>.</h1>
+      <p class="lede">Facing.ai sends real AI shopping agents, like Meta Muse, OpenAI dots and Grok, through your store and shows you exactly where you're losing their sales.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#demo">Book a demo</a>
-        <a class="btn btn-secondary" href="#demo">Get a free visibility snapshot</a>
+        <a class="btn btn-primary" href="#start">Get a free agent scan</a>
+        <a class="btn btn-secondary" href="#start">Book a demo</a>
       </div>
     </div>
 
-    <figure class="dash" style="margin:0" aria-label="Illustration of the Facing.ai brand overview dashboard with example data">
+    <figure class="dash" style="margin:0" aria-label="Illustration of a Facing.ai agent scan with example results">
       <div class="dash-top">
         <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-        <span class="t"><b>Brand overview</b> · Last 30 days · All assistants</span>
+        <span class="t"><b>Agent scan</b> · yourstore.com · 4 agents · 12 runs</span>
       </div>
       <div class="dash-body">
         <div class="kpis">
-          <div class="kpi"><span class="label">AI share of voice</span><span class="v">24.3%</span><span class="delta up">▲ 3.1 pts</span></div>
-          <div class="kpi"><span class="label">Shown for sale</span><span class="v">61%</span><span class="delta up">▲ 8 pts</span></div>
-          <div class="kpi"><span class="label">AI-referred revenue</span><span class="v">$48.2K</span><span class="delta up">▲ 18%</span></div>
-          <div class="kpi"><span class="label">Accuracy issues</span><span class="v">7</span><span class="delta warn">3 new this week</span></div>
+          <div class="kpi"><span class="label">Reached checkout</span><span class="v">7 of 12</span></div>
+          <div class="kpi"><span class="label">Blockers found</span><span class="v">3</span></div>
+          <div class="kpi"><span class="label">Instant checks passed</span><span class="v">8 of 10</span></div>
         </div>
         <div class="dash-grid">
-          <div class="cardlet chart">
-            <h4>AI-referred revenue, by week</h4>
-            <svg viewBox="0 0 560 150" role="img" aria-label="Line chart rising from week 1 to week 8">
-              <line x1="0" y1="140" x2="560" y2="140" style="stroke: var(--line); stroke-width: 1"/>
-              <line x1="0" y1="90" x2="560" y2="90" style="stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 4"/>
-              <line x1="0" y1="40" x2="560" y2="40" style="stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 4"/>
-              <path d="M0,104 L80,98 L160,100 L240,86 L320,78 L400,66 L480,52 L560,36 L560,140 L0,140 Z" style="fill: var(--accent-soft)"/>
-              <polyline points="0,104 80,98 160,100 240,86 320,78 400,66 480,52 560,36" style="fill: none; stroke: var(--accent); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round"/>
-              <circle cx="560" cy="36" r="5" style="fill: var(--accent)"/>
-            </svg>
-            <div class="axis" aria-hidden="true"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span></div>
+          <div class="cardlet">
+            <h4>Task: find your best-seller in size M and get it ready to buy</h4>
+            <div class="run"><span class="who">Meta Muse</span><span class="step">Found it, picked M, reached checkout</span><span class="tag ok">Checkout</span></div>
+            <div class="run"><span class="who">OpenAI dots</span><span class="step">Stopped by a bot check on the product page</span><span class="tag bad">Blocked</span></div>
+            <div class="run"><span class="who">Grok Bot</span><span class="step">Added size L: sizes weren't in the product data</span><span class="tag warn">Wrong size</span></div>
+            <div class="run"><span class="who">Instinct</span><span class="step">Order set up for Shop Pay</span><span class="tag ok">Checkout</span></div>
           </div>
           <div class="cardlet">
-            <h4>Share of voice by assistant</h4>
-            <div class="bars">
-              <div class="bar"><span>ChatGPT</span><span class="track"><span class="fill" style="width: 77.5%; display:block"></span></span><span class="num">31%</span></div>
-              <div class="bar"><span>Gemini</span><span class="track"><span class="fill" style="width: 67.5%; display:block"></span></span><span class="num">27%</span></div>
-              <div class="bar"><span>Perplexity</span><span class="track"><span class="fill" style="width: 47.5%; display:block"></span></span><span class="num">19%</span></div>
-              <div class="bar"><span>Grok</span><span class="track"><span class="fill" style="width: 30%; display:block"></span></span><span class="num">12%</span></div>
-            </div>
-            <span class="label">Scale 0–40%</span>
+            <h4>Top blockers</h4>
+            <ol class="blockers">
+              <li><b>Bot protection challenges agent browsers.</b> Let verified agents through.</li>
+              <li><b>Sizes and colors aren't in your product data.</b> Agents guess.</li>
+              <li><b>4 in 10 products have no barcode.</b> Agents can't match them across stores.</li>
+            </ol>
           </div>
         </div>
       </div>
-      <figcaption class="dash-note">Illustrative example data</figcaption>
+      <figcaption class="dash-note">Illustration with example results</figcaption>
     </figure>
   </section>
 
-  <section class="coverage" aria-label="Assistants and agents covered">
-    <span class="label">Built for the assistants and agents your customers use</span>
+  <section class="coverage" aria-label="Agents and assistants">
+    <span class="label">Real agents and assistants your customers use</span>
     <div class="row">
-      <span class="name">ChatGPT</span><span class="name">Gemini</span><span class="name">Perplexity</span><span class="name">Grok</span>
-      <span class="soon">Google AI Mode<small>Soon</small></span><span class="soon">Copilot<small>Soon</small></span><span class="soon">Meta Muse<small>Soon</small></span><span class="soon">OpenAI dots<small>Soon</small></span><span class="soon">Instinct<small>Soon</small></span>
+      <span class="name">Meta Muse</span><span class="name">OpenAI dots</span><span class="name">Grok</span><span class="name">Instinct</span><span class="name">ChatGPT</span><span class="name">Gemini</span><span class="name">Perplexity</span><span class="name">Copilot</span>
     </div>
   </section>
 </div>
+
+<section class="section" id="scan">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">The agent scan</span>
+      <h2>Four questions every store should be asking</h2>
+      <p>AI agents are already shopping on behalf of your customers. Your scan answers each question, with proof from real runs.</p>
+    </div>
+    <div class="checks four">
+      <div class="chk"><span class="n">01</span><h3>Can agents get in?</h3><p>Or does your site turn them away before they see a product?</p></div>
+      <div class="chk"><span class="n">02</span><h3>Can they find what they came for?</h3><p>The right product, the right size, the right price.</p></div>
+      <div class="chk"><span class="n">03</span><h3>Can they buy?</h3><p>All the way to checkout, without a human stepping in.</p></div>
+      <div class="chk"><span class="n">04</span><h3>Do they pick you?</h3><p>Or do they recommend someone else, and why.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="how">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">How it works</span>
+      <h2>Scan, fix, track</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">01 · SCAN</span><h3>One click</h3><p>Tell us your store. Real AI agents shop it, and you see every run and every blocker.</p></div>
+      <div class="step"><span class="n">02 · FIX</span><h3>Install the plugin</h3><p>Install Facing.ai and clear what is holding agents back.</p></div>
+      <div class="step"><span class="n">03 · TRACK</span><h3>See what AI sells</h3><p>Watch AI orders grow in your own sales data.</p></div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="why-now">
   <div class="wrap">
     <div class="head">
       <span class="label">Why now</span>
-      <h2>AI is becoming a sales channel. Most brands can't see it yet.</h2>
-      <p>Shoppers ask AI what to buy, and now agents buy for them. The channel is growing fast, and it gets details wrong.</p>
+      <h2>AI agents started buying this fall</h2>
+      <p>Shoppers already ask AI what to buy. Now agents choose and pay for them, and each one shops your site its own way.</p>
     </div>
     <div class="stats">
       <div class="stat"><span class="v">$20.6B</span><p>US sales made on or referred by AI platforms in 2026, up 278% in a year.</p><a href="https://www.emarketer.com/content/ai-commerce-2026">eMarketer</a></div>
@@ -310,7 +332,7 @@ footer { padding-block: 36px 44px; display: flex; justify-content: space-between
       <div class="stat"><span class="v">54%</span><p>Of shoppers who used AI for a recent purchase had to double-check all of the information.</p><a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-27-gartner-survey-finds-consumers-want-ai-shopping-help-but-not-ai-purchase-decisions">Gartner</a></div>
     </div>
     <div class="agents">
-      <span class="label">AI started buying</span>
+      <span class="label">The new shoppers</span>
       <ul>
         <li><b>Aug 28</b>Grok's bot buys for users</li>
         <li><b>Sep 8</b>Meta launches Muse</li>
@@ -326,118 +348,52 @@ footer { padding-block: 36px 44px; display: flex; justify-content: space-between
   <div class="wrap">
     <div class="head">
       <span class="label">Product</span>
-      <h2>Everything you need to win the AI shelf</h2>
-      <p>Track the metrics you already report on, for a channel your current tools can't see.</p>
+      <h2>One suite for the AI shopping channel</h2>
+      <p>From whether agents can buy from you, to what AI recommends, to the sales it brings in.</p>
     </div>
     <div class="features">
       <div class="feature wide">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round"/></svg></span>
-        <h3>AI share of voice</h3>
-        <p>How often each assistant recommends you versus competitors, by prompt, product and market, with the sources it cites.</p>
-        <div class="sov" aria-label="Example share of voice: you 24%, competitor A 31%, competitor B 18%, others 27%"><span style="width:24%; background: var(--accent)"></span><span style="width:31%; background: var(--ink-2)"></span><span style="width:18%; background: var(--bar-2)"></span><span style="width:27%; background: var(--line)"></span></div>
-        <div class="legend"><span><i style="background: var(--accent)"></i>You 24%</span><span><i style="background: var(--ink-2)"></i>Competitor A 31%</span><span><i style="background: var(--bar-2)"></i>Competitor B 18%</span><span><i style="background: var(--line)"></i>Others 27%</span></div>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" style="fill:none; stroke: var(--accent); stroke-width: 2"/><path d="M16 16l5 5" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round"/></svg></span>
+        <h3>Agent scan</h3>
+        <p>Watch real AI agents shop your store, and see exactly where they stop.</p>
+      </div>
+      <div class="feature wide">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v4M15 3v4M7 7h10v4a5 5 0 0 1-10 0zM12 16v5" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"/></svg></span>
+        <h3>Agent-ready store</h3>
+        <p>One install to make your store the easy choice for agents.</p>
       </div>
       <div class="feature wide">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"/></svg></span>
-        <h3>Revenue attribution</h3>
-        <p>AI-referred sessions, orders and revenue from your own store data, by assistant. Report AI as a channel, with ROI.</p>
-        <div class="mini"><span class="v">$48.2K</span><span class="delta up">▲ 18% vs last month</span></div>
-      </div>
-      <div class="feature">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16l-1.5 11h-13zM9 7a3 3 0 0 1 6 0" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round"/></svg></span>
-        <h3>Product shelf</h3>
-        <p>Which of your products get a shopping card, at what price, and which store wins the click.</p>
-      </div>
-      <div class="feature">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3zM12 10v4M12 17v.5" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"/></svg></span>
-        <h3>Accuracy alerts</h3>
-        <p>Know when AI shows a wrong price, recommends a sold-out item or links the wrong product.</p>
-      </div>
-      <div class="feature">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"/></svg></span>
-        <h3>Shopping agents</h3>
-        <p>See what agents like Meta Muse, OpenAI dots and Instinct pick and buy in your category.</p>
+        <h3>Revenue from AI</h3>
+        <p>See the orders AI assistants and agents bring you, product by product.</p>
       </div>
       <div class="feature wide">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round"/></svg></span>
-        <h3>Tested playbooks</h3>
-        <p>Recommendations for your content, product data and feeds, ranked by the lift we measure in controlled experiments. No guesswork.</p>
-      </div>
-      <div class="feature wide">
-        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round"/></svg></span>
-        <h3>What customers actually see</h3>
-        <p>We capture the real consumer apps, with fresh sessions and no history, not the developer versions, which return different results.</p>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2" style="fill:none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round"/></svg></span>
+        <h3>AI visibility</h3>
+        <p>Know how often AI recommends you, and what it gets wrong about you.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="how">
+<section class="section" id="faq">
   <div class="wrap">
-    <div class="head">
-      <span class="label">How it works</span>
-      <h2>Live in a day. Useful from the first report.</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><span class="n">01 · CONNECT</span><h3>Add your brand</h3><p>Add your brand, competitors and key products, or connect your store. We suggest the prompts your customers actually ask.</p></div>
-      <div class="step"><span class="n">02 · TRACK</span><h3>See every answer</h3><p>Every day we ask the AI apps your prompts and record what customers see: mentions, rank, sources, shopping cards and prices.</p></div>
-      <div class="step"><span class="n">03 · GROW</span><h3>Prove the impact</h3><p>Act on tested recommendations, measure the lift, and report AI-driven revenue to leadership.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section alt" id="why">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">Why Facing.ai</span>
-      <h2>Beyond mentions</h2>
-      <p>Visibility is the start. Marketers need to know what AI gets right, what it gets wrong, and what it's worth.</p>
-    </div>
-    <div class="diffs">
-      <div class="diff-card"><h3>Every assistant and buying agent</h3><p>Shopping results across ChatGPT, Gemini, Perplexity, Grok and the agents that buy, not just one app.</p></div>
-      <div class="diff-card"><h3>Orders, not just sessions</h3><p>AI-driven orders matched to the product, the assistant and the store that made the sale.</p></div>
-      <div class="diff-card"><h3>A live catalog check</h3><p>Every answer checked against your current prices, stock and variants, with alerts when AI gets them wrong.</p></div>
-      <div class="diff-card"><h3>Recommendations with proof</h3><p>Fixes ranked by the lift measured in controlled experiments, with the confidence behind every number.</p></div>
-    </div>
-    <p class="fine">Facing.ai is in early access, and some capabilities are still rolling out.</p>
-  </div>
-</section>
-
-<section class="section" id="research">
-  <div class="wrap">
-    <div class="head">
-      <span class="label">From our research</span>
-      <h2>What we've learned measuring AI shopping</h2>
-    </div>
-    <div class="research">
-      <div class="finding"><span class="v">6%</span><p>Overlap between the stores AI apps send shoppers to and what their developer APIs return for the same questions. You have to measure the real apps.</p></div>
-      <div class="finding"><span class="v">13 → 0</span><p>How often an AI picked a leading product in our lab, before and after its specs were removed from the product data.</p></div>
-      <div class="finding"><span class="v">76 of 79</span><p>ChatGPT seller lists where the top store came through a product catalog feed. The cheapest store won only about half the time.</p></div>
-    </div>
-    <p class="fine">Facing.ai research panel: 200 answers captured in ChatGPT, Gemini, Perplexity and Grok, September 30 to October 2, 2026; lab: 400 controlled trials. Early data, updated as the panel grows.</p>
-  </div>
-</section>
-
-<section class="section alt" id="faq">
-  <div class="wrap">
-    <div class="head"><span class="label">FAQ</span><h2>Questions marketers ask us</h2></div>
+    <div class="head"><span class="label">FAQ</span><h2>Questions we get</h2></div>
     <div class="faq">
-      <details><summary>Which AI assistants do you track?</summary><p>ChatGPT, Gemini, Perplexity and Grok today, in the real consumer apps. Google AI Mode, Microsoft Copilot and buying agents such as Meta Muse, OpenAI dots and Instinct are coming next.</p></details>
-      <details><summary>How is this different from SEO tools?</summary><p>SEO tools rank links on a results page. AI assistants write one answer and pick a few products. We measure that answer: who is named, recommended, shown for sale and bought.</p></details>
-      <details><summary>How do you measure revenue?</summary><p>We read AI-referred visits and orders from your store's own data, by assistant, and line them up with what each AI showed customers that day.</p></details>
-      <details><summary>Do you work with agencies?</summary><p>Yes. We're building multi-brand workspaces so agencies can track and report on every client from one account.</p></details>
-      <details><summary>What does it cost?</summary><p>Plans depend on the brands, products, markets and assistants you track. Book a demo and we'll scope it with you.</p></details>
-      <details><summary>Do you change anything in my store?</summary><p>No. Store connections are read-only.</p></details>
+      <details><summary>Do the agents buy anything?</summary><p>No. Every run stops before payment.</p></details>
+      <details><summary>Which agents?</summary><p>The personal shopping agents your customers use, including Meta Muse, OpenAI dots, Grok and Instinct, and new ones as they launch.</p></details>
+      <details><summary>What do I get?</summary><p>What each agent did on your store, where it got stuck, and what to fix first.</p></details>
+      <details><summary>What does it cost?</summary><p>The first scan is free. After that, plans fit your store. Book a demo and we'll walk you through it.</p></details>
     </div>
   </div>
 </section>
 
-<section class="section" id="demo">
+<section class="section" id="start">
   <div class="wrap">
     <div class="final">
       <div>
-        <h2>See how AI sells your brand</h2>
-        <p>Book a 20-minute demo, or send us your brand and three products for a free AI visibility snapshot across every assistant.</p>
+        <h2>Get a free agent scan</h2>
+        <p>Send us your store. Real AI agents will shop it, and you'll see what they see. We're running a limited number of scans during early access.</p>
       </div>
       <div class="contact">
         <span class="label">Email us</span>
@@ -452,7 +408,7 @@ footer { padding-block: 36px 44px; display: flex; justify-content: space-between
 <div class="wrap">
   <footer>
     <span>© 2026 Facing.ai · Founded by Logan Allen (CEO) and Brandon O'Neill (CTO)</span>
-    <span>Not affiliated with OpenAI, Google, Microsoft, Perplexity, xAI, Meta, Shopify or Instinct.</span>
+    <span>Not affiliated with Meta, OpenAI, xAI, Instinct, Google, Microsoft, Perplexity or Shopify.</span>
   </footer>
 </div>
 
