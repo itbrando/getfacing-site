@@ -125,10 +125,10 @@ details p { color: var(--muted); padding-bottom: 16px; }
 .final h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); color: var(--bg); margin: 0; }
 .final p { color: color-mix(in srgb, var(--bg) 70%, transparent); margin-top: 10px; }
 .contact { background: color-mix(in srgb, var(--bg) 8%, transparent); border: 1px solid color-mix(in srgb, var(--bg) 18%, transparent); border-radius: 14px; padding: 20px; display: grid; gap: 12px; }
-.addr { font-family: var(--mono); font-size: 1.05rem; color: var(--bg); user-select: all; overflow-wrap: anywhere; }
+.addr { font-family: var(--mono); font-size: 0.95rem; color: color-mix(in srgb, var(--bg) 75%, transparent); text-decoration: none; text-align: center; overflow-wrap: anywhere; }
+.addr:hover { color: var(--bg); text-decoration: underline; }
 .contact .btn { background: var(--bg); color: var(--ink); }
 .contact .btn:hover { background: var(--accent-soft); }
-.copied { font-size: 0.8rem; min-height: 1.2em; color: color-mix(in srgb, var(--bg) 70%, transparent); }
 
 footer { padding-block: 32px 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); }
 
@@ -151,7 +151,7 @@ footer { padding-block: 32px 40px; display: flex; justify-content: space-between
 <div class="wrap">
   <header class="nav">
     <a class="brand" href="#top" aria-label="Facing.ai home"><span class="mark" aria-hidden="true"></span>Facing.ai</a>
-    <a class="btn btn-primary" href="#start">Get a free scan</a>
+    <a class="btn btn-primary" href="mailto:hello@getfacing.ai?subject=Free%20agent%20scan">Get a free scan</a>
   </header>
 
   <section class="hero" id="top">
@@ -159,8 +159,8 @@ footer { padding-block: 32px 40px; display: flex; justify-content: space-between
     <h1>See how AI agents shop your store.</h1>
     <p class="lede">We send real shopping agents, like Meta Muse, OpenAI dots and Grok, through your site and show you where they drop off.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#start">Get a free scan</a>
-      <a class="btn btn-secondary" href="#start">Book a demo</a>
+      <a class="btn btn-primary" href="mailto:hello@getfacing.ai?subject=Free%20agent%20scan">Get a free scan</a>
+      <a class="btn btn-secondary" href="mailto:hello@getfacing.ai?subject=Demo%20request">Book a demo</a>
     </div>
   </section>
 
@@ -234,9 +234,8 @@ footer { padding-block: 32px 40px; display: flex; justify-content: space-between
         <p>Send us your store's URL. Spots are limited during early access.</p>
       </div>
       <div class="contact">
-        <span class="addr" id="addr">hello@getfacing.ai</span>
-        <button class="btn" type="button" id="copy">Copy email</button>
-        <span class="copied" id="copied" aria-live="polite"></span>
+        <a class="btn" href="mailto:hello@getfacing.ai?subject=Free%20agent%20scan">Contact us</a>
+        <a class="addr" href="mailto:hello@getfacing.ai">hello@getfacing.ai</a>
       </div>
     </div>
   </div>
@@ -248,20 +247,5 @@ footer { padding-block: 32px 40px; display: flex; justify-content: space-between
     <span>Not affiliated with Meta, OpenAI, xAI or Instinct.</span>
   </footer>
 </div>
-
-<script>
-document.getElementById("copy").addEventListener("click", function () {
-  var text = document.getElementById("addr").textContent.trim();
-  var done = document.getElementById("copied");
-  function select() {
-    var r = document.createRange(); r.selectNodeContents(document.getElementById("addr"));
-    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-    done.textContent = "Selected. Press Cmd+C or Ctrl+C to copy.";
-  }
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(function () { done.textContent = "Copied."; }, select);
-  } else { select(); }
-});
-</script>
 </body>
 </html>
