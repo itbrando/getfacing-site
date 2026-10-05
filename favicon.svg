@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .tile { fill: #141310; } .cut { fill: #f8f7f4; } .pick { fill: #3ccb9a; }
+    @media (prefers-color-scheme: dark) { .tile { fill: #f6f4ee; } .cut { fill: #141310; } .pick { fill: #0d7a59; } }
+  </style>
+  <rect class="tile" x="4" y="4" width="56" height="56" rx="14"/>
+  <rect class="cut" x="13" y="43" width="38" height="6" rx="3"/>
+  <rect class="pick" x="13" y="15" width="9" height="24" rx="2"/>
+  <rect class="cut" x="27.5" y="23" width="9" height="16" rx="2"/>
+</svg>
