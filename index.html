@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Facing.ai | AI shopping analytics</title>
-<meta name="description" content="AI agents now choose products for your customers. Facing.ai shows which brands they pick in your category, the reasons they give, and where you lose the sale.">
+<title>Facing.ai | Help AI shoppers choose your products</title>
+<meta name="description" content="Founder-led AI shopping pilots for ecommerce teams. Understand product, competitor and seller choices, make supported changes, and measure what changed.">
 <link rel="canonical" href="https://getfacing.ai/">
-<meta property="og:title" content="Facing.ai: AI shopping analytics">
-<meta property="og:description" content="AI agents now choose products for your customers. Facing.ai shows which brands they pick in your category, the reasons they give, and where you lose the sale.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Facing.ai | Help AI shoppers choose your products">
+<meta property="og:description" content="Understand real AI shopping decisions. Work with our founders to make supported changes and measure what changed.">
 <meta property="og:url" content="https://getfacing.ai/">
+<meta property="og:site_name" content="Facing.ai">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Facing.ai | Help AI shoppers choose your products">
+<meta name="twitter:description" content="Founder-led AI shopping pilots for ecommerce teams. Understand the decision, make a useful change, and measure what changed.">
 <meta name="theme-color" content="#f8f7f4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#11100d" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -16,656 +21,123 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Organization", "name": "Facing.ai", "url": "https://getfacing.ai/", "logo": "https://getfacing.ai/icon-512.png",
- "email": "hello@getfacing.ai",
- "description": "AI shopping analytics: Facing.ai runs benchmarks and evals of AI shopping agents and assistants (ChatGPT, Google AI Mode, Gemini, Perplexity, Meta Muse, OpenAI dots, Grok), and measures which brands they pick in a category, the reasons they give, and where a brand loses the sale, on its own site and at the retailers that sell it."}
+{"@context":"https://schema.org","@type":"Organization","name":"Facing.ai","url":"https://getfacing.ai/","logo":"https://getfacing.ai/icon-512.png","email":"hello@getfacing.ai","description":"Founder-led AI shopping pilots for ecommerce teams: understand product, competitor and seller choices, identify and implement approved merchant changes, and measure resulting shopping behavior and sales when the data supports it."}
 </script>
 <style>
-/* One page for a busy brand lead: what this is, what it shows, how agents really shop, why now, one action.
-   Type: Archivo, condensed and bold for headings (a shelf-label voice, for a company named after shelf facings).
-   Mono only where the machine speaks (what an agent reads). Green means your brand. See BRIEF.md. */
 :root {
-  --paper: #f8f7f4;
-  --paper-2: #f0eee9;
-  --card: #ffffff;
-  --ink: #141310;
-  --ink-2: #393832;
-  --muted: #64615a;
-  --faint: #8a857a;
-  --rule: #e6e2da;
-  --rule-2: #d3cec3;
-  --you: #0d7a59;
-  --you-ink: #0a5f45;
-  --you-soft: #e1f1ea;
-  --rival-1: #7f796d;
-  --rival-2: #b3ad9f;
-  --rival-3: #dcd7cc;
-  --loss: #b3381f;
-  --loss-soft: #f8e3dc;
-  --warn: #855600;
-  --warn-soft: #f5e9cf;
-  --mark: #fbe7a1;
-  --pkg-a: #ffffff;
-  --pkg-b: #e2dccf;
-  --close-bg: #141310;
-  --close-fg: #f6f4ee;
-  --close-muted: #a9a497;
-  --close-rule: #33312a;
-  --shadow: 0 1px 1px rgba(20, 19, 16, 0.04), 0 30px 60px -30px rgba(20, 19, 16, 0.22);
-  --sans: "Archivo", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --fs-xs: 0.78rem;
-  --fs-sm: 0.875rem;
-  --fs-md: 1rem;
-  --fs-lg: 1.15rem;
-  --fs-xl: 1.4rem;
-  --r-lg: 16px;
-  --r-md: 12px;
-  --r-sm: 7px;
+  color-scheme: light;
+  --paper: #f8f7f4; --ink: #141310; --ink-2: #393832; --muted: #64615a;
+  --rule: #e6e2da; --green: #0d7a59; --green-ink: #0a5f45; --green-soft: #e1f1ea;
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #11100d; --paper-2: #171612; --card: #1b1a16; --ink: #f3f0e8; --ink-2: #d5d1c6;
-    --muted: #a8a397; --faint: #7d786d; --rule: #2a2924; --rule-2: #3a3832; --you: #3ccb9a;
-    --you-ink: #6bddb5; --you-soft: #12302a; --rival-1: #9a9487; --rival-2: #67635a; --rival-3: #45423b;
-    --loss: #ef8466; --loss-soft: #3a1e16; --warn: #e2b04a; --warn-soft: #32270f; --mark: #4a3d12;
-    --pkg-a: #45423b; --pkg-b: #26241f; --close-bg: #1c1b17; --close-fg: #f3f0e8; --close-muted: #a29d91;
-    --close-rule: #34322b; --shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.75);
     color-scheme: dark;
+    --paper: #11100d; --ink: #f3f0e8; --ink-2: #d5d1c6; --muted: #a8a397;
+    --rule: #2a2924; --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #11100d; --paper-2: #171612; --card: #1b1a16; --ink: #f3f0e8; --ink-2: #d5d1c6;
-  --muted: #a8a397; --faint: #7d786d; --rule: #2a2924; --rule-2: #3a3832; --you: #3ccb9a;
-  --you-ink: #6bddb5; --you-soft: #12302a; --rival-1: #9a9487; --rival-2: #67635a; --rival-3: #45423b;
-  --loss: #ef8466; --loss-soft: #3a1e16; --warn: #e2b04a; --warn-soft: #32270f; --mark: #4a3d12;
-  --pkg-a: #45423b; --pkg-b: #26241f; --close-bg: #1c1b17; --close-fg: #f3f0e8; --close-muted: #a29d91;
-  --close-rule: #34322b; --shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 30px 60px -30px rgba(0, 0, 0, 0.75);
   color-scheme: dark;
+  --paper: #11100d; --ink: #f3f0e8; --ink-2: #d5d1c6; --muted: #a8a397;
+  --rule: #2a2924; --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
 }
-
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid var(--you); outline-offset: 3px; border-radius: 6px; }
-h1, h2, h3 { margin: 0; text-wrap: balance; }
-h1, h2 { font-weight: 700; font-stretch: 78%; letter-spacing: -0.01em; line-height: 0.95; }
-h3 { font-weight: 650; font-stretch: 88%; font-size: var(--fs-xl); letter-spacing: -0.005em; line-height: 1.1; }
-p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
-ul, ol { padding: 0; list-style: none; }
-.wrap { max-width: 1160px; margin-inline: auto; padding-inline: 24px; }
-.eyebrow { font-size: var(--fs-sm); font-weight: 500; color: var(--muted); }
-.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 8px 12px; border-radius: 8px; z-index: 20; }
-.skip:focus { left: 8px; }
-
-.btn { display: inline-flex; align-items: center; justify-content: center; font: 600 var(--fs-md)/1 var(--sans); padding: 15px 20px; border-radius: 10px; text-decoration: none; white-space: nowrap; transition: background-color 0.15s; }
-.btn-primary { background: var(--ink); color: var(--paper); }
-.btn-primary:hover { background: var(--you-ink); color: #fff; }
-.btn-sm { padding: 10px 14px; font-size: var(--fs-sm); border-radius: 9px; }
-
-/* Nav */
-.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--paper) 86%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--rule); }
-.nav-in { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 64px; gap: 24px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-stretch: 85%; font-size: var(--fs-lg); text-decoration: none; }
-.logo { width: 26px; height: 26px; flex: none; fill: currentColor; }
-.logo .pick { fill: var(--you); }
-.nav-links { display: flex; gap: 30px; font-size: var(--fs-sm); color: var(--muted); }
-.nav-links a { text-decoration: none; }
-.nav-links a:hover { color: var(--ink); }
-.nav-in > .btn { justify-self: end; }
-
-/* Hero */
-.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px 72px; align-items: end; padding-block: 96px 56px; }
-.hero .eyebrow { grid-column: 1 / -1; }
-.hero h1 { font-size: clamp(3rem, 6vw, 5.2rem); }
-.hero-side { display: grid; gap: 28px; justify-items: start; padding-bottom: 6px; }
-.lede { font-size: var(--fs-lg); line-height: 1.55; color: var(--ink-2); max-width: 30em; }
-
-/* The overview (example data) */
-.report { border: 1px solid var(--rule-2); border-radius: var(--r-lg); background: var(--card); box-shadow: var(--shadow); overflow: hidden; }
-.rp-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
-.rp-crumbs { display: flex; align-items: center; gap: 10px; font-size: var(--fs-sm); color: var(--muted); }
-.avatar { width: 20px; height: 20px; border-radius: 50%; background: var(--you); color: #fff; font: 700 0.6rem/20px var(--sans); text-align: center; letter-spacing: 0.02em; }
-.rp-crumbs b { color: var(--ink); font-weight: 600; }
-.chips { display: flex; gap: 6px; flex-wrap: wrap; }
-.chip { font-size: var(--fs-xs); font-weight: 500; font-variant-numeric: tabular-nums; padding: 5px 8px; border: 1px solid var(--rule); border-radius: 6px; color: var(--ink-2); white-space: nowrap; }
-.chip.ex { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
-.rp-main { padding: 20px; display: grid; gap: 14px; }
-.rp-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.kpi { border: 1px solid var(--rule); border-radius: var(--r-md); padding: 14px 16px; display: grid; gap: 2px; align-content: start; }
-.k-label, .k-note { font-size: var(--fs-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
-.k-val { font-size: 2.1rem; font-weight: 700; font-stretch: 78%; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
-.k-val.you { color: var(--you); }
-.rp-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 12px; }
-.panel { border: 1px solid var(--rule); border-radius: var(--r-md); padding: 16px; display: grid; gap: 14px; align-content: start; min-width: 0; }
-.panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; }
-.panel h3 { font-size: var(--fs-md); font-weight: 600; font-stretch: 100%; }
-.panel-note { font-size: var(--fs-xs); color: var(--muted); }
-.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--fs-xs); color: var(--muted); }
-.legend span { display: inline-flex; align-items: center; gap: 6px; }
-.sw { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
-.you-bg { background: var(--you); }
-.r1-bg { background: var(--rival-1); }
-.r2-bg { background: var(--rival-2); }
-.r3-bg { background: var(--rival-3); }
-.srows { display: grid; gap: 9px; }
-.srow { display: grid; grid-template-columns: 108px minmax(0, 1fr) 52px; gap: 12px; align-items: center; font-size: var(--fs-sm); }
-.srow .who { color: var(--ink-2); white-space: nowrap; }
-.srow .val { text-align: right; font-size: var(--fs-xs); color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.stack { display: flex; height: 12px; border-radius: 3px; overflow: hidden; }
-.stack i { display: block; height: 100%; border-right: 2px solid var(--card); }
-.stack i:last-child { border-right: 0; }
-.bars { display: grid; gap: 11px; }
-.bar { display: grid; grid-template-columns: 90px minmax(0, 1fr) 34px; gap: 10px; align-items: center; font-size: var(--fs-sm); color: var(--ink-2); }
-.track { height: 8px; border-radius: 99px; background: var(--paper-2); overflow: hidden; }
-.track i { display: block; height: 100%; border-radius: 99px; background: var(--ink-2); }
-.bar .v { text-align: right; font-size: var(--fs-xs); font-variant-numeric: tabular-nums; }
-.insight { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 13px 16px; border-radius: var(--r-md); background: var(--warn-soft); }
-.insight p { font-size: var(--fs-sm); line-height: 1.45; }
-.insight .next { font-size: var(--fs-xs); color: var(--warn); text-align: right; font-variant-numeric: tabular-nums; }
-.tag { display: inline-block; font: 600 var(--fs-xs)/1 var(--sans); padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
-.tag.loss { background: var(--loss-soft); color: var(--loss); }
-.tag.warn { background: var(--warn-soft); color: var(--warn); }
-.tag.ok { background: var(--you-soft); color: var(--you-ink); }
-.tag.plain { background: var(--paper-2); color: var(--ink-2); }
-.insight .tag { background: var(--card); color: var(--warn); justify-self: start; }
-
-.agents { padding-block: 34px 44px; color: var(--muted); font-size: var(--fs-md); }
-.agents b { color: var(--ink-2); font-weight: 600; }
-
-/* Sections */
-.section { padding-block: 112px; border-top: 1px solid var(--rule); }
-.section.alt { background: var(--paper-2); }
-.sec-head { display: grid; gap: 14px; margin-bottom: 48px; max-width: 50em; }
-.sec-head h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
-.sec-head .sub { color: var(--muted); font-size: var(--fs-lg); max-width: 36em; }
-.sec-head .sub strong { color: var(--ink); font-weight: 600; }
-
-/* The new reader: one product page, two readers */
-.reveal { position: relative; border: 1px solid var(--rule-2); border-radius: var(--r-lg); background: var(--card); overflow: hidden; box-shadow: var(--shadow); touch-action: pan-y; cursor: ew-resize; user-select: none; -webkit-user-select: none; --x: 72%; }
-.layer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(360px, auto); }
-.layer.agent { position: absolute; inset: 0; background: var(--card); clip-path: inset(0 0 0 var(--x)); }
-.cell { padding: 56px 40px 40px; min-width: 0; }
-.cell.img { position: relative; display: grid; place-items: center; background: radial-gradient(120% 90% at 50% 100%, var(--rule) 0%, var(--paper-2) 62%); }
-.prod { width: 170px; height: auto; filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.16)); }
-.p-shadow { fill: rgba(0, 0, 0, 0.06); }
-.p-body { fill: var(--pkg-a); stroke: var(--rule-2); stroke-width: 1.5; }
-.p-lid { stroke: var(--rule-2); stroke-width: 1.5; }
-.p-label { fill: var(--you); }
-.p-brand { fill: #fff; font: 700 15px var(--sans); font-stretch: 80%; letter-spacing: 0.08em; }
-.p-sub { fill: rgba(255, 255, 255, 0.8); font: 500 9.5px var(--sans); }
-.p-code rect { fill: var(--ink-2); }
-.cell.info { display: grid; grid-template-rows: repeat(7, 44px); row-gap: 6px; align-content: center; align-items: center; }
-.p-title { font-weight: 700; font-stretch: 85%; font-size: var(--fs-xl); line-height: 1; }
-.p-rating { color: var(--ink-2); font-size: var(--fs-sm); }
-.p-rating span { color: var(--muted); }
-.p-price { font-weight: 700; font-size: var(--fs-lg); }
-.p-badges { display: flex; align-items: center; gap: 8px; justify-self: start; }
-.p-badges, .p-chart, .p-ship { outline: 1px dashed var(--faint); outline-offset: 4px; }
-.b-seal { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--you); display: grid; place-items: center; text-align: center; font: 700 0.48rem/1.1 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--you); transform: rotate(-10deg); }
-.b-usa { padding: 5px 7px; border: 1.5px solid var(--ink-2); border-radius: 4px; font: 700 0.56rem/1 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
-.p-chart { justify-self: start; width: 132px; height: 36px; border: 1px solid var(--rule-2); border-radius: 6px; background: linear-gradient(var(--rule) 1px, transparent 1px) 0 0 / 100% 12px, linear-gradient(90deg, var(--rule) 1px, transparent 1px) 0 0 / 22px 100%, var(--card); display: grid; place-items: center; font-size: var(--fs-xs); font-weight: 700; color: var(--ink-2); }
-.p-ship { justify-self: start; min-width: 190px; padding: 9px 14px; border-radius: 3px; background: var(--you-soft); color: var(--you-ink); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.02em; }
-.p-cart { justify-self: start; padding: 10px 16px; border-radius: 9px; background: var(--paper-2); border: 1px solid var(--rule-2); color: var(--ink-2); font-weight: 600; font-size: var(--fs-sm); }
-.a-img { place-items: center start; align-content: center; gap: 10px; background: repeating-linear-gradient(-45deg, var(--paper-2) 0 10px, var(--card) 10px 20px); }
-.agent .cell { font: 400 var(--fs-sm)/1.5 var(--mono); color: var(--ink-2); }
-.agent .a-img p { background: var(--card); padding: 4px 8px; border-radius: 4px; justify-self: start; }
-.agent .cell.info > p { justify-self: end; display: flex; gap: 10px; align-items: baseline; white-space: nowrap; padding: 4px 8px; }
-.agent span { color: var(--muted); }
-.agent .miss, .agent .miss span { color: var(--loss); }
-.agent .cell.info > p.miss { background: var(--loss-soft); border-radius: 4px; }
-.divider { position: absolute; top: 0; bottom: 0; left: var(--x); width: 2px; margin-left: -1px; background: var(--ink-2); pointer-events: none; z-index: 2; }
-.handle { position: absolute; top: 50%; left: 50%; width: 42px; height: 42px; margin: -21px 0 0 -21px; border-radius: 50%; background: var(--card); border: 1.5px solid var(--ink-2); color: var(--ink); display: grid; place-items: center; font: 700 var(--fs-md)/1 var(--sans); box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.45); }
-.reveal:focus-within .handle { outline: 2px solid var(--you); outline-offset: 3px; }
-.toggles { position: absolute; top: 14px; left: 14px; right: 14px; z-index: 3; display: flex; justify-content: space-between; pointer-events: none; }
-.side-tag { pointer-events: auto; padding: 8px 12px; border-radius: var(--r-sm); font: 600 var(--fs-xs)/1 var(--sans); color: var(--ink); background: var(--card); border: 1px solid var(--rule); cursor: pointer; }
-.side-tag[aria-pressed="true"] { background: var(--paper-2); border-color: var(--ink-2); }
-.slider { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-.reveal-note { margin-top: 16px; color: var(--muted); font-size: var(--fs-md); }
-
-/* How agents shop */
-.ways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); column-gap: 1px; row-gap: 0; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; }
-.way { grid-row: span 4; display: grid; grid-template-rows: subgrid; row-gap: 16px; background: var(--card); padding: 28px; min-width: 0; }
-.way-who { font-size: var(--fs-sm); color: var(--muted); margin-top: 6px; }
-.way > p { color: var(--ink-2); }
-.path { display: flex; align-items: center; gap: 6px; white-space: nowrap; font-size: var(--fs-xs); font-weight: 600; }
-.path span { padding: 6px 9px; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); color: var(--ink-2); }
-.path span.you { background: var(--you-soft); border-color: transparent; color: var(--you-ink); }
-.path i { font-style: normal; color: var(--faint); }
-.way > p.breaks { padding-top: 16px; border-top: 1px solid var(--rule); font-size: var(--fs-sm); color: var(--muted); }
-.breaks b { color: var(--ink); font-weight: 600; }
-
-/* What Facing.ai shows you */
-.compare { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; margin-bottom: 20px; }
-.compare > div { background: var(--card); padding: 20px 22px; display: grid; gap: 4px; align-content: start; }
-.compare b { font-weight: 700; font-stretch: 85%; font-size: var(--fs-lg); }
-.compare p { color: var(--muted); }
-.compare .us { background: var(--card); box-shadow: inset 0 3px 0 var(--ink); }
-.compare .us p { color: var(--ink); }
-.panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; }
-.pnl { background: var(--card); padding: 30px; display: grid; align-content: start; gap: 24px; min-width: 0; }
-.pnl-text p { color: var(--muted); margin-top: 8px; max-width: 32em; }
-.pnl-vis { min-width: 0; display: grid; gap: 14px; }
-.pg { display: grid; gap: 9px; }
-.pg-row { display: grid; grid-template-columns: 7.4em minmax(0, 1fr) 3.8em; gap: 12px; align-items: center; font-size: var(--fs-sm); }
-.pg-row .who { color: var(--ink-2); white-space: nowrap; }
-.cells { display: grid; grid-template-columns: repeat(20, minmax(0, 1fr)); gap: 3px; }
-.cells i { display: block; aspect-ratio: 1; border-radius: 2px; background: var(--rival-3); }
-.cells i.y { background: var(--you); }
-.cells i.a { background: var(--rival-1); }
-.cells i.b { background: var(--rival-2); }
-.cnt { text-align: right; font-size: var(--fs-xs); color: var(--muted); font-variant-numeric: tabular-nums; }
-.quote blockquote { font-size: var(--fs-lg); line-height: 1.55; }
-.quote mark { background: var(--mark); color: inherit; padding: 0; border-radius: 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-.quote figcaption { margin-top: 10px; font-size: var(--fs-sm); color: var(--muted); }
-.reasons { display: flex; flex-wrap: wrap; gap: 8px; }
-.reasons span { font-size: var(--fs-sm); border: 1px solid var(--rule); border-radius: 99px; padding: 6px 11px; color: var(--ink-2); }
-.reasons b { font-weight: 600; margin-left: 4px; font-variant-numeric: tabular-nums; }
-.log li { display: grid; grid-template-columns: 6.6em minmax(0, 1fr) auto; gap: 14px; align-items: center; padding-block: 11px; border-bottom: 1px solid var(--rule); font-size: var(--fs-sm); }
-.log li:last-child { border-bottom: 0; }
-.log .who { font-weight: 600; white-space: nowrap; }
-.log .what { color: var(--muted); }
-.ba { display: grid; gap: 10px; }
-.ba-row { display: grid; grid-template-columns: 7.4em minmax(0, 1fr) 4.6em; gap: 12px; align-items: center; font-size: var(--fs-sm); }
-.ba-row .who { color: var(--ink-2); }
-.track i.you-bg { background: var(--you); }
-.vis-note { font-size: var(--fs-sm); color: var(--muted); }
-
-/* Why now */
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 28px; }
-.stat { display: grid; grid-template-rows: auto 1fr auto; gap: 12px; padding: 18px 0 0; border-top: 2px solid var(--ink); text-decoration: none; transition: border-color 0.15s; }
-.stat:hover { border-color: var(--you); }
-.s-num { font-size: 2.6rem; font-weight: 700; font-stretch: 78%; line-height: 1; font-variant-numeric: tabular-nums; }
-.s-text { font-size: var(--fs-md); color: var(--ink-2); }
-.s-src { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); }
-.more { margin-top: 20px; font-size: var(--fs-sm); color: var(--muted); max-width: 52em; }
-.more a { color: var(--ink-2); text-underline-offset: 3px; }
-
-/* Close */
-.close { background: var(--close-bg); color: var(--close-fg); padding-block: 120px; }
-.close-in { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; }
-.close h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
-.close-side { display: grid; gap: 24px; justify-items: start; }
-.close-side p { color: var(--close-muted); font-size: var(--fs-lg); max-width: 28em; }
-.close .btn-primary { background: var(--close-fg); color: var(--close-bg); }
-.close .btn-primary:hover { background: var(--you-soft); color: var(--ink); }
-
-footer { background: var(--close-bg); color: var(--close-muted); border-top: 1px solid var(--close-rule); font-size: var(--fs-sm); }
-.foot-in { display: flex; justify-content: space-between; align-items: center; gap: 12px 32px; flex-wrap: wrap; padding-block: 28px 36px; }
-footer .brand { color: var(--close-fg); font-size: var(--fs-md); }
-footer .logo .pick { fill: #3ccb9a; }
-footer nav { display: flex; gap: 24px; flex-wrap: wrap; }
-footer a { text-decoration: none; }
-footer a:hover { color: var(--close-fg); }
-
-/* Motion: the overview settles in once; nothing moves after load */
-@media (prefers-reduced-motion: no-preference) {
-  .report { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s both; }
-  .stack i, .track i { transform-origin: left; animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.45s both; }
-  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-  @keyframes grow { from { transform: scaleX(0); } to { transform: none; } }
+a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; border-radius: 4px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-inline: 32px; }
+.skip { position: absolute; top: 10px; left: -9999px; z-index: 10; padding: 8px 12px; background: var(--ink); color: var(--paper); }
+.skip:focus { left: 10px; }
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 27px; border-bottom: 1px solid var(--rule); }
+.brand { display: inline-flex; align-items: center; gap: 11px; font-size: 1.2rem; font-weight: 700; font-stretch: 85%; text-decoration: none; }
+.logo { width: 32px; height: 32px; fill: currentColor; flex: none; }
+.logo .pick { fill: var(--green); }
+.early { color: var(--green-ink); font-size: .85rem; display: inline-flex; align-items: center; gap: 8px; }
+.early::before { content: ""; width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+.hero { padding-block: 100px 86px; }
+.eyebrow { color: var(--muted); font-size: .9rem; margin-bottom: 24px; }
+h1 { max-width: 10.8em; font-size: clamp(3.4rem, 7.5vw, 6.25rem); font-stretch: 78%; font-weight: 700; letter-spacing: -.025em; line-height: .99; }
+h1 span { color: var(--green-ink); }
+.lede { max-width: 33em; margin-top: 30px; font-size: 1.23rem; line-height: 1.6; color: var(--ink-2); text-wrap: pretty; }
+.cta { display: inline-flex; align-items: center; gap: 30px; margin-top: 32px; padding: 15px 21px; background: var(--ink); color: var(--paper); border-radius: 7px; font-size: 1rem; font-weight: 600; text-decoration: none; }
+.cta:hover { background: var(--green-ink); color: var(--paper); }
+.cta svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.capabilities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--rule); padding-block: 36px 43px; }
+.capability { min-width: 0; padding-inline: 28px; }
+.capability:first-child { padding-left: 0; }
+.capability:last-child { padding-right: 0; }
+.capability + .capability { border-left: 1px solid var(--rule); }
+.number { display: block; font-size: .8rem; font-weight: 500; color: var(--green-ink); margin-bottom: 23px; }
+h2 { font-size: 1.6rem; font-weight: 650; font-stretch: 85%; line-height: 1.15; letter-spacing: -.01em; }
+.capability p { margin-top: 13px; color: var(--muted); font-size: 1rem; line-height: 1.65; text-wrap: pretty; }
+.pilot { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; padding-block: 55px 60px; }
+.pilot h2 { max-width: 13em; }
+.pilot p { color: var(--ink-2); max-width: 37em; text-wrap: pretty; }
+footer { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--rule); padding-block: 23px 30px; font-size: .8rem; color: var(--muted); }
+@media (max-width: 760px) {
+  .wrap { padding-inline: 24px; }
+  .hero { padding-block: 70px 60px; }
+  h1 { font-size: clamp(3.3rem, 10vw, 5rem); }
+  .lede { font-size: 1.12rem; }
+  .capabilities { grid-template-columns: 1fr; padding-block: 0; }
+  .capability, .capability:first-child, .capability:last-child { padding: 27px 0 30px; }
+  .capability + .capability { border-left: 0; border-top: 1px solid var(--rule); }
+  .number { margin-bottom: 12px; }
+  .capability p { max-width: 36em; }
+  .pilot { grid-template-columns: 1fr; gap: 17px; padding-block: 37px 42px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-@media (max-width: 1040px) {
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .nav-links { display: none; }
-  .nav-in { grid-template-columns: 1fr auto; }
-  .hero, .close-in { grid-template-columns: minmax(0, 1fr); }
-  .hero { padding-block: 56px 40px; }
-  .rp-grid, .panels, .compare { grid-template-columns: minmax(0, 1fr); }
-  .ways { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 1px; }
-  .way { grid-row: auto; grid-template-rows: none; }
-  .insight { grid-template-columns: minmax(0, 1fr); }
-  .insight .next { text-align: left; }
-  .section, .close { padding-block: 80px; }
-  .pnl { padding: 24px; }
-  .layer { grid-template-columns: minmax(0, 1fr); grid-template-rows: 230px auto; }
-  .reveal { cursor: default; touch-action: auto; }
-  .layer.agent { clip-path: none; opacity: 0; transition: opacity 0.15s; }
-  .reveal.agent-on .layer.agent { opacity: 1; }
-  .divider { display: none; }
-  .note-drag { display: none; }
-  .toggles { top: 10px; left: 10px; right: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-  .side-tag { min-height: 40px; }
-  .agent .cell.info > p { justify-self: start; }
-  .cell { padding: 64px 24px 24px; }
-  .cell.info { padding-top: 20px; grid-template-rows: repeat(7, 40px); }
-}
-@media (max-width: 560px) {
-  .wrap { padding-inline: 16px; }
-  .rp-main { padding: 12px; }
-  .stats { grid-template-columns: minmax(0, 1fr); }
-  .rp-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .kpi:nth-child(2), .rp-grid .panel:last-child { display: none; }
-  .k-val { font-size: var(--fs-xl); }
-  .srow { grid-template-columns: 108px minmax(0, 1fr) 44px; gap: 8px; }
-  .pg-row { grid-template-columns: minmax(0, 1fr) 3.4em; row-gap: 4px; column-gap: 8px; }
-  .pg-row .who { grid-column: 1 / -1; }
-  .cells { gap: 2px; }
-  .log li { grid-template-columns: minmax(0, 1fr) auto; }
-  .log .what { grid-column: 1 / -1; grid-row: 2; }
-  .layer { grid-template-rows: 200px auto; }
-  .agent .cell { font-size: var(--fs-xs); }
+@media (max-width: 400px) {
+  .wrap { padding-inline: 20px; }
+  .nav { gap: 12px; }
+  .brand { font-size: 1.1rem; }
+  .early { font-size: .75rem; }
+  h1 { font-size: 3.15rem; }
 }
 </style>
-<noscript><style>
-/* Without the script: the comparison rests at 72% on desktop, and phones show both readers, stacked */
-.toggles, .divider, .note-drag { display: none; }
-@media (max-width: 860px) { .layer.agent { position: static; opacity: 1; } }
-</style></noscript>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="Facing.ai, back to top"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing.ai</a>
-    <nav class="nav-links" aria-label="Sections">
-      <a href="#how">How agents shop</a>
-      <a href="#product">Product</a>
-      <a href="#why-now">Why now</a>
-    </nav>
-    <a class="btn btn-primary btn-sm" href="mailto:hello@getfacing.ai?subject=AI%20shopping%20insights&amp;body=Brand%3A%20%0D%0AWhere%20you%20sell%3A%20%0D%0ACompetitors%20you%20watch%3A%20%0D%0A">Get your insights</a>
-  </div>
-</header>
-
-<main id="main">
-  <section class="wrap hero" id="top" aria-labelledby="hero-h">
-    <p class="eyebrow">AI shopping analytics for brands</p>
-    <h1 id="hero-h">See who AI shopping agents pick, and why.</h1>
-    <div class="hero-side">
-      <p class="lede">AI agents now choose products for your customers, on your site and at the retailers that sell you. Your analytics only see the sales that agents send you. Facing.ai shows who they picked instead of you, and why.</p>
-      <a class="btn btn-primary" href="mailto:hello@getfacing.ai?subject=AI%20shopping%20insights&amp;body=Brand%3A%20%0D%0AWhere%20you%20sell%3A%20%0D%0ACompetitors%20you%20watch%3A%20%0D%0A">Get your insights</a>
-    </div>
-  </section>
-
-  <div class="wrap">
-    <figure class="report" aria-label="Example overview: your brand gets 11 of 120 agent picks, Competitor A 49; reviews are the reason agents give most">
-      <div class="rp-bar">
-        <div class="rp-crumbs"><span class="avatar" aria-hidden="true">YB</span><b>Your brand</b><span aria-hidden="true">/</span><span>Overview</span></div>
-        <div class="chips"><span class="chip ex">Example data</span><span class="chip">6 agents</span><span class="chip">20 questions</span><span class="chip">120 runs</span></div>
-      </div>
-      <div class="rp-main">
-        <div class="rp-kpis">
-          <div class="kpi"><span class="k-label">Your share of picks</span><span class="k-val you">9%</span><span class="k-note">11 of 120 runs · Competitor A 41%</span></div>
-          <div class="kpi"><span class="k-label">Reason agents gave most</span><span class="k-val">Reviews</span><span class="k-note">In 34% of picks</span></div>
-          <div class="kpi"><span class="k-label">Runs where something broke</span><span class="k-val">7</span><span class="k-note">4 on your site, 3 elsewhere</span></div>
-        </div>
-        <div class="rp-grid">
-          <section class="panel" aria-label="Picks by agent">
-            <div class="panel-head">
-              <h3>Picks by agent</h3>
-              <div class="legend"><span><i class="sw you-bg"></i>You</span><span><i class="sw r1-bg"></i>Competitor A</span><span><i class="sw r2-bg"></i>Competitor B</span><span><i class="sw r3-bg"></i>Others</span></div>
-            </div>
-            <div class="srows">
-                <div class="srow"><span class="who">ChatGPT</span><div class="stack"><i class="you-bg" style="width:15%"></i><i class="r1-bg" style="width:40%"></i><i class="r2-bg" style="width:25%"></i><i class="r3-bg" style="width:20%"></i></div><span class="val">3 of 20</span></div>
-                <div class="srow"><span class="who">Google AI Mode</span><div class="stack"><i class="you-bg" style="width:10%"></i><i class="r1-bg" style="width:45%"></i><i class="r2-bg" style="width:30%"></i><i class="r3-bg" style="width:15%"></i></div><span class="val">2 of 20</span></div>
-                <div class="srow"><span class="who">Perplexity</span><div class="stack"><i class="you-bg" style="width:15%"></i><i class="r1-bg" style="width:35%"></i><i class="r2-bg" style="width:30%"></i><i class="r3-bg" style="width:20%"></i></div><span class="val">3 of 20</span></div>
-                <div class="srow"><span class="who">Meta Muse</span><div class="stack"><i class="you-bg" style="width:5%"></i><i class="r1-bg" style="width:45%"></i><i class="r2-bg" style="width:25%"></i><i class="r3-bg" style="width:25%"></i></div><span class="val">1 of 20</span></div>
-                <div class="srow"><span class="who">OpenAI dots</span><div class="stack"><i class="you-bg" style="width:10%"></i><i class="r1-bg" style="width:40%"></i><i class="r2-bg" style="width:25%"></i><i class="r3-bg" style="width:25%"></i></div><span class="val">2 of 20</span></div>
-                <div class="srow"><span class="who">Grok</span><div class="stack"><i class="r1-bg" style="width:40%"></i><i class="r2-bg" style="width:25%"></i><i class="r3-bg" style="width:35%"></i></div><span class="val">0 of 20</span></div>
-            </div>
-          </section>
-          <section class="panel" aria-label="Why agents picked">
-            <div class="panel-head"><h3>Why agents picked</h3><span class="panel-note">Share of picks naming it</span></div>
-            <div class="bars">
-              <div class="bar"><span>Reviews</span><span class="track"><i style="width:34%"></i></span><span class="v">34%</span></div>
-              <div class="bar"><span>Price</span><span class="track"><i style="width:29%"></i></span><span class="v">29%</span></div>
-              <div class="bar"><span>Shipping</span><span class="track"><i style="width:22%"></i></span><span class="v">22%</span></div>
-              <div class="bar"><span>Certification</span><span class="track"><i style="width:18%"></i></span><span class="v">18%</span></div>
-              <div class="bar"><span>Specs</span><span class="track"><i style="width:12%"></i></span><span class="v">12%</span></div>
-            </div>
-          </section>
-        </div>
-        <div class="insight">
-          <span class="tag">Insight</span>
-          <p><b>Twice, an agent left your cart at your $50 free-shipping minimum.</b> Both times it went to a store that ships free.</p>
-          <span class="next">2 of 6 agents<br>Re-tested next week</span>
-        </div>
-      </div>
-    </figure>
-
-    <p class="agents">We run benchmarks and evals on <b>ChatGPT</b>, <b>Google AI Mode</b>, <b>Gemini</b>, <b>Perplexity</b>, <b>Meta Muse</b>, <b>OpenAI dots</b> and <b>Grok</b>.</p>
-  </div>
-
-  <section class="section" aria-labelledby="reader-h">
-    <div class="wrap">
-      <header class="sec-head">
-        <h2 id="reader-h">Your product page has a new reader.</h2>
-        <p class="sub">AI agents mostly read your text and product data, not your photos or your ads, and they decide in seconds. <strong>When they pass you over, nothing in your analytics shows it.</strong></p>
-      </header>
-      <figure class="reveal" aria-label="One product page, two readers. A shopper sees award and Made in USA badges, a size chart and a free-shipping banner. An agent reading the page finds the title, rating, price and button, but the badges, the size chart and the shipping offer are images, so it finds nothing for them.">
-        <div class="layer shopper">
-          <div class="cell img">
-            <svg class="prod" viewBox="0 0 180 220" aria-hidden="true">
-              <rect class="p-shadow" x="26" y="202" width="128" height="10" rx="5"/>
-              <rect class="p-body" x="20" y="24" width="140" height="176" rx="10"/>
-              <path class="p-lid" d="M20 52 H160"/>
-              <rect class="p-label" x="34" y="74" width="112" height="58" rx="6"/>
-              <text class="p-brand" x="90" y="101" text-anchor="middle">YOUR BRAND</text>
-              <text class="p-sub" x="90" y="119" text-anchor="middle">Everyday essential</text>
-              <g class="p-code"><rect x="34" y="160" width="2" height="24"/><rect x="38" y="160" width="1" height="24"/><rect x="41" y="160" width="3" height="24"/><rect x="46" y="160" width="1" height="24"/><rect x="49" y="160" width="2" height="24"/><rect x="53" y="160" width="1" height="24"/><rect x="56" y="160" width="3" height="24"/><rect x="61" y="160" width="1" height="24"/><rect x="64" y="160" width="2" height="24"/><rect x="68" y="160" width="1" height="24"/><rect x="71" y="160" width="3" height="24"/></g>
-            </svg>
-          </div>
-          <div class="cell info">
-            <p class="p-title">Your product</p>
-            <p class="p-rating">★★★★★ <span>2,140 reviews</span></p>
-            <p class="p-price">$36</p>
-            <div class="p-badges"><span class="b-seal">Award<br>winner</span><span class="b-usa">Made in USA</span></div>
-            <span class="p-chart">Size chart</span>
-            <span class="p-ship">Free shipping over $50</span>
-            <span class="p-cart">Add to cart</span>
-          </div>
-        </div>
-        <div class="layer agent" aria-hidden="true">
-          <div class="cell img a-img">
-            <p>image: product-front.jpg</p>
-            <p>alt text: none</p>
-          </div>
-          <div class="cell info">
-            <p><span>title</span>Your product</p>
-            <p><span>rating</span>4.8 (2,140 reviews)</p>
-            <p><span>price</span>36.00 USD</p>
-            <p class="miss"><span>badges</span>image only</p>
-            <p class="miss"><span>size chart</span>image only</p>
-            <p class="miss"><span>shipping offer</span>image only</p>
-            <p><span>button</span>Add to cart</p>
-          </div>
-        </div>
-        <div class="divider" aria-hidden="true"><span class="handle">↔</span></div>
-        <div class="toggles">
-          <button type="button" class="side-tag" data-side="shopper" aria-pressed="false">What a shopper sees</button>
-          <button type="button" class="side-tag" data-side="agent" aria-pressed="false">What an agent reads</button>
-        </div>
-        <input class="slider" type="range" min="0" max="100" value="72" aria-label="Move the divider between what a shopper sees and what an agent reads">
-      </figure>
-      <p class="reveal-note">The badges, the size chart and the free-shipping banner are images, so most agents never read them. <span class="note-drag">Drag across to compare.</span></p>
-    </div>
-  </section>
-
-  <section class="section alt" id="how" aria-labelledby="how-h">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">How agents shop</p>
-        <h2 id="how-h">Three ways agents reach your products</h2>
-        <p class="sub">What we've learned from our benchmarks and evals.</p>
-      </header>
-      <div class="ways">
-        <article class="way">
-          <div><h3>Answer engines</h3><p class="way-who">ChatGPT · Perplexity · Gemini · Google AI Mode</p></div>
-          <p class="path" aria-label="A question, then your pages, then a pick"><span>Question</span><i aria-hidden="true">→</i><span class="you">Your pages</span><i aria-hidden="true">→</i><span>Pick</span></p>
-          <p>They read your pages and what others write about you, then recommend. Most don't run your site's scripts, so details that load late or live in images never reach them.</p>
-          <p class="breaks"><b>Where it breaks:</b> details only in images or scripts, and review sites that favor a competitor.</p>
-        </article>
-        <article class="way">
-          <div><h3>Buying agents</h3><p class="way-who">OpenAI dots · Meta Muse · Grok</p></div>
-          <p class="path" aria-label="A task, then your store, then checkout"><span>Task</span><i aria-hidden="true">→</i><span class="you">Your store</span><i aria-hidden="true">→</i><span>Checkout</span></p>
-          <p>They drive a real browser on a computer in the cloud and click through to checkout. A few identify themselves; most don't, and bot protection often stops them first. We show which ones your rules stop, so you can decide.</p>
-          <p class="breaks"><b>Where it breaks:</b> bot checks, sign-in walls, add-to-cart scripts and free-shipping minimums.</p>
-        </article>
-        <article class="way">
-          <div><h3>Agentic checkout</h3><p class="way-who">Checkout inside ChatGPT and other AI apps (ACP, UCP)</p></div>
-          <p class="path" aria-label="A request, then your catalog, then an order"><span>Request</span><i aria-hidden="true">→</i><span class="you">Your catalog</span><i aria-hidden="true">→</i><span>Order</span></p>
-          <p>They order through your platform's catalog and checkout, and never see your storefront. Your product data is all they have.</p>
-          <p class="breaks"><b>Where it breaks:</b> sizes, options and product codes missing from your data.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="product" aria-labelledby="product-h">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Product</p>
-        <h2 id="product-h">What Facing.ai shows you</h2>
-      </header>
-      <div class="compare">
-        <div><b>Your analytics</b><p>The orders AI agents sent you.</p></div>
-        <div><b>AI visibility tools</b><p>How often AI answers mention you, and next to whom.</p></div>
-        <div class="us"><b>Facing.ai</b><p>Who agents pick instead of you, why, and where the sale breaks.</p></div>
-      </div>
-      <div class="panels">
-        <article class="pnl">
-          <div class="pnl-text"><h3>Who agents pick</h3><p>A pick is the product an agent recommends first or puts in the cart. One square per question, colored by the brand each agent picked.</p></div>
-          <div class="pnl-vis">
-            <div class="legend"><span><i class="sw you-bg"></i>You</span><span><i class="sw r1-bg"></i>Competitor A</span><span><i class="sw r2-bg"></i>Competitor B</span><span><i class="sw r3-bg"></i>Others</span></div>
-            <div class="pg" role="img" aria-label="Example: picks per agent across 20 questions. Your brand: ChatGPT 3, Google AI Mode 2, Perplexity 3, Meta Muse 1, OpenAI dots 2, Grok 0.">
-              <div class="pg-row"><span class="who">ChatGPT</span><span class="cells"><i class="o"></i><i class="b"></i><i class="b"></i><i class="o"></i><i class="a"></i><i class="a"></i><i class="o"></i><i class="a"></i><i class="b"></i><i class="y"></i><i class="a"></i><i class="a"></i><i class="o"></i><i class="a"></i><i class="b"></i><i class="y"></i><i class="y"></i><i class="b"></i><i class="a"></i><i class="a"></i></span><span class="cnt">3 of 20</span></div>
-              <div class="pg-row"><span class="who">Google AI Mode</span><span class="cells"><i class="o"></i><i class="b"></i><i class="o"></i><i class="b"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="y"></i><i class="y"></i><i class="o"></i><i class="a"></i><i class="a"></i><i class="b"></i><i class="b"></i><i class="a"></i></span><span class="cnt">2 of 20</span></div>
-              <div class="pg-row"><span class="who">Perplexity</span><span class="cells"><i class="y"></i><i class="o"></i><i class="a"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="o"></i><i class="o"></i><i class="y"></i><i class="a"></i><i class="o"></i><i class="b"></i><i class="y"></i><i class="b"></i><i class="b"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="b"></i><i class="b"></i></span><span class="cnt">3 of 20</span></div>
-              <div class="pg-row"><span class="who">Meta Muse</span><span class="cells"><i class="b"></i><i class="b"></i><i class="a"></i><i class="a"></i><i class="o"></i><i class="a"></i><i class="a"></i><i class="b"></i><i class="o"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="o"></i><i class="a"></i><i class="a"></i><i class="y"></i><i class="o"></i><i class="b"></i><i class="a"></i><i class="o"></i></span><span class="cnt">1 of 20</span></div>
-              <div class="pg-row"><span class="who">OpenAI dots</span><span class="cells"><i class="a"></i><i class="o"></i><i class="a"></i><i class="y"></i><i class="b"></i><i class="b"></i><i class="a"></i><i class="y"></i><i class="o"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="a"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="b"></i></span><span class="cnt">2 of 20</span></div>
-              <div class="pg-row"><span class="who">Grok</span><span class="cells"><i class="a"></i><i class="b"></i><i class="o"></i><i class="o"></i><i class="a"></i><i class="b"></i><i class="b"></i><i class="o"></i><i class="a"></i><i class="o"></i><i class="o"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="b"></i><i class="o"></i><i class="b"></i><i class="o"></i></span><span class="cnt">0 of 20</span></div>
-            </div>
-          </div>
-        </article>
-        <article class="pnl">
-          <div class="pnl-text"><h3>Why they pick</h3><p>The reasons agents give, in their own words, ranked across your category, including the strengths you have but don't show.</p></div>
-          <div class="pnl-vis">
-            <figure class="quote">
-              <blockquote>“I'd go with Competitor A. It has <mark>over 12,000 five-star reviews</mark>, it's <mark>$8 cheaper</mark>, and it <mark>arrives by Friday</mark>.”</blockquote>
-              <figcaption>OpenAI dots, question 14 of 20</figcaption>
-            </figure>
-            <div class="reasons"><span>Reviews <b>34%</b></span><span>Price <b>29%</b></span><span>Shipping <b>22%</b></span><span>Certification <b>18%</b></span></div>
-          </div>
-        </article>
-        <article class="pnl">
-          <div class="pnl-text"><h3>Where you lose the sale</h3><p>Where agents were blocked, got stuck, or worked from stale prices and stock, on your site and at the retailers that sell you.</p></div>
-          <div class="pnl-vis">
-            <ul class="log">
-              <li><span class="who">Meta Muse</span><span class="what">Out of stock at a retailer that sells you</span><span class="tag loss">Went to Competitor A</span></li>
-              <li><span class="who">OpenAI dots</span><span class="what">Bot check on your product page</span><span class="tag loss">Blocked</span></li>
-              <li><span class="who">Perplexity</span><span class="what">Quoted a retailer's price from last month</span><span class="tag warn">Out of date</span></li>
-              <li><span class="who">ChatGPT</span><span class="what">Said your product was discontinued</span><span class="tag loss">Wrong</span></li>
-              <li><span class="who">Grok</span><span class="what">Sign-in required to pay</span><span class="tag loss">Left</span></li>
-            </ul>
-          </div>
-        </article>
-        <article class="pnl">
-          <div class="pnl-text"><h3>Whether your changes worked</h3><p>Change your product page, and the next round of runs shows whether agents noticed, and whether they picked you.</p></div>
-          <div class="pnl-vis">
-            <ul class="log">
-              <li><span class="who">Before</span><span class="what">Size chart only in an image</span><span class="tag loss">Missed</span></li>
-              <li><span class="who">You</span><span class="what">Added the size chart as text</span><span class="tag plain">Changed</span></li>
-              <li><span class="who">After</span><span class="what">All 6 agents read your size chart</span><span class="tag ok">Seen</span></li>
-            </ul>
-            <div class="ba" role="img" aria-label="Example: across six agents and the same 20 questions, you were picked 11 of 120 times before the change and 17 of 120 times after">
-              <div class="ba-row"><span class="who">Picks before</span><span class="track"><i class="you-bg" style="width:9.2%"></i></span><span class="cnt">11 of 120</span></div>
-              <div class="ba-row"><span class="who">Picks after</span><span class="track"><i class="you-bg" style="width:14.2%"></i></span><span class="cnt">17 of 120</span></div>
-            </div>
-            <p class="vis-note">All six agents, same 20 questions, before and after. Example data.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="why-now" aria-labelledby="why-now-h">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Why now</p>
-        <h2 id="why-now-h">Where agentic shopping is heading</h2>
-      </header>
-      <div class="stats">
-        <a class="stat" href="https://www.emarketer.com/content/ai-commerce-2026" target="_blank" rel="noopener"><span class="s-num">$20.6B</span><span class="s-text">US sales on or referred by AI platforms in 2026, up 278% in a year</span><span class="s-src">eMarketer ↗</span></a>
-        <a class="stat" href="https://www.morganstanley.com/insights/articles/agentic-commerce-market-impact-outlook" target="_blank" rel="noopener"><span class="s-num">10–20%</span><span class="s-text">of US online spending by AI shopping agents by 2030: $190–385 billion</span><span class="s-src">Morgan Stanley ↗</span></a>
-        <a class="stat" href="https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable" target="_blank" rel="noopener"><span class="s-num">39%</span><span class="s-text">of US consumers have already used AI to shop online</span><span class="s-src">Adobe ↗</span></a>
-        <a class="stat" href="https://www.gartner.com/en/newsroom/press-releases/2026-05-27-gartner-survey-finds-consumers-want-ai-shopping-help-but-not-ai-purchase-decisions" target="_blank" rel="noopener"><span class="s-num">54%</span><span class="s-text">of shoppers who used AI for a recent purchase had to double-check all of it. “Accuracy is now a brand issue.”</span><span class="s-src">Gartner ↗</span></a>
-      </div>
-      <p class="more">Also: <a href="https://www.bain.com/insights/2030-forecast-how-agentic-ai-will-reshape-us-retail-snap-chart/" target="_blank" rel="noopener">Bain</a> expects agents to start, influence or complete 15–25% of US online sales by 2030, and <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank" rel="noopener">McKinsey</a> puts the upper bound at $1 trillion of US retail.</p>
-    </div>
-  </section>
-
-  <section class="close" id="start" aria-labelledby="close-h">
-    <div class="wrap close-in">
-      <h2 id="close-h">See how AI agents shop your category.</h2>
-      <div class="close-side">
-        <p>Send us your brand and the competitors you watch. We'll send back who the agents picked and what cost you the sale. No logins or store access needed.</p>
-        <a class="btn btn-primary" href="mailto:hello@getfacing.ai?subject=AI%20shopping%20insights&amp;body=Brand%3A%20%0D%0AWhere%20you%20sell%3A%20%0D%0ACompetitors%20you%20watch%3A%20%0D%0A">Get your insights</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap foot-in">
-    <a class="brand" href="#top"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing.ai</a>
-    <nav aria-label="Footer"><a href="#how">How agents shop</a><a href="#product">Product</a><a href="#why-now">Why now</a></nav>
-    <span>© 2026 Facing.ai</span>
-  </div>
-</footer>
-
-<script>
-/* The reveal: drag (or use the arrow keys on the slider) to move the line between the two readers */
-document.querySelectorAll(".reveal").forEach(function (box) {
-  var input = box.querySelector(".slider"), tags = box.querySelectorAll(".side-tag"), dragging = false;
-  var small = window.matchMedia("(max-width: 860px)"), still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function set(v) { v = Math.max(0, Math.min(100, v)); box.style.setProperty("--x", v + "%"); input.value = v; }
-  function move(e) { var r = box.getBoundingClientRect(); set((e.clientX - r.left) / r.width * 100); }
-  function press(side) { tags.forEach(function (t) { t.setAttribute("aria-pressed", String(t.dataset.side === side)); }); }
-  function show(side) { if (small.matches) box.classList.toggle("agent-on", side === "agent"); else set(side === "agent" ? 0 : 100); press(side); }
-  tags.forEach(function (t) {
-    t.addEventListener("pointerdown", function (e) { e.stopPropagation(); });
-    t.addEventListener("click", function (e) { e.stopPropagation(); box.dataset.touched = "1"; show(t.dataset.side); });
-  });
-  box.addEventListener("pointerdown", function (e) { if (small.matches) return; dragging = true; box.dataset.touched = "1"; press(null); box.setPointerCapture(e.pointerId); move(e); });
-  box.addEventListener("pointermove", function (e) { if (dragging) move(e); });
-  box.addEventListener("pointerup", function () { dragging = false; });
-  box.addEventListener("pointercancel", function () { dragging = false; });
-  input.addEventListener("input", function () { box.dataset.touched = "1"; press(null); set(+input.value); });
-  box.addEventListener("click", function () { if (!small.matches) input.focus({ preventScroll: true }); });
-  set(72);
-  if (small.matches) press("shopper");
-  if (!("IntersectionObserver" in window)) return;
-  var seen = new IntersectionObserver(function (entries) {
-    if (!entries[0].isIntersecting) return;
-    seen.disconnect();
-    if (small.matches) { /* phones: switch to the agent's view once, so the misses show without a tap */
-      setTimeout(function () { if (!box.dataset.touched) show("agent"); }, still ? 0 : 900);
-      return;
-    }
-    if (still) return;
-    var keys = [[0, 72], [900, 92], [2100, 30], [3000, 72]], start = null;
-    function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
-    function step(now) {
-      if (box.dataset.touched) return;
-      if (start === null) start = now;
-      var t = now - start, k = 1;
-      while (k < keys.length - 1 && t > keys[k][0]) k++;
-      var a = keys[k - 1], b = keys[k], f = Math.min(1, Math.max(0, (t - a[0]) / (b[0] - a[0])));
-      set(a[1] + (b[1] - a[1]) * ease(f));
-      if (t < keys[keys.length - 1][0]) requestAnimationFrame(step);
-    }
-    setTimeout(function () { requestAnimationFrame(step); }, 400);
-  }, { threshold: 0.6 });
-  seen.observe(box);
-});
-</script>
+<div class="wrap">
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Facing.ai home"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing.ai</a>
+    <span class="early">Early access</span>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="headline">
+      <p class="eyebrow">For ecommerce teams</p>
+      <h1 id="headline">Help AI shoppers find and <span>choose your products.</span></h1>
+      <p class="lede">Understand how AI shopping assistants choose between your products, competitors and sellers. Turn those decisions into useful changes for your business.</p>
+      <a class="cta" href="mailto:hello@getfacing.ai?subject=Facing.ai%20early%20access&amp;body=Store%20URL%3A%20%0D%0AWhat%20you%27d%20like%20to%20understand%3A%20">Talk with us<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
+    </section>
+    <section class="capabilities" aria-label="How we help">
+      <article class="capability">
+        <span class="number" aria-hidden="true">01</span>
+        <h2>See the shopping decision</h2>
+        <p>See what real AI shopping assistants recommend, which products and sellers they choose, and where your brand gets passed over.</p>
+      </article>
+      <article class="capability">
+        <span class="number" aria-hidden="true">02</span>
+        <h2>Make a useful change</h2>
+        <p>Identify changes supported by the evidence. Work with our founders and your team to implement the changes you approve.</p>
+      </article>
+      <article class="capability">
+        <span class="number" aria-hidden="true">03</span>
+        <h2>Measure what changed</h2>
+        <p>Retest shopping behavior after a change. Connect it to sales outcomes when your store data supports the comparison.</p>
+      </article>
+    </section>
+    <section class="pilot" aria-labelledby="pilot-heading">
+      <h2 id="pilot-heading">Start with a conversation.</h2>
+      <p>Talk with our founders about how AI shopping affects your business, the problems you’re seeing, and what a useful pilot would look like. We shape the work around your team’s priorities.</p>
+    </section>
+  </main>
+  <footer><span>Facing.ai</span><span>© 2026 Facing.ai</span></footer>
+</div>
 </body>
 </html>
