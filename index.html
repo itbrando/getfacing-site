@@ -4,168 +4,176 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Facing AI | We get your products facing AI</title>
-<meta name="description" content="AI shopping agents now find, compare and buy products for people. Facing AI shows brands where agents get their products wrong, and what to change so they get them right.">
+<meta name="description" content="AI shopping agents now find, compare and buy products for people. Facing AI monitors what they show for your products, tells you what to fix when they get it wrong, and measures the channel over time.">
 <link rel="canonical" href="https://getfacing.ai/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Facing AI | We get your products facing AI">
-<meta property="og:description" content="AI shopping agents now find, compare and buy products for people. Facing AI shows brands where agents get their products wrong, and what to change so they get them right.">
+<meta property="og:description" content="AI shopping agents now find, compare and buy products for people. Facing AI monitors what they show for your products, tells you what to fix when they get it wrong, and measures the channel over time.">
 <meta property="og:url" content="https://getfacing.ai/">
 <meta property="og:site_name" content="Facing AI">
 <meta property="og:image" content="https://getfacing.ai/icon-512.png">
-<meta property="og:image:alt" content="The Facing AI mark: two products standing on a shelf, the taller one in green">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Facing AI | We get your products facing AI">
-<meta name="twitter:description" content="AI shopping agents now find, compare and buy products for people. Facing AI shows brands where agents get their products wrong, and what to change so they get them right.">
+<meta name="twitter:description" content="AI shopping agents now find, compare and buy products for people. Facing AI monitors what they show for your products, tells you what to fix when they get it wrong, and measures the channel over time.">
 <meta name="twitter:image" content="https://getfacing.ai/icon-512.png">
-<meta name="theme-color" content="#f8f7f4" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#11100d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Facing AI","url":"https://getfacing.ai/","logo":"https://getfacing.ai/icon-512.png","email":"hello@getfacing.ai","slogan":"We get your products facing AI.","description":"Facing AI shows brands where AI shopping agents get their products wrong, and what to change so agents get them right."}
+{"@context":"https://schema.org","@type":"Organization","name":"Facing AI","url":"https://getfacing.ai/","logo":"https://getfacing.ai/icon-512.png","email":"hello@getfacing.ai","slogan":"We get your products facing AI.","description":"Facing AI monitors how AI shopping agents present brands' products, shows what to fix when they get them wrong, and measures the channel over time."}
 </script>
 <style>
-/* Facing AI homepage: short on purpose. The detail lives on /about and /blog. No scripts (CSP script-src 'none'). */
 :root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --tint: #f3f1ec;
+  --ink: #15140f;
+  --ink-2: #3c3a34;
+  --muted: #6c685f;
+  --rule: #e6e2d9;
+  --rule-2: #d6d1c6;
+  --green: #0b6e50;
+  --green-2: #0d7a59;
+  --green-soft: #e3f1ea;
+  --red: #a3341f;
+  --red-soft: #f8e6e1;
+  --amber: #8a5a00;
+  --amber-soft: #f6ecd6;
+  --band: #15140f;
+  --band-fg: #f4f2ec;
+  --band-muted: #a7a297;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --max: 1120px;
+  --measure: 40rem;
   color-scheme: light;
-  --paper: #f8f7f4;
-  --paper-2: #f0eee9;
-  --ink: #141310;
-  --ink-2: #393832;
-  --muted: #64615a;
-  --rule: #e6e2da;
-  --rule-2: #d3cec3;
-  --green: #0d7a59;
-  --green-ink: #0a5f45;
-  --green-soft: #e1f1ea;
-  --band: #141310;
-  --band-fg: #f6f4ee;
-  --band-muted: #a9a497;
-  --band-rule: #33312a;
-  --btn-hover: #0a5f45;
-  --btn-hover-fg: #ffffff;
-  --sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --fs-sm: 0.875rem;
-  --fs-md: 1rem;
-  --fs-lg: 1.15rem;
-  --fs-xl: 1.4rem;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --paper: #11100d; --paper-2: #171612; --ink: #f3f0e8; --ink-2: #d5d1c6; --muted: #a8a397;
-    --rule: #2a2924; --rule-2: #3a3832; --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
-    --band: #201f1a; --band-fg: #f3f0e8; --band-muted: #a29d91; --band-rule: #34322b;
-    --btn-hover: #6bddb5; --btn-hover-fg: #11100d;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --paper: #11100d; --paper-2: #171612; --ink: #f3f0e8; --ink-2: #d5d1c6; --muted: #a8a397;
-  --rule: #2a2924; --rule-2: #3a3832; --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
-  --band: #201f1a; --band-fg: #f3f0e8; --band-muted: #a29d91; --band-rule: #34322b;
-  --btn-hover: #6bddb5; --btn-hover-fg: #11100d;
-}
-
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.65 var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.015em; text-wrap: balance; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
-h1, h2, h3, p, ul { margin: 0; }
-ul { padding: 0; list-style: none; }
-h1, h2, h3 { text-wrap: balance; }
-h1, h2 { font-weight: 700; letter-spacing: -0.012em; }
-.wrap { max-width: 1160px; margin-inline: auto; padding-inline: 24px; }
-.skip { position: absolute; left: -999px; top: 8px; z-index: 20; padding: 8px 12px; border-radius: 8px; background: var(--ink); color: var(--paper); }
+:focus-visible { outline: 2px solid var(--green-2); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: 32px; }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 20; padding: 8px 12px; border-radius: 6px; background: var(--ink); color: #fff; }
 .skip:focus { left: 8px; }
-.eyebrow { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); }
+.kicker { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
-/* The one action */
-.btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 20px; border-radius: 10px; background: var(--ink); color: var(--paper); font: 600 var(--fs-md)/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background-color 0.15s; }
-.btn:hover { background: var(--btn-hover); color: var(--btn-hover-fg); }
-.btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-.btn-sm { padding: 10px 14px; border-radius: 9px; font-size: var(--fs-sm); }
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border: 1px solid var(--ink); border-radius: 8px; background: var(--ink); color: #fff; font: 500 0.95rem/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background-color 0.15s, border-color 0.15s; }
+.btn:hover { background: var(--green); border-color: var(--green); }
+.btn .arr { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.btn-sm { padding: 9px 14px; font-size: 0.875rem; }
+.link { font-weight: 500; color: var(--green); text-decoration: none; }
+.link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* Nav */
-.nav { position: sticky; top: 0; z-index: 10; background: var(--paper); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--rule); }
+/* Header */
+.nav { position: sticky; top: 0; z-index: 10; background: rgba(251, 250, 247, 0.92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
 .nav-in { display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 64px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-size: var(--fs-lg); font-weight: 700; text-decoration: none; white-space: nowrap; }
-.logo { width: 26px; height: 26px; flex: none; fill: currentColor; }
-.logo .pick { fill: var(--green); }
-.nav-end { display: flex; align-items: center; gap: 24px; }
-.nav-end > a:not(.btn) { font-size: var(--fs-sm); color: var(--muted); text-decoration: none; }
-.nav-end > a:not(.btn):hover { color: var(--ink); }
-
-/* Hero */
-.hero { display: grid; justify-items: start; gap: 28px; padding-block: 128px 112px; }
-.hero h1 { max-width: 11em; font-size: clamp(3rem, 7.4vw, 6.4rem); line-height: 0.96; }
-.hero h1 span { color: var(--green-ink); }
-.lede { max-width: 30em; font-size: var(--fs-xl); line-height: 1.45; color: var(--ink-2); text-wrap: pretty; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.logo { width: 24px; height: 24px; flex: none; fill: currentColor; }
+.logo .pick { fill: var(--green-2); }
+.nav-end { display: flex; align-items: center; gap: 28px; }
+.nav-end > a:not(.btn) { font-size: 0.9rem; color: var(--muted); text-decoration: none; }
+.nav-end > a:not(.btn):hover, .nav-end > a[aria-current="page"] { color: var(--ink); }
 
 /* Sections */
 .section { padding-block: 88px; border-top: 1px solid var(--rule); }
-.section h2 { max-width: 20em; font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; }
-.section .eyebrow { margin-bottom: 14px; }
+.sec-head { display: grid; gap: 14px; max-width: 46rem; margin-bottom: 48px; }
+.sec-head h2 { font-size: clamp(1.7rem, 2.8vw, 2.25rem); line-height: 1.2; }
+.sec-head p:not(.kicker) { font-size: 1.075rem; color: var(--ink-2); text-wrap: pretty; }
 
-/* Why now: three numbers */
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; margin-top: 48px; }
-.stats li { display: grid; align-content: start; gap: 10px; padding-top: 18px; border-top: 2px solid var(--ink); }
-.num { font-size: clamp(2.6rem, 4.6vw, 3.6rem); font-weight: 700; line-height: 1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
-.stats p { color: var(--ink-2); text-wrap: pretty; }
-.stats .src { font-size: var(--fs-sm); color: var(--muted); }
-.src a { text-underline-offset: 3px; }
-
-/* What we do: three plain points */
-.does { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; margin-top: 48px; }
-.does li { display: grid; align-content: start; gap: 10px; padding-top: 18px; border-top: 1px solid var(--rule-2); }
-.does h3 { font-size: var(--fs-xl); line-height: 1.2; }
-.does p { color: var(--ink-2); text-wrap: pretty; }
-
-/* Go deeper */
-.more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
-.more a { display: grid; align-content: start; gap: 8px; padding: 26px 28px; border: 1px solid var(--rule-2); border-radius: 14px; text-decoration: none; transition: border-color 0.15s; }
-.more a:hover { border-color: var(--green); }
-.more b { font-size: var(--fs-lg); font-weight: 650; }
-.more .d { color: var(--ink-2); }
-.more .go { font-weight: 600; color: var(--green-ink); }
-
-/* Close */
-.close { padding-block: 112px; background: var(--band); color: var(--band-fg); }
-.close-in { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; }
-.close h2 { font-size: clamp(2.3rem, 4.8vw, 4rem); line-height: 0.98; }
-.close-side { display: grid; gap: 24px; justify-items: start; }
-.close-side p { max-width: 28em; font-size: var(--fs-lg); color: var(--band-muted); }
-.close .btn { background: var(--band-fg); color: var(--band); }
-.close .btn:hover { background: var(--green-soft); color: var(--ink); }
-
-footer { border-top: 1px solid var(--band-rule); background: var(--band); color: var(--band-muted); font-size: var(--fs-sm); }
-.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; padding-block: 28px 36px; }
-footer .brand { font-size: var(--fs-md); color: var(--band-fg); }
+/* Close and footer */
+.close { padding-block: 96px; background: var(--band); color: var(--band-fg); }
+.close-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; }
+.close h2 { max-width: 18em; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
+.close p { margin-top: 12px; color: var(--band-muted); }
+.close .btn { background: var(--band-fg); border-color: var(--band-fg); color: var(--ink); }
+.close .btn:hover { background: var(--green-soft); border-color: var(--green-soft); }
+footer { background: var(--band); color: var(--band-muted); font-size: 0.875rem; border-top: 1px solid #2d2b25; }
+.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; padding-block: 26px 32px; }
+footer .brand { font-size: 0.95rem; color: var(--band-fg); }
 footer .logo .pick { fill: #3ccb9a; }
 footer nav { display: flex; flex-wrap: wrap; gap: 24px; }
 footer a { text-decoration: none; }
-footer a:hover { color: var(--band-fg); }
+footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
 
 @media (max-width: 860px) {
-  .hero { padding-block: 72px 64px; }
-  .section, .close { padding-block: 64px; }
-  .stats, .does, .more, .close-in { grid-template-columns: minmax(0, 1fr); }
-  .stats, .does { gap: 32px; }
+  .section { padding-block: 64px; }
+  .close { padding-block: 64px; }
 }
 @media (max-width: 560px) {
-  .wrap { padding-inline: 16px; }
-  .lede { font-size: var(--fs-lg); }
-  .more a { padding: 22px; }
+  .wrap { padding-inline: 20px; }
+  .nav-end { gap: 18px; }
 }
 @media (max-width: 374px) {
-  .nav-end { gap: 14px; }
-  .brand { font-size: var(--fs-md); }
-  .nav .btn-sm { padding-inline: 11px; }
+  .wrap { padding-inline: 16px; }
+  .nav-end { gap: 12px; }
+  .brand { font-size: 0.95rem; }
+  .nav .btn-sm { padding-inline: 10px; }
+}
+
+/* Home */
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 56px; align-items: center; padding-block: 96px 88px; }
+.hero h1 { margin-top: 18px; font-size: clamp(2.5rem, 5.2vw, 4.1rem); line-height: 1.04; letter-spacing: -0.025em; }
+.hero h1 span { color: var(--green-2); }
+.lede { max-width: 32rem; margin-top: 22px; font-size: 1.2rem; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 32px; }
+
+/* The monitor card (illustrative) */
+.monitor { border: 1px solid var(--rule-2); border-radius: 12px; background: var(--surface); box-shadow: 0 1px 2px rgba(21, 20, 15, 0.04), 0 18px 40px -24px rgba(21, 20, 15, 0.25); overflow: hidden; }
+.m-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--rule); }
+.m-title { font-size: 0.9rem; font-weight: 600; }
+.m-meta { font-size: 0.78rem; color: var(--muted); }
+.m-prod { padding: 14px 20px; border-bottom: 1px solid var(--rule); background: var(--tint); font-size: 0.875rem; color: var(--ink-2); }
+.m-prod b { font-weight: 600; color: var(--ink); }
+.m-row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 13px 20px; border-bottom: 1px solid var(--rule); font-size: 0.875rem; }
+.m-row:last-of-type { border-bottom: 0; }
+.m-agent { font-weight: 600; }
+.m-what { color: var(--ink-2); }
+.tag { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 0.74rem; font-weight: 600; white-space: nowrap; }
+.tag.ok { background: var(--green-soft); color: var(--green); }
+.tag.bad { background: var(--red-soft); color: var(--red); }
+.tag.warn { background: var(--amber-soft); color: var(--amber); }
+.m-foot { display: flex; justify-content: space-between; gap: 12px; padding: 12px 20px; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--muted); }
+
+/* Why now */
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.stat { padding-top: 20px; border-top: 2px solid var(--ink); }
+.stat .num { font-size: 2.4rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat p { margin-top: 12px; color: var(--ink-2); text-wrap: pretty; }
+.stat .src { margin-top: 10px; font-size: 0.8rem; color: var(--muted); }
+.stat .src a { text-underline-offset: 2px; }
+
+/* What we do */
+.does { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.do { padding: 28px; border: 1px solid var(--rule); border-radius: 12px; background: var(--surface); }
+.do .step { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.do h3 { margin-top: 10px; font-size: 1.2rem; line-height: 1.3; }
+.do p { margin-top: 10px; color: var(--ink-2); text-wrap: pretty; }
+
+/* About teaser */
+.teaser { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px 40px; padding: 32px; border: 1px solid var(--rule); border-radius: 12px; background: var(--tint); }
+.teaser h2 { font-size: 1.35rem; line-height: 1.3; }
+.teaser p { margin-top: 6px; color: var(--ink-2); }
+
+@media (max-width: 960px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 44px; padding-block: 64px 64px; }
+}
+@media (max-width: 860px) {
+  .stats, .does { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .m-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .m-what { grid-column: 1 / -1; grid-row: 2; }
+  .do, .teaser { padding: 22px; }
 }
 </style>
 </head>
@@ -177,7 +185,6 @@ footer a:hover { color: var(--band-fg); }
     <a class="brand" href="/" aria-label="Facing AI home"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing AI</a>
     <nav class="nav-end" aria-label="Site">
       <a href="/about">About</a>
-      <a href="/blog">Blog</a>
       <a class="btn btn-sm" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us</a>
     </nav>
   </div>
@@ -185,29 +192,46 @@ footer a:hover { color: var(--band-fg); }
 
 <main id="main">
   <section class="wrap hero" aria-labelledby="hero-h">
-    <h1 id="hero-h">We get your products <span>facing AI.</span></h1>
-    <p class="lede">AI shopping agents now find, compare and buy products for people. Facing AI shows where they get your products wrong, and what to change so they get them right.</p>
-    <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
+    <div>
+      <p class="kicker">AI shopping, monitored</p>
+      <h1 id="hero-h">We get your products <span>facing AI.</span></h1>
+      <p class="lede">AI shopping agents now find, compare and buy products for people. Facing AI monitors what they show for your products, tells you what to fix when they get it wrong, and measures the channel as it grows.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
+        <a class="link" href="/about">How AI agents shop <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <figure class="monitor" aria-label="Example of an agent monitor for one product">
+      <div class="m-head"><span class="m-title">Agent monitor</span><span class="m-meta">Example</span></div>
+      <p class="m-prod"><b>Trail jacket</b> · Navy · Size M · $189 on your store</p>
+      <div class="m-row"><span class="m-agent">ChatGPT</span><span class="m-what">Quotes $149, links the black jacket</span><span class="tag bad">Wrong price</span></div>
+      <div class="m-row"><span class="m-agent">Gemini</span><span class="m-what">Navy, size M, $189, your store</span><span class="tag ok">Correct</span></div>
+      <div class="m-row"><span class="m-agent">Copilot</span><span class="m-what">Sends the shopper to a reseller</span><span class="tag warn">Other seller</span></div>
+      <div class="m-row"><span class="m-agent">Meta’s Muse</span><span class="m-what">Says size M is sold out</span><span class="tag bad">Wrong stock</span></div>
+      <p class="m-foot"><span>4 agents checked</span><span>3 issues · fixes ready</span></p>
+    </figure>
   </section>
 
   <section class="section" aria-labelledby="now-h">
     <div class="wrap">
-      <p class="eyebrow">Why now</p>
-      <h2 id="now-h">Shoppers are handing the search, the comparison and the purchase to AI agents.</h2>
+      <header class="sec-head">
+        <p class="kicker">Why now</p>
+        <h2 id="now-h">Shoppers are handing the search, the comparison and the purchase to AI agents.</h2>
+      </header>
       <ul class="stats">
-        <li>
+        <li class="stat">
           <p class="num">15–25%</p>
           <p>of US online sales could be purchases that AI agents start, influence or complete by 2030.</p>
           <p class="src">Forecast: <a href="https://www.bain.com/insights/2030-forecast-how-agentic-ai-will-reshape-us-retail-snap-chart/">Bain &amp; Company</a>, Dec 2025</p>
         </li>
-        <li>
+        <li class="stat">
           <p class="num">Up to $1T</p>
           <p>of US retail revenue could be orchestrated by AI agents by 2030.</p>
           <p class="src">Forecast: <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants">McKinsey</a>, Oct 2025</p>
         </li>
-        <li>
+        <li class="stat">
           <p class="num">1B+</p>
-          <p>people use Google’s AI Mode every month, and checkout inside AI assistants is now switching on for online stores.</p>
+          <p>people use Google’s AI Mode every month, and checkout inside AI assistants is switching on for online stores.</p>
           <p class="src">Sources: <a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/">Alphabet</a>, Jul 2026; <a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/ai-channels-with-built-in-checkout">Shopify</a></p>
         </li>
       </ul>
@@ -216,43 +240,50 @@ footer a:hover { color: var(--band-fg); }
 
   <section class="section" aria-labelledby="do-h">
     <div class="wrap">
-      <p class="eyebrow">What we do</p>
-      <h2 id="do-h">When an agent gets your product wrong, the sale goes somewhere else.</h2>
+      <header class="sec-head">
+        <p class="kicker">What we do</p>
+        <h2 id="do-h">When an agent gets your product wrong, the sale goes somewhere else.</h2>
+        <p>Facing AI watches the agents your customers use, so your team can see this new channel and run it.</p>
+      </header>
       <ul class="does">
-        <li>
-          <h3>See what agents show</h3>
-          <p>Where ChatGPT, Gemini, Copilot, Meta’s Muse and other agents show the wrong product, size, price, stock or seller for your products, or leave you out.</p>
+        <li class="do">
+          <p class="step">Monitor</p>
+          <h3>See what every agent shows</h3>
+          <p>We continuously check what ChatGPT, Gemini, Copilot, Meta’s Muse and other agents show for your products: the product, size, price, stock and seller, and whether you appear at all.</p>
         </li>
-        <li>
+        <li class="do">
+          <p class="step">Fix</p>
           <h3>Know what to change</h3>
-          <p>Why each error happens, and what to change in the product pages, catalogs and listings you control.</p>
+          <p>When an agent gets a product wrong, we show why and what to change in the product pages, catalogs and listings you control, then confirm the fix holds.</p>
         </li>
-        <li>
-          <h3>Know it held</h3>
-          <p>Confirmation that agents show your products correctly once the change is live, and that it lasts.</p>
+        <li class="do">
+          <p class="step">Measure</p>
+          <h3>Track the channel</h3>
+          <p>Analytics on how agents present your products over time, by agent and product, so you can see a channel your current reports miss.</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="more-h">
+  <section class="section" aria-labelledby="about-h">
     <div class="wrap">
-      <p class="eyebrow">Go deeper</p>
-      <h2 id="more-h">How AI agents shop, and why it matters for brands.</h2>
-      <div class="more">
-        <a href="/about"><b>About Facing AI</b><span class="d">What is changing in how people shop, where agents go wrong, and what we do about it.</span><span class="go">Read more <span aria-hidden="true">→</span></span></a>
-        <a href="/blog"><b>Blog</b><span class="d">What the 2030 forecasts actually count, and why agents quote the wrong price or stock.</span><span class="go">Read the blog <span aria-hidden="true">→</span></span></a>
+      <div class="teaser">
+        <div>
+          <h2 id="about-h">How AI agents are changing shopping</h2>
+          <p>What is shifting, where agents go wrong, and why brands can’t see it.</p>
+        </div>
+        <a class="link" href="/about">Read about Facing AI <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
   <section class="close" aria-labelledby="close-h">
     <div class="wrap close-in">
-      <h2 id="close-h">See how AI agents present your products.</h2>
-      <div class="close-side">
+      <div>
+        <h2 id="close-h">See how AI agents present your products.</h2>
         <p>For brands that sell online, in any category.</p>
-        <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
       </div>
+      <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
     </div>
   </section>
 </main>
@@ -260,7 +291,7 @@ footer a:hover { color: var(--band-fg); }
 <footer>
   <div class="wrap foot-in">
     <a class="brand" href="/"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing AI</a>
-    <nav aria-label="Footer"><a href="/about">About</a><a href="/blog">Blog</a><a href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">hello@getfacing.ai</a></nav>
+    <nav aria-label="Footer"><a href="/about">About</a><a href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">hello@getfacing.ai</a></nav>
     <span>© 2026 Facing AI</span>
   </div>
 </footer>

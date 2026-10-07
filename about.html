@@ -7,266 +7,160 @@
 <meta name="description" content="Why AI shopping agents matter to brands now, where they get products wrong, and what Facing AI does about it. Sourced and dated.">
 <link rel="canonical" href="https://getfacing.ai/about">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AI agents are becoming shoppers. Brands can’t see what they show. | Facing AI">
+<meta property="og:title" content="About | Facing AI">
 <meta property="og:description" content="Why AI shopping agents matter to brands now, where they get products wrong, and what Facing AI does about it. Sourced and dated.">
 <meta property="og:url" content="https://getfacing.ai/about">
 <meta property="og:site_name" content="Facing AI">
+<meta property="og:image" content="https://getfacing.ai/icon-512.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AI agents are becoming shoppers. Brands can’t see what they show. | Facing AI">
+<meta name="twitter:title" content="About | Facing AI">
 <meta name="twitter:description" content="Why AI shopping agents matter to brands now, where they get products wrong, and what Facing AI does about it. Sourced and dated.">
-<meta name="theme-color" content="#f8f7f4" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#11100d" media="(prefers-color-scheme: dark)">
+<meta name="twitter:image" content="https://getfacing.ai/icon-512.png">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AboutPage","name":"About Facing AI","headline":"AI agents are becoming shoppers. Brands can’t see what they show.","datePublished":"2026-10-07","url":"https://getfacing.ai/about","description":"Why AI shopping agents matter to brands now, where they get products wrong, and what Facing AI does about it. Sourced and dated.","publisher":{"@type":"Organization","name":"Facing AI","url":"https://getfacing.ai/","logo":"https://getfacing.ai/icon-512.png","email":"hello@getfacing.ai"}}
+{"@context":"https://schema.org","@type":"AboutPage","name":"About Facing AI","headline":"AI agents are becoming shoppers. Brands can’t see what they show.","datePublished":"2026-10-07","url":"https://getfacing.ai/about","publisher":{"@type":"Organization","name":"Facing AI","url":"https://getfacing.ai/","logo":"https://getfacing.ai/icon-512.png"}}
 </script>
 <style>
-/* Facing AI, About: a research memo. Same tokens, type, nav and mark as index.html.
-   Ink rules mark our measurements, green marks what a brand controls; black is reserved for "Talk with us".
-   No scripts (the CSP is script-src 'none'). */
 :root {
-  color-scheme: light;
-  --paper: #f8f7f4;
-  --paper-2: #f0eee9;
+  --bg: #fbfaf7;
   --surface: #ffffff;
-  --sunk: #f7f6f2;
-  --ink: #141310;
-  --ink-2: #393832;
-  --muted: #64615a;
-  --faint: #8a857a;
-  --rule: #e6e2da;
-  --rule-2: #d3cec3;
-  --green: #0d7a59;
-  --green-ink: #0a5f45;
-  --green-soft: #e1f1ea;
-  --band: #141310;
-  --band-fg: #f6f4ee;
-  --band-muted: #a9a497;
-  --band-rule: #33312a;
-  --btn-hover: #0a5f45;
-  --btn-hover-fg: #ffffff;
-  --sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --fs-xs: 0.78rem;
-  --fs-sm: 0.875rem;
-  --fs-md: 1rem;
-  --fs-lg: 1.15rem;
-  --fs-xl: 1.4rem;
-  --r-md: 11px;
-  --measure: 42rem;
+  --tint: #f3f1ec;
+  --ink: #15140f;
+  --ink-2: #3c3a34;
+  --muted: #6c685f;
+  --rule: #e6e2d9;
+  --rule-2: #d6d1c6;
+  --green: #0b6e50;
+  --green-2: #0d7a59;
+  --green-soft: #e3f1ea;
+  --red: #a3341f;
+  --red-soft: #f8e6e1;
+  --amber: #8a5a00;
+  --amber-soft: #f6ecd6;
+  --band: #15140f;
+  --band-fg: #f4f2ec;
+  --band-muted: #a7a297;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --max: 1120px;
+  --measure: 40rem;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --paper: #11100d; --paper-2: #171612; --surface: #1b1a16; --sunk: #181713; --ink: #f3f0e8;
-    --ink-2: #d5d1c6; --muted: #a8a397; --faint: #7d786d; --rule: #2a2924; --rule-2: #3a3832;
-    --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
-    --band: #201f1a; --band-fg: #f3f0e8; --band-muted: #a29d91;
-    --band-rule: #34322b; --btn-hover: #6bddb5; --btn-hover-fg: #11100d;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --paper: #11100d; --paper-2: #171612; --surface: #1b1a16; --sunk: #181713; --ink: #f3f0e8;
-  --ink-2: #d5d1c6; --muted: #a8a397; --faint: #7d786d; --rule: #2a2924; --rule-2: #3a3832;
-  --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
-  --band: #201f1a; --band-fg: #f3f0e8; --band-muted: #a29d91;
-  --band-rule: #34322b; --btn-hover: #6bddb5; --btn-hover-fg: #11100d;
-}
-
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
-a { color: inherit; }
-:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
-[id] { scroll-margin-top: 84px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.65 var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
-h1, h2, h3 { text-wrap: balance; }
-h1, h2 { font-weight: 700; letter-spacing: -0.012em; line-height: 1.08; }
-h3 { font-weight: 650; line-height: 1.2; letter-spacing: -0.005em; }
-code { font: 0.9em/1.4 var(--mono); overflow-wrap: anywhere; }
-.wrap { max-width: 1160px; margin-inline: auto; padding-inline: 24px; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-.skip { position: absolute; left: -999px; top: 8px; z-index: 20; padding: 8px 12px; border-radius: 8px; background: var(--ink); color: var(--paper); }
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.015em; text-wrap: balance; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--green-2); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: 32px; }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 20; padding: 8px 12px; border-radius: 6px; background: var(--ink); color: #fff; }
 .skip:focus { left: 8px; }
-.eyebrow { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); }
+.kicker { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
-/* The one action */
-.btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 20px; border-radius: 10px; background: var(--ink); color: var(--paper); font: 600 var(--fs-md)/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background-color 0.15s; }
-.btn:hover { background: var(--btn-hover); color: var(--btn-hover-fg); }
-.btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-.btn-sm { padding: 10px 14px; border-radius: 9px; font-size: var(--fs-sm); }
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border: 1px solid var(--ink); border-radius: 8px; background: var(--ink); color: #fff; font: 500 0.95rem/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background-color 0.15s, border-color 0.15s; }
+.btn:hover { background: var(--green); border-color: var(--green); }
+.btn .arr { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.btn-sm { padding: 9px 14px; font-size: 0.875rem; }
+.link { font-weight: 500; color: var(--green); text-decoration: none; }
+.link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* Nav: the homepage's markup */
-.nav { position: sticky; top: 0; z-index: 10; background: var(--paper); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--rule); }
+/* Header */
+.nav { position: sticky; top: 0; z-index: 10; background: rgba(251, 250, 247, 0.92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
 .nav-in { display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 64px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-size: var(--fs-lg); font-weight: 700; text-decoration: none; white-space: nowrap; }
-.logo { width: 26px; height: 26px; flex: none; fill: currentColor; }
-.logo .pick { fill: var(--green); }
-.nav-end { display: flex; align-items: center; gap: 24px; }
-.nav-end > a:not(.btn) { font-size: var(--fs-sm); color: var(--muted); text-decoration: none; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.logo { width: 24px; height: 24px; flex: none; fill: currentColor; }
+.logo .pick { fill: var(--green-2); }
+.nav-end { display: flex; align-items: center; gap: 28px; }
+.nav-end > a:not(.btn) { font-size: 0.9rem; color: var(--muted); text-decoration: none; }
 .nav-end > a:not(.btn):hover, .nav-end > a[aria-current="page"] { color: var(--ink); }
 
-/* Memo head */
-.memo-head { padding-block: 88px 64px; }
-.memo-head h1 { max-width: 14em; margin-top: 18px; font-size: clamp(2.3rem, 5.4vw, 4.6rem); line-height: 1.06; }
-.byline { display: flex; flex-wrap: wrap; margin-top: 26px; font-size: var(--fs-sm); color: var(--muted); }
-.byline span + span::before { content: "·"; margin-inline: 10px; color: var(--muted); }
-.toc { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 12px; font-size: var(--fs-sm); }
-.toc a { color: var(--muted); text-decoration-color: var(--rule-2); text-underline-offset: 3px; }
-.toc a:hover { color: var(--ink); text-decoration-color: currentColor; }
-.intro { display: grid; justify-items: start; gap: 24px; max-width: var(--measure); margin-top: 40px; }
-.intro > p { font-size: var(--fs-xl); line-height: 1.45; color: var(--ink-2); text-wrap: pretty; }
-.findings { display: grid; gap: 14px; }
-.findings li { padding-left: 16px; border-left: 2px solid var(--ink); font-size: var(--fs-lg); line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+/* Sections */
+.section { padding-block: 88px; border-top: 1px solid var(--rule); }
+.sec-head { display: grid; gap: 14px; max-width: 46rem; margin-bottom: 48px; }
+.sec-head h2 { font-size: clamp(1.7rem, 2.8vw, 2.25rem); line-height: 1.2; }
+.sec-head p:not(.kicker) { font-size: 1.075rem; color: var(--ink-2); text-wrap: pretty; }
 
-/* Parts: a label rail beside the text */
-.part { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 16px 56px; padding-block: 72px; border-top: 1px solid var(--rule); }
-.rail { position: sticky; top: 84px; align-self: start; display: flex; align-items: baseline; gap: 12px; padding-top: 6px; font-size: var(--fs-sm); font-weight: 600; color: var(--muted); }
-.num { font-size: var(--fs-xs); font-weight: 600; font-variant-numeric: tabular-nums; color: var(--muted); }
-.body { grid-column: 2; min-width: 0; font-size: var(--fs-lg); line-height: 1.65; color: var(--ink-2); }
-.body > h2 { max-width: 17em; margin-bottom: 28px; font-size: clamp(1.9rem, 3.4vw, 2.7rem); line-height: 1.1; color: var(--ink); }
-.body > p { max-width: var(--measure); text-wrap: pretty; }
-.body > * + p { margin-top: 0.9em; }
-.body > .lead { font-size: var(--fs-xl); line-height: 1.5; color: var(--ink); }
-.runin { font-weight: 700; color: var(--ink); }
-.wide { grid-column: 1 / -1; min-width: 0; margin-top: 30px; }
-.wide + .body { margin-top: 26px; }
-.body > .inputs { display: grid; gap: 10px; max-width: var(--measure); margin-top: 0.9em; }
-.inputs li { position: relative; padding-left: 22px; text-wrap: pretty; }
-.inputs li::before { content: ""; position: absolute; left: 0; top: 0.82em; width: 10px; height: 2px; background: var(--muted); }
-.inputs b { font-weight: 650; color: var(--ink); }
-
-/* Citations */
-.ref { margin-left: 1px; font-size: 0.66em; font-weight: 600; line-height: 0; color: var(--muted); }
-.ref a { padding-inline: 1px; text-decoration: none; }
-.ref a:hover { color: var(--ink); text-decoration: underline; }
-
-/* Figures on rules: market figures in 01, our own in 03 */
-.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-bottom: 40px; }
-.figures > div { display: grid; align-content: start; gap: 10px; padding-top: 14px; border-top: 2px solid var(--ink); }
-.figures dt { font-size: 1.9rem; font-weight: 700; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--ink); }
-.figures dd { font-size: var(--fs-sm); line-height: 1.5; text-wrap: pretty; }
-
-/* How agents shop: one row per agent */
-.agents-cap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 14px; font-size: var(--fs-sm); color: var(--muted); }
-.agents-cap b { font-weight: 600; color: var(--ink); }
-.agents { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: var(--fs-sm); line-height: 1.5; color: var(--ink-2); }
-.agents th, .agents td { padding: 15px 20px 17px 0; text-align: left; vertical-align: top; border-top: 1px solid var(--rule); text-wrap: pretty; }
-.agents thead th { padding-block: 0 11px; border-top: 0; border-bottom: 2px solid var(--ink); font-size: var(--fs-xs); font-weight: 600; line-height: 1.35; color: var(--muted); }
-.agents tbody tr:first-child > * { border-top: 0; }
-.agents tbody th { font-size: var(--fs-md); font-weight: 700; line-height: 1.3; color: var(--ink); }
-.agents tbody th small { display: block; margin-top: 3px; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
-.agents .c-agent { width: 14%; }
-.agents .c-src { width: 23%; }
-.agents .c-offer { width: 22%; }
-.agents .c-see { width: 20%; }
-.agents .c-sale { width: 21%; }
-.agents .nd { font-style: italic; color: var(--muted); }
-.agents .lbl { display: none; }
-.agents-note { max-width: var(--measure); margin-top: 18px; font-size: var(--fs-sm); line-height: 1.55; color: var(--muted); }
-
-/* Where they fail */
-.scope { max-width: var(--measure); margin-top: 26px; padding: 18px 20px; border: 1px solid var(--rule-2); border-radius: var(--r-md); background: var(--surface); font-size: var(--fs-sm); line-height: 1.6; text-wrap: pretty; }
-.scope b { color: var(--ink); }
-.fails { display: grid; max-width: var(--measure); margin-top: 34px; }
-.fails > li { display: grid; gap: 12px; padding: 28px 0 30px; border-top: 1px solid var(--rule); }
-.fails > li:last-child { border-bottom: 1px solid var(--rule); }
-.fails h3 { font-size: var(--fs-xl); color: var(--ink); }
-.fails p { font-size: var(--fs-md); line-height: 1.65; text-wrap: pretty; }
-.fails .case { padding: 12px 15px; border-radius: var(--r-md); background: var(--paper-2); font-size: var(--fs-sm); line-height: 1.6; }
-.fails .case b { color: var(--ink); }
-.fails .meas { padding-left: 14px; border-left: 2px solid var(--ink); color: var(--ink); }
-.fails .ctl { font-size: var(--fs-sm); color: var(--muted); }
-.fails .ctl b { color: var(--green-ink); }
-
-/* What it costs */
-.costs { display: grid; max-width: var(--measure); margin-top: 30px; }
-.costs li { display: grid; gap: 8px; padding: 22px 0; border-top: 1px solid var(--rule); }
-.costs li:last-child { border-bottom: 1px solid var(--rule); }
-.costs h3 { font-size: var(--fs-lg); color: var(--ink); }
-.costs p { font-size: var(--fs-md); line-height: 1.65; text-wrap: pretty; }
-.body > .costs + p { margin-top: 30px; }
-
-/* What we do */
-.gets { max-width: var(--measure); margin-top: 28px; border-top: 1px solid var(--rule); }
-.gets > div { display: grid; grid-template-columns: 10.5em minmax(0, 1fr); gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: var(--fs-md); line-height: 1.6; }
-.gets dt { font-weight: 650; color: var(--ink); }
-.body > .gets + p { margin-top: 28px; }
-.body > .sig { display: flex; align-items: center; gap: 10px; margin-top: 22px; font-size: var(--fs-lg); font-weight: 700; color: var(--ink); }
-.sig .logo { width: 24px; height: 24px; }
-
-/* Sources */
-.src-note { margin-bottom: 18px; font-size: var(--fs-sm); color: var(--muted); }
-.sources { display: grid; gap: 12px; max-width: var(--measure); padding-left: 2.1em; list-style: decimal; font-size: var(--fs-sm); line-height: 1.55; }
-.sources li { padding-left: 4px; }
-.sources li::marker { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--muted); }
-.sources li:target { border-radius: 6px; background: var(--green-soft); }
-.sources a { text-underline-offset: 3px; overflow-wrap: anywhere; }
-.sources a:hover { color: var(--green-ink); }
-
-/* Talk with us */
-.close { padding-block: 104px; background: var(--band); color: var(--band-fg); }
-.close-in { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; }
-.close h2 { font-size: clamp(2.3rem, 4.6vw, 3.8rem); }
-.close-side { display: grid; gap: 24px; justify-items: start; }
-.close-side p { max-width: 28em; font-size: var(--fs-lg); color: var(--band-muted); }
-.close .btn { background: var(--band-fg); color: var(--band); }
-.close .btn:hover { background: var(--green-soft); color: var(--ink); }
-
-footer { border-top: 1px solid var(--band-rule); background: var(--band); color: var(--band-muted); font-size: var(--fs-sm); }
-.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; padding-block: 28px 36px; }
-footer .brand { font-size: var(--fs-md); color: var(--band-fg); }
+/* Close and footer */
+.close { padding-block: 96px; background: var(--band); color: var(--band-fg); }
+.close-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; }
+.close h2 { max-width: 18em; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
+.close p { margin-top: 12px; color: var(--band-muted); }
+.close .btn { background: var(--band-fg); border-color: var(--band-fg); color: var(--ink); }
+.close .btn:hover { background: var(--green-soft); border-color: var(--green-soft); }
+footer { background: var(--band); color: var(--band-muted); font-size: 0.875rem; border-top: 1px solid #2d2b25; }
+.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; padding-block: 26px 32px; }
+footer .brand { font-size: 0.95rem; color: var(--band-fg); }
 footer .logo .pick { fill: #3ccb9a; }
 footer nav { display: flex; flex-wrap: wrap; gap: 24px; }
 footer a { text-decoration: none; }
 footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
 
-@media (max-width: 1100px) {
-  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 22px; }
-}
-@media (max-width: 900px) {
-  /* The agent table becomes one block per agent; roles on the table keep its semantics. */
-  .agents, .agents tbody, .agents tr, .agents th, .agents td { display: block; width: auto; }
-  .agents thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .agents colgroup { display: none; }
-  .agents tbody tr { padding: 20px 0 22px; border-top: 1px solid var(--rule); }
-  .agents tbody tr:first-child { border-top: 2px solid var(--ink); }
-  .agents th, .agents td { padding: 0; border: 0; }
-  .agents tbody th { margin-bottom: 12px; font-size: var(--fs-lg); }
-  .agents td + td { margin-top: 12px; }
-  .agents .lbl { display: block; margin-bottom: 2px; font-size: var(--fs-xs); font-weight: 600; font-style: normal; color: var(--muted); }
-}
 @media (max-width: 860px) {
-  .memo-head { padding-block: 56px 44px; }
-  .part { grid-template-columns: minmax(0, 1fr); gap: 14px; padding-block: 56px; }
-  .rail { position: static; }
-  .rail-t { display: none; }
-  .body, .wide { grid-column: 1 / -1; }
-  .close { padding-block: 76px; }
-  .close-in { grid-template-columns: minmax(0, 1fr); }
+  .section { padding-block: 64px; }
+  .close { padding-block: 64px; }
 }
 @media (max-width: 560px) {
-  .wrap { padding-inline: 16px; }
-  .intro > p { font-size: var(--fs-lg); }
-  .findings li { font-size: var(--fs-md); }
-  .body { font-size: var(--fs-md); }
-  .body > .lead { font-size: var(--fs-lg); }
-  .figures { gap: 24px 18px; }
-  .figures dt { font-size: 1.6rem; }
-  .gets > div { grid-template-columns: minmax(0, 1fr); }
+  .wrap { padding-inline: 20px; }
+  .nav-end { gap: 18px; }
 }
 @media (max-width: 374px) {
-  .nav-in { gap: 8px; }
+  .wrap { padding-inline: 16px; }
   .nav-end { gap: 12px; }
-  .brand { font-size: var(--fs-md); }
-  .nav .btn-sm { padding-inline: 11px; }
+  .brand { font-size: 0.95rem; }
+  .nav .btn-sm { padding-inline: 10px; }
+}
+
+/* About: a short memo */
+.head { padding-block: 88px 56px; }
+.head h1 { max-width: 20em; margin-top: 16px; font-size: clamp(2.1rem, 4.2vw, 3.2rem); line-height: 1.12; letter-spacing: -0.02em; }
+.byline { display: flex; flex-wrap: wrap; margin-top: 20px; font-size: 0.875rem; color: var(--muted); }
+.byline span + span::before { content: "·"; margin-inline: 10px; }
+.intro { display: grid; justify-items: start; gap: 24px; max-width: var(--measure); margin-top: 28px; }
+.intro p { font-size: 1.2rem; line-height: 1.55; color: var(--ink-2); }
+.part { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 16px 56px; padding-block: 64px; border-top: 1px solid var(--rule); }
+.rail { position: sticky; top: 88px; align-self: start; display: flex; gap: 10px; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.rail .n { color: var(--green); font-variant-numeric: tabular-nums; }
+.body { min-width: 0; max-width: var(--measure); font-size: 1.06rem; line-height: 1.72; color: var(--ink-2); }
+.body > h2 { margin-bottom: 24px; font-size: clamp(1.5rem, 2.5vw, 1.95rem); line-height: 1.2; color: var(--ink); }
+.body > * + p { margin-top: 1em; }
+.body b.runin { font-weight: 600; color: var(--ink); }
+.body a { text-underline-offset: 3px; }
+.ref { margin-left: 1px; font-size: 0.68em; font-weight: 600; line-height: 0; color: var(--muted); }
+.ref a { padding-inline: 1px; text-decoration: none; }
+.ref a:hover { color: var(--ink); text-decoration: underline; }
+.figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; margin-bottom: 36px; }
+.figures div { padding-top: 14px; border-top: 2px solid var(--ink); }
+.figures dt { font-size: 1.75rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.figures dd { margin-top: 8px; font-size: 0.9rem; line-height: 1.5; color: var(--ink-2); }
+.fails { display: grid; gap: 0; margin-top: 26px; border-top: 1px solid var(--rule); }
+.fails li { padding-block: 18px; border-bottom: 1px solid var(--rule); }
+.fails h3 { font-size: 1.05rem; color: var(--ink); }
+.fails p { margin-top: 6px; font-size: 1rem; line-height: 1.65; }
+.lead { font-size: 1.15rem; color: var(--ink); }
+.sig { display: flex; align-items: center; gap: 10px; margin-top: 26px; font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+.sig .logo { width: 22px; height: 22px; }
+.src-note { margin-bottom: 16px; font-size: 0.875rem; color: var(--muted); }
+.sources { display: grid; gap: 10px; padding-left: 1.6em; list-style: decimal; font-size: 0.875rem; line-height: 1.55; }
+.sources li::marker { font-weight: 600; color: var(--muted); }
+.sources li:target { background: var(--green-soft); }
+.sources a { overflow-wrap: anywhere; text-underline-offset: 2px; }
+@media (max-width: 860px) {
+  .head { padding-block: 56px 40px; }
+  .part { grid-template-columns: minmax(0, 1fr); gap: 10px; padding-block: 48px; }
+  .rail { position: static; }
+}
+@media (max-width: 480px) {
+  .figures { grid-template-columns: minmax(0, 1fr); }
 }
 </style>
 </head>
@@ -278,7 +172,6 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
     <a class="brand" href="/" aria-label="Facing AI home"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing AI</a>
     <nav class="nav-end" aria-label="Site">
       <a href="/about" aria-current="page">About</a>
-      <a href="/blog">Blog</a>
       <a class="btn btn-sm" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us</a>
     </nav>
   </div>
@@ -286,19 +179,19 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
 
 <main id="main">
   <article aria-labelledby="memo-h">
-    <header class="wrap memo-head">
-      <p class="eyebrow">About Facing AI</p>
+    <header class="wrap head">
+      <p class="kicker">About Facing AI</p>
       <h1 id="memo-h">AI agents are becoming shoppers. Brands can’t see what they show.</h1>
       <p class="byline"><span>Facing AI</span><span><time datetime="2026-10">October 2026</time></span><span>5-minute read</span></p>
       <div class="intro">
-        <p>Facing AI shows brands where AI shopping agents get their products wrong, and what to change so agents get them right. This page explains why that matters now.</p>
-        <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
+        <p>Facing AI monitors how AI shopping agents present a brand’s products, shows where and why they get them wrong, and what to change so they get them right. This page explains why that matters now.</p>
+        <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
       </div>
     </header>
 
     <div class="wrap">
       <section class="part" id="shift" aria-labelledby="shift-h">
-        <p class="rail"><span class="num" aria-hidden="true">01</span><span class="rail-t">The shift</span></p>
+        <p class="rail"><span class="n">01</span><span>The shift</span></p>
         <div class="body">
           <h2 id="shift-h">Shopping is moving to personal AI agents</h2>
           <dl class="figures">
@@ -310,12 +203,12 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
           <p>A personal shopping agent works for one person. It takes a request in plain words, searches and compares on that person’s behalf, recommends a product from a particular seller and, on more and more surfaces, completes the purchase. The audience is already large: Google’s AI Mode has more than a billion monthly users and the Gemini app 950 million<sup class="ref"><span class="sr-only">Source </span><a href="#src-1">1</a></sup>, and about half of US adults now use AI chatbots<sup class="ref"><span class="sr-only">Source </span><a href="#src-2">2</a></sup>.</p>
           <p><b class="runin">In 2026, agent connections became the default.</b> Shopify made eligible merchants’ products discoverable in ChatGPT by default in March<sup class="ref"><span class="sr-only">Source </span><a href="#src-7">7</a></sup>, and for eligible US Shopify stores, checkout inside Microsoft Copilot, Google’s AI Mode and Gemini, and Meta’s assistants is on by default<sup class="ref"><span class="sr-only">Source </span><a href="#src-8">8</a></sup>. Amazon’s Buy for Me buys from other brands’ own sites for Amazon shoppers<sup class="ref"><span class="sr-only">Source </span><a href="#src-9">9</a></sup>. ChatGPT went the other way on checkout: OpenAI scaled back Instant Checkout in March, and ChatGPT buyers now finish on the store’s own site<sup class="ref"><span class="sr-only">Source </span><a href="#src-15">15</a></sup>.</p>
           <p><b class="runin">The traffic is small and growing fast.</b> Independent studies put AI-referred visits at roughly 0.1–0.3% of traffic to online stores<sup class="ref"><span class="sr-only">Sources </span><a href="#src-12">12</a>,<a href="#src-13">13</a>,<a href="#src-14">14</a></sup>. Adobe measured AI-referred visits to US retail sites up 393% year over year in the first quarter of 2026 and 127% in August<sup class="ref"><span class="sr-only">Source </span><a href="#src-10">10</a></sup>, and Shopify counted nearly 13 times as many AI-referred orders in the first quarter as a year earlier<sup class="ref"><span class="sr-only">Source </span><a href="#src-11">11</a></sup>.</p>
-          <p><b class="runin">Forecasts are large.</b> Bain projects that agents could start, influence or complete 15–25% of US online sales by 2030, $300–500 billion<sup class="ref"><span class="sr-only">Source </span><a href="#src-3">3</a></sup>; Morgan Stanley’s range is 10–20%<sup class="ref"><span class="sr-only">Source </span><a href="#src-4">4</a></sup>; McKinsey puts the ceiling at as much as $1 trillion of US retail revenue<sup class="ref"><span class="sr-only">Source </span><a href="#src-5">5</a></sup>; and Juniper Research expects $1.5 trillion of agentic commerce spending worldwide in 2030<sup class="ref"><span class="sr-only">Source </span><a href="#src-6">6</a></sup>. They count different things, which <a href="/blog/forecasts-2030">we compare on our blog</a>. Shoppers still check the work: in Gartner’s surveys, 54% of AI users double-check “all information”<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+          <p><b class="runin">Forecasts are large.</b> Bain projects that agents could start, influence or complete 15–25% of US online sales by 2030, $300–500 billion<sup class="ref"><span class="sr-only">Source </span><a href="#src-3">3</a></sup>; Morgan Stanley’s range is 10–20%<sup class="ref"><span class="sr-only">Source </span><a href="#src-4">4</a></sup>; McKinsey puts the ceiling at as much as $1 trillion of US retail revenue<sup class="ref"><span class="sr-only">Source </span><a href="#src-5">5</a></sup>; and Juniper Research expects $1.5 trillion of agentic commerce spending worldwide in 2030<sup class="ref"><span class="sr-only">Source </span><a href="#src-6">6</a></sup>. They count different things, from retailers’ own assistants to influence on the purchase. Shoppers still check the work: in Gartner’s surveys, 54% of AI users double-check “all information”<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
         </div>
       </section>
 
       <section class="part" id="fail" aria-labelledby="fail-h">
-        <p class="rail"><span class="num" aria-hidden="true">02</span><span class="rail-t">Where agents go wrong</span></p>
+        <p class="rail"><span class="n">02</span><span>Where agents go wrong</span></p>
         <div class="body">
           <h2 id="fail-h">Where agents get products wrong</h2>
           <p>An agent is only as good as what it can read and match. When it gets a product wrong, the shopper rarely knows, and the brand never sees it. The failures fall into a few kinds.</p>
@@ -331,7 +224,7 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
       </section>
 
       <section class="part" id="see" aria-labelledby="see-h">
-        <p class="rail"><span class="num" aria-hidden="true">03</span><span class="rail-t">Why it’s hidden</span></p>
+        <p class="rail"><span class="n">03</span><span>Why it’s hidden</span></p>
         <div class="body">
           <h2 id="see-h">Why brands can’t see it</h2>
           <p>Each agent draws on different sources: product catalogs that stores and platforms send it, its own search index, and pages it reads or browses live. None of them documents how it chooses the product, the version or the seller it shows. Answers change from day to day, and the error happens off the brand’s site, in a conversation the brand never sees. A store’s own reports cannot show what an agent told a shopper who never arrived.</p>
@@ -339,17 +232,17 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
       </section>
 
       <section class="part" id="work" aria-labelledby="work-h">
-        <p class="rail"><span class="num" aria-hidden="true">04</span><span class="rail-t">What we do</span></p>
+        <p class="rail"><span class="n">04</span><span>What we do</span></p>
         <div class="body">
           <h2 id="work-h">What Facing AI does for a brand</h2>
-          <p class="lead">Facing AI shows a brand where AI shopping agents misrepresent its products or send shoppers to other sellers, why it happens, and what to change in the sources the brand controls. Once a change is live, we confirm that it holds in what the agents show.</p>
-          <p>We work with brands that sell online, in any category, across the agents their customers use: ChatGPT, Google’s AI Mode and Gemini, Microsoft Copilot, Meta’s Muse, Perplexity and the agents that browse and buy on a store’s own site.</p>
+          <p class="lead">Facing AI continuously monitors what AI shopping agents show for a brand’s products. When an agent misrepresents a product or sends shoppers to another seller, we show why it happens and what to change in the sources the brand controls, and we confirm the change holds. Over time, a brand sees how this new channel presents and sells its products, agent by agent.</p>
+          <p>We work with brands that sell online, in any category, across the agents their customers use: ChatGPT, Google’s AI Mode and Gemini, Microsoft Copilot, Meta’s Muse, Perplexity and the agents that browse and buy on a store’s own site. As agents take on more of the purchase, we are building the system ecommerce teams use to sell through them.</p>
           <p class="sig"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>We get your products facing AI.</p>
         </div>
       </section>
 
       <section class="part" id="sources" aria-labelledby="sources-h">
-        <p class="rail"><span class="num" aria-hidden="true">05</span><span class="rail-t">Sources</span></p>
+        <p class="rail"><span class="n">05</span><span>Sources</span></p>
         <div class="body">
           <h2 id="sources-h" class="sr-only">Sources</h2>
           <p class="src-note">Links accessed 6 and 7 October 2026.</p>
@@ -379,11 +272,11 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
 
   <section class="close" aria-labelledby="close-h">
     <div class="wrap close-in">
-      <h2 id="close-h">See how AI agents present your products.</h2>
-      <div class="close-side">
+      <div>
+        <h2 id="close-h">See how AI agents present your products.</h2>
         <p>For brands that sell online, in any category.</p>
-        <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
       </div>
+      <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
     </div>
   </section>
 </main>
@@ -391,7 +284,7 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
 <footer>
   <div class="wrap foot-in">
     <a class="brand" href="/"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing AI</a>
-    <nav aria-label="Footer"><a href="/">Home</a><a href="/about" aria-current="page">About</a><a href="/blog">Blog</a></nav>
+    <nav aria-label="Footer"><a href="/about" aria-current="page">About</a><a href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">hello@getfacing.ai</a></nav>
     <span>© 2026 Facing AI</span>
   </div>
 </footer>
