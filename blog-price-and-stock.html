@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Why AI shopping agents quote the wrong price or stock | Facing AI</title>
-<meta name="description" content="A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Five mechanisms account for most of it, and most start in data a brand controls.">
+<meta name="description" content="A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Here are the five most common ways it happens.">
 <link rel="canonical" href="https://getfacing.ai/blog/price-and-stock">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Why AI shopping agents quote the wrong price or stock | Facing AI">
-<meta property="og:description" content="A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Five mechanisms account for most of it, and most start in data a brand controls.">
+<meta property="og:description" content="A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Here are the five most common ways it happens.">
 <meta property="og:url" content="https://getfacing.ai/blog/price-and-stock">
 <meta property="og:site_name" content="Facing AI">
 <meta property="og:image" content="https://getfacing.ai/icon-512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Why AI shopping agents quote the wrong price or stock | Facing AI">
-<meta name="twitter:description" content="A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Five mechanisms account for most of it, and most start in data a brand controls.">
+<meta name="twitter:description" content="A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Here are the five most common ways it happens.">
 <meta name="theme-color" content="#f8f7f4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#11100d" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why AI shopping agents quote the wrong price or stock", "description": "A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Five mechanisms account for most of it, and most start in data a brand controls.", "datePublished": "2026-10-07", "url": "https://getfacing.ai/blog/price-and-stock", "author": {"@type": "Organization", "name": "Facing AI", "url": "https://getfacing.ai/", "logo": "https://getfacing.ai/icon-512.png", "email": "hello@getfacing.ai"}, "publisher": {"@type": "Organization", "name": "Facing AI", "url": "https://getfacing.ai/", "logo": "https://getfacing.ai/icon-512.png", "email": "hello@getfacing.ai"}}
+{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why AI shopping agents quote the wrong price or stock", "description": "A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Here are the five most common ways it happens.", "datePublished": "2026-10-07", "url": "https://getfacing.ai/blog/price-and-stock", "author": {"@type": "Organization", "name": "Facing AI", "url": "https://getfacing.ai/", "logo": "https://getfacing.ai/icon-512.png", "email": "hello@getfacing.ai"}, "publisher": {"@type": "Organization", "name": "Facing AI", "url": "https://getfacing.ai/", "logo": "https://getfacing.ai/icon-512.png", "email": "hello@getfacing.ai"}}
 </script>
 <style>
 /* Facing AI blog: the About memo's tokens, nav, type and footer. No scripts (the CSP is script-src 'none'). */
@@ -211,44 +211,37 @@ footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
     <header class="wrap head">
       <p class="eyebrow"><a href="/blog">Blog</a></p>
       <h1 id="post-h">Why AI shopping agents quote the wrong price or stock</h1>
-      <p class="dek">A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Five mechanisms account for most of it, and most start in data a brand controls.</p>
-      <p class="byline"><span>Facing AI</span><span><time datetime="2026-10-07">October 7, 2026</time></span><span>5-minute read</span></p>
+      <p class="dek">A wrong price or a false “sold out” costs a sale at the moment a shopper decides. Here are the five most common ways it happens.</p>
+      <p class="byline"><span>Facing AI</span><span><time datetime="2026-10-07">October 7, 2026</time></span><span>3-minute read</span></p>
     </header>
     <div class="wrap">
       <div class="post">
-        <p>When an AI agent tells a shopper that a product costs less than it does, the shopper meets a higher price at checkout, or leaves. When it says an in-stock product is sold out, the shopper picks something else. Neither error shows up in a store’s reports, because the answer happens somewhere the store cannot see. These are the mechanisms we see most often, in agents’ answers and in stores’ own pages.</p>
+        <p>When an AI agent tells a shopper that a product costs less than it does, the shopper meets a higher price at checkout, or leaves. When it says an in-stock product is sold out, the shopper picks something else. Neither error shows up in a store’s reports, because the answer happens somewhere the store cannot see. These are the most common ways it happens.</p>
 
         <h2>1. One name, several versions</h2>
         <p>Most products come in versions: sizes, colors, materials, packs. When versions are priced differently and share one product name, an agent has to settle on one. Platforms also merge listings for the same product. Shopify’s documentation for its global catalog, which several agents draw on, says results are “clustered by Universal Product ID”, and that when “an exact match isn’t available”, options in a shopper’s preferences are dropped<sup class="ref"><span class="sr-only">Source </span><a href="#s1">1</a></sup>. So a request for one version can come back attached to a sibling, with the sibling’s photo, price or link.</p>
         <p class="illus"><b>Illustration.</b> A jacket comes in six colors, and two of them cost $40 more than the rest. Asked for the $189 navy jacket, an agent quotes $149, and its link opens the black one.</p>
-        <p>The ground for this error is common. On 54.6% of the Shopify stores we examined (458 of 839), at least one product’s price depends on a size or quantity option, and in 75% of those products the size is not in the title<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>. In ChatGPT’s “other sellers” rows, 13.8% linked a different product or variant (30 of 217)<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>.</p>
-        <p class="ctl"><b>What a brand controls:</b> one feed item per version, each with a title that names the version, its own photo, price and product code (GTIN), and a link that opens that version.</p>
 
         <h2>2. The first price a reader sees</h2>
-        <p>A product page usually opens on a default version, and many show that version’s price, or a “from” price, until the shopper chooses. Agents read pages in different ways. ChatGPT’s page reader ran no scripts in our controlled tests<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>: it reads the page’s code as delivered, not the page a shopper sees after choosing. A reader like that can take the first price it finds as the price of the version the shopper asked about. Browser agents render the page and can select a version, but only when the page makes that possible.</p>
-        <p class="ctl"><b>What a brand controls:</b> each version’s price stated as text on the page, and links that open the version they name, with its price in the page’s code.</p>
+        <p>A product page usually opens on a default version, and many show that version’s price, or a “from” price, until the shopper chooses. Agents read pages in different ways. Some read a page’s code as delivered, not the page a shopper sees after choosing, and a reader like that can take the first price it finds as the price of the version the shopper asked about. Browser agents render the page and can select a version, but only when the page makes that possible.</p>
 
         <h2>3. Data that disagrees with the store</h2>
-        <p>Structured data is the machine-readable product description in a page’s code. Search engines read it for price and stock, and agents draw on search indexes. On 6.3% of the Shopify stores we examined (41 of 654), structured data contradicted the store’s own catalog on availability, nearly always by marking sold-out variants in stock; on 1.4% (9 of 654) it carried a price more than 5% off<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>. A related error puts the compare-at (“was”) price where the selling price belongs: in one answer we recorded, Gemini showed a $119.99 compare-at price for an item selling at $71.99<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>. Whether agents take price or stock from structured data has not been shown; the exposure is there either way.</p>
-        <p class="ctl"><b>What a brand controls:</b> price and availability for each version in its structured data and feeds, generated from the same data as the page, with the compare-at price only in its own field.</p>
+        <p>Structured data is the machine-readable product description in a page’s code. Search engines read it for price and stock, and agents draw on search indexes. When it disagrees with the store, marking a sold-out version in stock or putting the compare-at (“was”) price where the selling price belongs, an agent can repeat the wrong figure to a shopper who never sees the store’s own page.</p>
 
         <h2>4. Hidden “Sold out” text</h2>
-        <p>Many store themes keep a “Sold out” label or a “Notify me” button in every product page’s code and hide it with styling until a version sells out. Shoppers never see it. A page reader that ignores styling still gets the words and can report an in-stock product as sold out. On product pages where every variant could be ordered, 30.7% of the Shopify stores we examined (225 of 732) still carried “Sold out”, “Out of stock” or “Notify me” text in the page’s code, mostly a hidden badge in common theme code; 7.7% (56 of 732) had a hidden sold-out button or back-in-stock form<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>. Those figures measure exposure, not how often agents act on it. Browser agents read the state as displayed.</p>
+        <p>Many store themes keep a “Sold out” label or a “Notify me” button in every product page’s code and hide it with styling until a version sells out. Shoppers never see it. A page reader that ignores styling still gets the words and can report an in-stock product as sold out. Agents that render the page in a full browser read the state as displayed.</p>
         <p class="illus"><b>Illustration.</b> A shopper asks whether a lamp comes in brass. Every finish is in stock, but the page’s code carries a hidden “Sold out” label, so the agent calls brass unavailable and recommends another brand’s lamp.</p>
-        <p class="ctl"><b>What a brand controls:</b> theme elements that appear in the page’s code only when they are true, instead of being hidden with styling.</p>
 
         <h2>5. Another seller’s listing</h2>
-        <p>When other stores list the same product, whether retailers, resellers, marketplaces or copycats, the agent may show their price, stock and link instead of the brand’s. In ChatGPT’s product panels, the default seller followed the merchant feed: a brand’s own store held the default every time its offer came through a feed (9 of 9) and never otherwise (0 of 26), and in 15 of the 19 cases where it lost on the same product, it matched the winning seller’s price<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>. Where several sellers were listed, large retailers held 60 of 79 defaults<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>. The price and stock the shopper sees are then the other seller’s.</p>
-        <p class="ctl"><b>What a brand controls:</b> feed eligibility and channel settings on each platform, which partners may pass its products on, and product codes that let platforms match its own offer to the product.</p>
+        <p>When other stores list the same product, whether retailers, resellers, marketplaces or copycats, the agent may show their price, stock and link instead of the brand’s. The agent picks one seller to put forward, and it is often a large retailer, sometimes at exactly the brand’s price. The price and stock the shopper sees are then the other seller’s, and so is the sale.</p>
 
         <h2>Why it is hard to see from inside the store</h2>
-        <p>None of these errors appears in a store’s reports. The answer happens elsewhere, and a shopper told the wrong price or stock may never visit. When a visit does come, most assistants do not label it: of those we observed, only ChatGPT tags its links as its own<sup class="ref"><span class="sr-only">Source </span><a href="#s2">2</a></sup>. A brand learns about these failures only from what agents actually show, product by product and version by version, and what they show changes as agents and catalogs update.</p>
+        <p>None of these errors appears in a store’s reports. The answer happens elsewhere, and a shopper told the wrong price or stock may never visit. When a visit does come, most assistants do not label it. A brand learns about these failures only from what agents actually show, product by product and version by version, and what they show changes as agents and catalogs update. Each failure starts somewhere different, and each needs its own fix.</p>
         <p class="end">Facing AI shows brands where AI shopping agents misrepresent or lose their products, why it happens and what to change in the sources they control, then confirms that the change holds. Our <a href="/about">analysis of how agents shop</a> has the detail, and <a href="/blog/forecasts-2030">a note on the 2030 forecasts</a> covers what is at stake.</p>
 
         <h2 class="sources-h" id="sources">Sources</h2>
         <ol class="sources">
       <li id="s1">Shopify, <a href="https://shopify.dev/docs/agents/catalog/global-catalog" target="_blank" rel="noopener">Global Catalog documentation</a>, read October 2026.</li>
-      <li id="s2">Facing AI research, September and October 2026: answers from ChatGPT, Gemini, Meta’s Muse and Meta AI, and OpenAI’s browser agent to test requests that named no brand, mostly for outdoor gear and beauty, 27 September to 6 October 2026; ChatGPT product panels from 40 answers, 2 October 2026; links in answers from ChatGPT, Perplexity, Grok and the Gemini app; public product pages of 654 to 839 Shopify stores, September 2026; controlled tests. Errors count only when confirmed, so rates are lower bounds; store figures measure exposure to a defect, not harm.</li>
         </ol>
       </div>
     </div>
