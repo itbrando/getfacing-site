@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About | Facing AI</title>
+<meta name="description" content="A Facing AI research memo: how personal AI agents find, compare and buy products in 2026, where they get products wrong, and what that costs a brand. Sourced and dated.">
+<link rel="canonical" href="https://getfacing.ai/about">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How AI agents shop, and where they get products wrong | Facing AI">
+<meta property="og:description" content="A Facing AI research memo: how personal AI agents find, compare and buy products in 2026, where they get products wrong, and what that costs a brand. Sourced and dated.">
+<meta property="og:url" content="https://getfacing.ai/about">
+<meta property="og:site_name" content="Facing AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How AI agents shop, and where they get products wrong | Facing AI">
+<meta name="twitter:description" content="A Facing AI research memo: how personal AI agents find, compare and buy products in 2026, where they get products wrong, and what that costs a brand. Sourced and dated.">
+<meta name="theme-color" content="#f8f7f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11100d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AboutPage","name":"About Facing AI","headline":"How AI agents shop, and where they get products wrong","datePublished":"2026-10-07","url":"https://getfacing.ai/about","description":"A Facing AI research memo: how personal AI agents find, compare and buy products in 2026, where they get products wrong, and what that costs a brand. Sourced and dated.","publisher":{"@type":"Organization","name":"Facing AI","url":"https://getfacing.ai/","logo":"https://getfacing.ai/icon-512.png","email":"hello@getfacing.ai"}}
+</script>
+<style>
+/* Facing AI, About: a research memo. Same tokens, type, nav and mark as index.html.
+   Ink rules mark our measurements, green marks what a brand controls; black is reserved for "Talk with us".
+   No scripts (the CSP is script-src 'none'). */
+:root {
+  color-scheme: light;
+  --paper: #f8f7f4;
+  --paper-2: #f0eee9;
+  --surface: #ffffff;
+  --sunk: #f7f6f2;
+  --ink: #141310;
+  --ink-2: #393832;
+  --muted: #64615a;
+  --faint: #8a857a;
+  --rule: #e6e2da;
+  --rule-2: #d3cec3;
+  --green: #0d7a59;
+  --green-ink: #0a5f45;
+  --green-soft: #e1f1ea;
+  --band: #141310;
+  --band-fg: #f6f4ee;
+  --band-muted: #a9a497;
+  --band-rule: #33312a;
+  --btn-hover: #0a5f45;
+  --btn-hover-fg: #ffffff;
+  --sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-xs: 0.78rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.15rem;
+  --fs-xl: 1.4rem;
+  --r-md: 11px;
+  --measure: 42rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #11100d; --paper-2: #171612; --surface: #1b1a16; --sunk: #181713; --ink: #f3f0e8;
+    --ink-2: #d5d1c6; --muted: #a8a397; --faint: #7d786d; --rule: #2a2924; --rule-2: #3a3832;
+    --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
+    --band: #201f1a; --band-fg: #f3f0e8; --band-muted: #a29d91;
+    --band-rule: #34322b; --btn-hover: #6bddb5; --btn-hover-fg: #11100d;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #11100d; --paper-2: #171612; --surface: #1b1a16; --sunk: #181713; --ink: #f3f0e8;
+  --ink-2: #d5d1c6; --muted: #a8a397; --faint: #7d786d; --rule: #2a2924; --rule-2: #3a3832;
+  --green: #3ccb9a; --green-ink: #6bddb5; --green-soft: #12302a;
+  --band: #201f1a; --band-fg: #f3f0e8; --band-muted: #a29d91;
+  --band-rule: #34322b; --btn-hover: #6bddb5; --btn-hover-fg: #11100d;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+[id] { scroll-margin-top: 84px; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { text-wrap: balance; }
+h1, h2 { font-weight: 700; letter-spacing: -0.012em; line-height: 1.08; }
+h3 { font-weight: 650; line-height: 1.2; letter-spacing: -0.005em; }
+code { font: 0.9em/1.4 var(--mono); overflow-wrap: anywhere; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-inline: 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 20; padding: 8px 12px; border-radius: 8px; background: var(--ink); color: var(--paper); }
+.skip:focus { left: 8px; }
+.eyebrow { font-size: var(--fs-sm); font-weight: 600; color: var(--muted); }
+
+/* The one action */
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 20px; border-radius: 10px; background: var(--ink); color: var(--paper); font: 600 var(--fs-md)/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background-color 0.15s; }
+.btn:hover { background: var(--btn-hover); color: var(--btn-hover-fg); }
+.btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.btn-sm { padding: 10px 14px; border-radius: 9px; font-size: var(--fs-sm); }
+
+/* Nav: the homepage's markup */
+.nav { position: sticky; top: 0; z-index: 10; background: var(--paper); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--rule); }
+.nav-in { display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: var(--fs-lg); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.logo { width: 26px; height: 26px; flex: none; fill: currentColor; }
+.logo .pick { fill: var(--green); }
+.nav-end { display: flex; align-items: center; gap: 24px; }
+.nav-end > a:not(.btn) { font-size: var(--fs-sm); color: var(--muted); text-decoration: none; }
+.nav-end > a:not(.btn):hover, .nav-end > a[aria-current="page"] { color: var(--ink); }
+
+/* Memo head */
+.memo-head { padding-block: 88px 64px; }
+.memo-head h1 { max-width: 14em; margin-top: 18px; font-size: clamp(2.3rem, 5.4vw, 4.6rem); line-height: 1.06; }
+.byline { display: flex; flex-wrap: wrap; margin-top: 26px; font-size: var(--fs-sm); color: var(--muted); }
+.byline span + span::before { content: "·"; margin-inline: 10px; color: var(--muted); }
+.toc { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 12px; font-size: var(--fs-sm); }
+.toc a { color: var(--muted); text-decoration-color: var(--rule-2); text-underline-offset: 3px; }
+.toc a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.intro { display: grid; justify-items: start; gap: 24px; max-width: var(--measure); margin-top: 40px; }
+.intro > p { font-size: var(--fs-xl); line-height: 1.45; color: var(--ink-2); text-wrap: pretty; }
+.findings { display: grid; gap: 14px; }
+.findings li { padding-left: 16px; border-left: 2px solid var(--ink); font-size: var(--fs-lg); line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+
+/* Parts: a label rail beside the text */
+.part { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 16px 56px; padding-block: 72px; border-top: 1px solid var(--rule); }
+.rail { position: sticky; top: 84px; align-self: start; display: flex; align-items: baseline; gap: 12px; padding-top: 6px; font-size: var(--fs-sm); font-weight: 600; color: var(--muted); }
+.num { font-size: var(--fs-xs); font-weight: 600; font-variant-numeric: tabular-nums; color: var(--muted); }
+.body { grid-column: 2; min-width: 0; font-size: var(--fs-lg); line-height: 1.65; color: var(--ink-2); }
+.body > h2 { max-width: 17em; margin-bottom: 28px; font-size: clamp(1.9rem, 3.4vw, 2.7rem); line-height: 1.1; color: var(--ink); }
+.body > p { max-width: var(--measure); text-wrap: pretty; }
+.body > * + p { margin-top: 0.9em; }
+.body > .lead { font-size: var(--fs-xl); line-height: 1.5; color: var(--ink); }
+.runin { font-weight: 700; color: var(--ink); }
+.wide { grid-column: 1 / -1; min-width: 0; margin-top: 30px; }
+.wide + .body { margin-top: 26px; }
+.body > .inputs { display: grid; gap: 10px; max-width: var(--measure); margin-top: 0.9em; }
+.inputs li { position: relative; padding-left: 22px; text-wrap: pretty; }
+.inputs li::before { content: ""; position: absolute; left: 0; top: 0.82em; width: 10px; height: 2px; background: var(--muted); }
+.inputs b { font-weight: 650; color: var(--ink); }
+
+/* Citations */
+.ref { margin-left: 1px; font-size: 0.66em; font-weight: 600; line-height: 0; color: var(--muted); }
+.ref a { padding-inline: 1px; text-decoration: none; }
+.ref a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Figures on rules: market figures in 01, our own in 03 */
+.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-bottom: 40px; }
+.figures > div { display: grid; align-content: start; gap: 10px; padding-top: 14px; border-top: 2px solid var(--ink); }
+.figures dt { font-size: 1.9rem; font-weight: 700; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--ink); }
+.figures dd { font-size: var(--fs-sm); line-height: 1.5; text-wrap: pretty; }
+
+/* How agents shop: one row per agent */
+.agents-cap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 14px; font-size: var(--fs-sm); color: var(--muted); }
+.agents-cap b { font-weight: 600; color: var(--ink); }
+.agents { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: var(--fs-sm); line-height: 1.5; color: var(--ink-2); }
+.agents th, .agents td { padding: 15px 20px 17px 0; text-align: left; vertical-align: top; border-top: 1px solid var(--rule); text-wrap: pretty; }
+.agents thead th { padding-block: 0 11px; border-top: 0; border-bottom: 2px solid var(--ink); font-size: var(--fs-xs); font-weight: 600; line-height: 1.35; color: var(--muted); }
+.agents tbody tr:first-child > * { border-top: 0; }
+.agents tbody th { font-size: var(--fs-md); font-weight: 700; line-height: 1.3; color: var(--ink); }
+.agents tbody th small { display: block; margin-top: 3px; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
+.agents .c-agent { width: 14%; }
+.agents .c-src { width: 23%; }
+.agents .c-offer { width: 22%; }
+.agents .c-see { width: 20%; }
+.agents .c-sale { width: 21%; }
+.agents .nd { font-style: italic; color: var(--muted); }
+.agents .lbl { display: none; }
+.agents-note { max-width: var(--measure); margin-top: 18px; font-size: var(--fs-sm); line-height: 1.55; color: var(--muted); }
+
+/* Where they fail */
+.scope { max-width: var(--measure); margin-top: 26px; padding: 18px 20px; border: 1px solid var(--rule-2); border-radius: var(--r-md); background: var(--surface); font-size: var(--fs-sm); line-height: 1.6; text-wrap: pretty; }
+.scope b { color: var(--ink); }
+.fails { display: grid; max-width: var(--measure); margin-top: 34px; }
+.fails > li { display: grid; gap: 12px; padding: 28px 0 30px; border-top: 1px solid var(--rule); }
+.fails > li:last-child { border-bottom: 1px solid var(--rule); }
+.fails h3 { font-size: var(--fs-xl); color: var(--ink); }
+.fails p { font-size: var(--fs-md); line-height: 1.65; text-wrap: pretty; }
+.fails .case { padding: 12px 15px; border-radius: var(--r-md); background: var(--paper-2); font-size: var(--fs-sm); line-height: 1.6; }
+.fails .case b { color: var(--ink); }
+.fails .meas { padding-left: 14px; border-left: 2px solid var(--ink); color: var(--ink); }
+.fails .ctl { font-size: var(--fs-sm); color: var(--muted); }
+.fails .ctl b { color: var(--green-ink); }
+
+/* What it costs */
+.costs { display: grid; max-width: var(--measure); margin-top: 30px; }
+.costs li { display: grid; gap: 8px; padding: 22px 0; border-top: 1px solid var(--rule); }
+.costs li:last-child { border-bottom: 1px solid var(--rule); }
+.costs h3 { font-size: var(--fs-lg); color: var(--ink); }
+.costs p { font-size: var(--fs-md); line-height: 1.65; text-wrap: pretty; }
+.body > .costs + p { margin-top: 30px; }
+
+/* What we do */
+.gets { max-width: var(--measure); margin-top: 28px; border-top: 1px solid var(--rule); }
+.gets > div { display: grid; grid-template-columns: 10.5em minmax(0, 1fr); gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: var(--fs-md); line-height: 1.6; }
+.gets dt { font-weight: 650; color: var(--ink); }
+.body > .gets + p { margin-top: 28px; }
+.body > .sig { display: flex; align-items: center; gap: 10px; margin-top: 22px; font-size: var(--fs-lg); font-weight: 700; color: var(--ink); }
+.sig .logo { width: 24px; height: 24px; }
+
+/* Sources */
+.src-note { margin-bottom: 18px; font-size: var(--fs-sm); color: var(--muted); }
+.sources { display: grid; gap: 12px; max-width: var(--measure); padding-left: 2.1em; list-style: decimal; font-size: var(--fs-sm); line-height: 1.55; }
+.sources li { padding-left: 4px; }
+.sources li::marker { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--muted); }
+.sources li:target { border-radius: 6px; background: var(--green-soft); }
+.sources a { text-underline-offset: 3px; overflow-wrap: anywhere; }
+.sources a:hover { color: var(--green-ink); }
+
+/* Talk with us */
+.close { padding-block: 104px; background: var(--band); color: var(--band-fg); }
+.close-in { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 72px; align-items: end; }
+.close h2 { font-size: clamp(2.3rem, 4.6vw, 3.8rem); }
+.close-side { display: grid; gap: 24px; justify-items: start; }
+.close-side p { max-width: 28em; font-size: var(--fs-lg); color: var(--band-muted); }
+.close .btn { background: var(--band-fg); color: var(--band); }
+.close .btn:hover { background: var(--green-soft); color: var(--ink); }
+
+footer { border-top: 1px solid var(--band-rule); background: var(--band); color: var(--band-muted); font-size: var(--fs-sm); }
+.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; padding-block: 28px 36px; }
+footer .brand { font-size: var(--fs-md); color: var(--band-fg); }
+footer .logo .pick { fill: #3ccb9a; }
+footer nav { display: flex; flex-wrap: wrap; gap: 24px; }
+footer a { text-decoration: none; }
+footer a:hover, footer a[aria-current="page"] { color: var(--band-fg); }
+
+@media (max-width: 1100px) {
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 22px; }
+}
+@media (max-width: 900px) {
+  /* The agent table becomes one block per agent; roles on the table keep its semantics. */
+  .agents, .agents tbody, .agents tr, .agents th, .agents td { display: block; width: auto; }
+  .agents thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .agents colgroup { display: none; }
+  .agents tbody tr { padding: 20px 0 22px; border-top: 1px solid var(--rule); }
+  .agents tbody tr:first-child { border-top: 2px solid var(--ink); }
+  .agents th, .agents td { padding: 0; border: 0; }
+  .agents tbody th { margin-bottom: 12px; font-size: var(--fs-lg); }
+  .agents td + td { margin-top: 12px; }
+  .agents .lbl { display: block; margin-bottom: 2px; font-size: var(--fs-xs); font-weight: 600; font-style: normal; color: var(--muted); }
+}
+@media (max-width: 860px) {
+  .memo-head { padding-block: 56px 44px; }
+  .part { grid-template-columns: minmax(0, 1fr); gap: 14px; padding-block: 56px; }
+  .rail { position: static; }
+  .rail-t { display: none; }
+  .body, .wide { grid-column: 1 / -1; }
+  .close { padding-block: 76px; }
+  .close-in { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .wrap { padding-inline: 16px; }
+  .intro > p { font-size: var(--fs-lg); }
+  .findings li { font-size: var(--fs-md); }
+  .body { font-size: var(--fs-md); }
+  .body > .lead { font-size: var(--fs-lg); }
+  .figures { gap: 24px 18px; }
+  .figures dt { font-size: 1.6rem; }
+  .gets > div { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 374px) {
+  .nav-in { gap: 8px; }
+  .nav-end { gap: 12px; }
+  .brand { font-size: var(--fs-md); }
+  .nav .btn-sm { padding-inline: 11px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Facing AI home"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing AI</a>
+    <nav class="nav-end" aria-label="Site">
+      <a href="/about" aria-current="page">About</a>
+      <a href="/blog">Blog</a>
+      <a class="btn btn-sm" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article aria-labelledby="memo-h">
+    <header class="wrap memo-head">
+      <p class="eyebrow">About Facing AI</p>
+      <h1 id="memo-h">How AI agents shop, and where they get products wrong</h1>
+      <p class="byline"><span>Facing AI</span><span><time datetime="2026-10">October 2026</time></span><span>15-minute read</span></p>
+      <nav class="toc" aria-label="In this memo"><a href="#shift">The shift</a><a href="#how">How agents shop</a><a href="#fail">Where they fail</a><a href="#cost">What it costs</a><a href="#work">What we do</a><a href="#sources">Sources</a></nav>
+      <div class="intro">
+        <p>Facing AI shows brands where AI shopping agents misrepresent or lose their products, why it happens and what to change. This memo is the analysis behind that work. Market figures in it are sourced and dated; our own figures state their scope.</p>
+        <ul class="findings">
+          <li>In ChatGPT, the default “Visit” button on a product went to the seller whose offer came through a merchant feed, the file in which a store lists its products for a platform. Across 112 product cards on 2 October 2026, a brand’s own store held that button every time its offer came through a feed (9 of 9) and never otherwise (0 of 26), though in most of its losses it matched the winning seller’s price.</li>
+          <li>In 108 answers from five assistants to shopping requests that named no brand, at least 6.6% of offers were wrong (42 of 636); an offer is a product shown as buyable from a particular seller. Nearly all were the wrong product, or the right product in the wrong size or pack.</li>
+        </ul>
+        <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <section class="part" id="shift" aria-labelledby="shift-h">
+        <p class="rail"><span class="num" aria-hidden="true">01</span><span class="rail-t">The shift</span></p>
+        <div class="body">
+          <h2 id="shift-h">Shopping is moving to personal AI agents, from a small base</h2>
+          <dl class="figures">
+            <div><dt>0.1–0.3%</dt><dd>of visits to online stores came from AI assistants in independent studies covering August 2024 to August 2026<sup class="ref"><span class="sr-only">Sources </span><a href="#src-1">1</a>,<a href="#src-2">2</a>,<a href="#src-3">3</a></sup></dd></div>
+            <div><dt>+127%</dt><dd>year-over-year growth in AI-referred visits to US retail sites, August 2026<sup class="ref"><span class="sr-only">Source </span><a href="#src-4">4</a></sup></dd></div>
+            <div><dt>1B+</dt><dd>monthly active users of AI Mode in Google Search, July 2026<sup class="ref"><span class="sr-only">Source </span><a href="#src-5">5</a></sup></dd></div>
+            <div><dt>15–25%</dt><dd>of US online sales that agents, including retailers’ own assistants, could initiate, influence or complete by 2030, in Bain’s forecast<sup class="ref"><span class="sr-only">Source </span><a href="#src-6">6</a></sup></dd></div>
+          </dl>
+          <p>A personal AI agent works for one shopper, though the companies that run these agents may also sell ads or, like Amazon, the products themselves. It takes a request in plain words, searches and compares on the shopper’s behalf, recommends a product from a particular seller and, on some surfaces, completes the purchase. The audience is large: about half of US adults use AI chatbots<sup class="ref"><span class="sr-only">Source </span><a href="#src-7">7</a></sup>, the Gemini app had 950 million monthly active users in July 2026<sup class="ref"><span class="sr-only">Source </span><a href="#src-5">5</a></sup>, and Amazon says more than 300 million customers have used its Rufus assistant<sup class="ref"><span class="sr-only">Source </span><a href="#src-8">8</a></sup>.</p>
+          <p><b class="runin">For Shopify stores, agent connections became the default in 2026.</b> On 24 March, Shopify made eligible merchants’ products discoverable in ChatGPT by default, and it lists Microsoft Copilot, Google’s AI Mode and the Gemini app as live channels, with no fees beyond payment processing<sup class="ref"><span class="sr-only">Sources </span><a href="#src-9">9</a>,<a href="#src-10">10</a></sup>. Agents that operate a browser also buy on brands’ own sites: Amazon’s Buy for Me can “make purchases on behalf of customers” in other online stores<sup class="ref"><span class="sr-only">Source </span><a href="#src-8">8</a></sup>.</p>
+          <p><b class="runin">Growth is fast, if slower than early in 2026.</b> Adobe measured AI-referred visits to US retail sites up 393% year over year in the first quarter of 2026 and 127% in August, and it forecasts 130% growth for the holiday season<sup class="ref"><span class="sr-only">Sources </span><a href="#src-4">4</a>,<a href="#src-11">11</a></sup>. Shopify’s AI-referred orders in the first quarter were nearly 13 times the level of a year earlier<sup class="ref"><span class="sr-only">Source </span><a href="#src-12">12</a></sup>, and its president said on the second-quarter call that AI traffic had “tripled”, with orders “right along with it”<sup class="ref"><span class="sr-only">Source </span><a href="#src-13">13</a></sup>.</p>
+          <p><b class="runin">The base is small.</b> Independent studies of online stores put AI-referred visits at roughly 0.1–0.3% of traffic: under 0.2% across 973 sites in a peer-reviewed study of August 2024 to July 2025, about a two-hundredth of the share from Google organic search<sup class="ref"><span class="sr-only">Source </span><a href="#src-1">1</a></sup>; 0.24% for 30 US brands in April 2026<sup class="ref"><span class="sr-only">Source </span><a href="#src-2">2</a></sup>; and 0.10% of sessions (0.12% of revenue) across 10 Shopify stores from January to August 2026<sup class="ref"><span class="sr-only">Source </span><a href="#src-3">3</a></sup>.</p>
+          <p><b class="runin">The conversion premium is recent and contested.</b> Adobe found AI-referred visits converting 48% better than other traffic in August 2026, but 38% worse in March 2025; the peer-reviewed study found ChatGPT referrals converting below every traditional channel except paid social<sup class="ref"><span class="sr-only">Sources </span><a href="#src-1">1</a>,<a href="#src-4">4</a></sup>. Neither figure shows a lift caused by AI. Where a premium appears, it most likely reflects who arrives: shoppers with intent, who land straight on a product page in more than half of AI sessions<sup class="ref"><span class="sr-only">Source </span><a href="#src-12">12</a></sup>.</p>
+          <p><b class="runin">Checkout is moving in two directions.</b> In ChatGPT, checkout inside the chat has stepped back. On 24 March 2026, OpenAI scaled back Instant Checkout; Walmart had seen conversion in the chat three times lower than when shoppers clicked through to its site<sup class="ref"><span class="sr-only">Source </span><a href="#src-14">14</a></sup>. For Shopify merchants, purchases that start in ChatGPT now complete on the store’s own checkout<sup class="ref"><span class="sr-only">Source </span><a href="#src-9">9</a></sup>. Copilot, Meta and Google went the other way: for eligible US Shopify stores, checkout inside their assistants is on by default<sup class="ref"><span class="sr-only">Sources </span><a href="#src-10">10</a>,<a href="#src-16">16</a></sup>.</p>
+          <p><b class="runin">Forecasts are large but broadly defined.</b> Bain projects $300–500 billion of US online sales by 2030, 15–25% of the total, counting purchases “initiated, influenced, or completed” by third-party or retailer-hosted agents<sup class="ref"><span class="sr-only">Source </span><a href="#src-6">6</a></sup>. Morgan Stanley’s range for “agentic shoppers” is 10–20% of US online spending, $190–385 billion<sup class="ref"><span class="sr-only">Source </span><a href="#src-17">17</a></sup>. McKinsey’s estimate is the widest: “as much as $1 trillion” of US retail revenue orchestrated by agents, and $3–5 trillion worldwide, across all retail rather than online sales alone<sup class="ref"><span class="sr-only">Source </span><a href="#src-18">18</a></sup>. Juniper Research expects agentic commerce spending of $1.5 trillion worldwide in 2030, up from early trial deployments in 2025 and 2026<sup class="ref"><span class="sr-only">Source </span><a href="#src-19">19</a></sup>. The spread comes from definitions: who counts as an agent, whether influence counts, and whether the base is online or all retail. We compare them in <a href="/blog/forecasts-2030">a note on our blog</a>.</p>
+          <p><b class="runin">Today’s reported figures are smaller, and partly self-reported.</b> Amazon credits Rufus with “nearly $12 billion in incremental annualized sales” in 2025, with no method given<sup class="ref"><span class="sr-only">Source </span><a href="#src-8">8</a></sup>. Shoppers remain cautious: in Gartner’s surveys, 54% of AI users double-check “all information”<sup class="ref"><span class="sr-only">Source </span><a href="#src-15">15</a></sup>.</p>
+        </div>
+      </section>
+
+      <section class="part" id="how" aria-labelledby="how-h">
+        <p class="rail"><span class="num" aria-hidden="true">02</span><span class="rail-t">How agents shop</span></p>
+        <div class="body">
+          <h2 id="how-h">How agents find a product, choose a seller and complete the sale</h2>
+          <p>Agents draw on up to three kinds of outside input:</p>
+          <ul class="inputs">
+            <li><b>Catalogs:</b> product databases that platforms build from merchant feeds. A feed lists each product with its variants (the sizes, colors or packs a shopper actually buys), prices and stock.</li>
+            <li><b>Search indexes:</b> built by the platforms’ own crawlers.</li>
+            <li><b>Live page visits:</b> by a page reader that takes the text from a page’s code, or by a browser the agent operates.</li>
+          </ul>
+          <p>Platforms describe the step in between only in outline, if at all. Google tells merchants how often their products appear in its AI answers, and Bing shows site owners the searches behind Copilot’s citations; none documents which candidates are considered, how they are weighted or how a seller’s offer is attached<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+        </div>
+        <figure class="wide" aria-labelledby="agents-title">
+          <figcaption class="agents-cap"><b id="agents-title">The main agents, as of October 2026</b><span>Not documented: the platform does not publish it</span></figcaption>
+          <table class="agents" role="table" aria-labelledby="agents-title">
+            <colgroup><col class="c-agent"><col class="c-src"><col class="c-offer"><col class="c-see"><col class="c-sale"></colgroup>
+            <thead role="rowgroup">
+              <tr role="row"><th scope="col" role="columnheader">Agent</th><th scope="col" role="columnheader">Where products come from</th><th scope="col" role="columnheader">How the offer and seller are chosen</th><th scope="col" role="columnheader">What it can’t see</th><th scope="col" role="columnheader">How the sale completes</th></tr>
+            </thead>
+            <tbody role="rowgroup">
+              <tr role="row">
+                <th scope="row" role="rowheader">ChatGPT<small>OpenAI</small></th>
+                <td role="cell"><span class="lbl" aria-hidden="true">Where products come from</span>Merchant feeds (Shopify’s catalog by default, OpenAI’s feed for approved partners, ad feeds), OpenAI’s search index and live page visits. The “other sellers” listed under the default appear to come from a separate comparison-shopping index.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the offer and seller are chosen</span>One default seller per product panel (the expanded card that lists a product’s sellers), behind a “Visit” button. In 106 of 112 panels, the default was the one offer with a feed tag, a marker in the link showing the offer came from a merchant feed.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">What it can’t see</span>Rendered pages. Its page reader ran no scripts in controlled tests, so it reads a page’s code rather than the page a shopper sees; text a theme hides from shoppers can read as current.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the sale completes</span>A link to the seller’s site; none of the 112 panels offered checkout in the chat. Instant Checkout was scaled back in March 2026.</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader">AI Mode and Gemini<small>Google</small></th>
+                <td role="cell"><span class="lbl" aria-hidden="true">Where products come from</span>Google’s Shopping Graph, a product database built from the feeds stores submit to Google Merchant Center; Google’s web index; search results that Gemini draws on for its answers.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the offer and seller are chosen</span>Each offer is one merchant’s listing; how a listing is matched to the size or color requested is not documented.</td>
+                <td role="cell" class="nd"><span class="lbl" aria-hidden="true">What it can’t see</span>Not documented</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the sale completes</span>A link to the store, or checkout inside Google: on by default for eligible US Shopify stores, and open to approved merchants that connect directly, in a limited US program.</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader">Copilot<small>Microsoft</small></th>
+                <td role="cell"><span class="lbl" aria-hidden="true">Where products come from</span>Bing’s index; feeds from Microsoft Merchant Center, PayPal and Stripe; Shopify’s catalog by default.</td>
+                <td role="cell" class="nd"><span class="lbl" aria-hidden="true">How the offer and seller are chosen</span>Not documented</td>
+                <td role="cell" class="nd"><span class="lbl" aria-hidden="true">What it can’t see</span>Not documented</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the sale completes</span>Copilot Checkout in the chat (US, English, US dollars), on by default for eligible US Shopify stores.</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader">Muse<small>Meta</small></th>
+                <td role="cell"><span class="lbl" aria-hidden="true">Where products come from</span>Meta’s catalogs, browser sessions it runs on the web, and Meta’s crawler for links a shopper pastes.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the offer and seller are chosen</span>Product cards built from the catalog items or web pages it selects.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">What it can’t see</span>Images in pasted links. The tool that opens them took in text only, and missed a claim shown only in a product image in 15 of 15 controlled tests.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the sale completes</span>“Buy with Muse”: Meta’s checkout (on by default for eligible US Shopify stores) or a virtual card used on the merchant’s site.</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader">Perplexity</th>
+                <td role="cell"><span class="lbl" aria-hidden="true">Where products come from</span>Its own index, live page visits, and catalogs from its Merchant Program and PayPal Store Sync.</td>
+                <td role="cell" class="nd"><span class="lbl" aria-hidden="true">How the offer and seller are chosen</span>Not documented</td>
+                <td role="cell" class="nd"><span class="lbl" aria-hidden="true">What it can’t see</span>Not documented</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the sale completes</span>Instant Buy through PayPal, where enabled; its Comet browser buys as the user.</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader">Browser agent<small>OpenAI, in ChatGPT</small></th>
+                <td role="cell"><span class="lbl" aria-hidden="true">Where products come from</span>Its own cloud browser on the open web. Whether it also uses a shopping index is unknown.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the offer and seller are chosen</span>From the pages it opens; how it ranks them is not documented.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">What it can’t see</span><span class="nd">Not documented.</span> It renders pages in its own browser.</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the sale completes</span>Checkout on the merchant’s own site; it reached the payment step in controlled tests.</td>
+              </tr>
+              <tr role="row">
+                <th scope="row" role="rowheader">Rufus, Alexa and Buy for Me<small>Amazon</small></th>
+                <td role="cell"><span class="lbl" aria-hidden="true">Where products come from</span>Amazon’s catalog, reviews, Q&amp;A and shopping history, plus the web; brands’ sites through Shop Direct feeds or pages it reads.</td>
+                <td role="cell" class="nd"><span class="lbl" aria-hidden="true">How the offer and seller are chosen</span>Not documented</td>
+                <td role="cell" class="nd"><span class="lbl" aria-hidden="true">What it can’t see</span>Not documented</td>
+                <td role="cell"><span class="lbl" aria-hidden="true">How the sale completes</span>Amazon’s checkout; Buy for Me completes the purchase on the brand’s own checkout.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="agents-note">Sources: platform documentation, our observations and controlled tests<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>, Shopify’s Help Center<sup class="ref"><span class="sr-only">Source </span><a href="#src-10">10</a></sup>, Amazon<sup class="ref"><span class="sr-only">Source </span><a href="#src-8">8</a></sup> and Modern Retail<sup class="ref"><span class="sr-only">Source </span><a href="#src-14">14</a></sup>. ChatGPT panel figures: 40 answers on 2 October 2026. The rows for AI Mode, Copilot and Amazon rest on platform documentation.</p>
+        </figure>
+        <div class="body">
+          <p>Two patterns stand out. Where a surface relies on merchant feeds, a brand outside the feed path (not eligible, or with the channel switched off) can be missing from that surface’s product cards, and a retailer’s feed can stand in for the brand’s own listing and take the buy button. In ChatGPT, the default followed the feed tag, and a matching price did not win it: a brand’s own store held the default every time its offer carried a feed tag (9 of 9) and never without one (0 of 26). In 15 of 19 cases where it lost the default for the same product, it matched the winner’s price, and once it was $50 cheaper and still lost<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+        </div>
+      </section>
+
+      <section class="part" id="fail" aria-labelledby="fail-h">
+        <p class="rail"><span class="num" aria-hidden="true">03</span><span class="rail-t">Where they fail</span></p>
+        <div class="body">
+          <h2 id="fail-h">Where agents get products wrong</h2>
+          <dl class="figures">
+            <div><dt>6.6%</dt><dd>or more of offers in answers to requests that named no brand were wrong (42 of 636)</dd></div>
+            <div><dt>23%</dt><dd>or more of those answers held at least one wrong offer (25 of 108)</dd></div>
+            <div><dt>8.9%</dt><dd>or more of offers were wrong where the link’s destination is known (40 of 451)</dd></div>
+            <div><dt>13.8%</dt><dd>or more of ChatGPT’s “other sellers” rows linked a different product or variant (30 of 217)</dd></div>
+          </dl>
+          <p>Wrong products and variants account for about nine in ten confirmed errors; price errors are fewer partly because few prices could be checked. We group the failures at five points where a mechanism in the agent or platform meets an input the brand controls. The evidence differs by point, from errors in agents’ answers to controlled tests and counts across stores, and each point states its own<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+          <p class="scope" id="scope"><b>Scope of our figures.</b> Offers: 636 offers in 108 answers from ChatGPT, Gemini, Meta’s Muse and Meta AI, and OpenAI’s browser agent, 27 September to 6 October 2026, to test requests that named no brand, mostly for outdoor gear and beauty products. The requests are not a sample of real shopping traffic; rates vary by category (8.8% for outdoor gear, 3.7% for beauty) and may differ in others. ChatGPT answers were unpersonalized, and 211 of its 217 “other sellers” rows are from 2 October. An offer counts as wrong only when the error was confirmed, so each rate is a lower bound. Links: answers from ChatGPT, Perplexity, Grok and the Gemini app, September and October 2026. Stores: public product pages of 654 to 839 Shopify stores, September 2026; these figures measure exposure to a defect, not harm, and the feed and page mechanisms behind them are not specific to Shopify. Tests: controlled pages, not live stores.</p>
+          <ul class="fails">
+            <li>
+              <h3>The offer is for a different product or size</h3>
+              <p>Platforms merge many sellers’ listings under one product. Shopify’s global catalog groups offers by a universal product ID under one title and drops options “when an exact match isn’t available”. ChatGPT’s “other sellers” appear to come from a separate index whose links look built for Google Shopping, and the most common error there attaches a sibling from the same line, a different model or size, to the product the agent recommended. How much of this a brand can prevent from its own data (distinct product codes, titles and variant fields) has not been tested<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+              <p class="case"><b>Observed cases.</b> In ChatGPT, one of the “other sellers” listed for a 58-liter backpack linked the 48-liter version from the same line. In Gemini, the card for an answer’s top pick, a mascara, linked a different mascara from the same line.</p>
+              <p class="meas"><b>Measured in answers.</b> Most confirmed errors (30 of 42) sat in ChatGPT’s “other sellers” rows. At least 8.7% of the product images in Gemini’s answers that link to a store were wrong (9 of 103, two of them price errors). Only 2 of 282 ChatGPT default cards were confirmed wrong, but for most the destination and price are unknown: a floor, not a low rate.</p>
+              <p class="meas"><b>Measured in stores.</b> On 54.6% of the Shopify stores we examined (458 of 839), at least one product’s price depends on a size or quantity option; in 75% of those products, the size is not in the title.</p>
+              <p class="ctl"><b>In the brand’s control:</b> a distinct product code, title and link for each variant in its feeds, and which resellers list its products.</p>
+            </li>
+            <li>
+              <h3>The price or stock is wrong</h3>
+              <p>An agent can show a compare-at (“was”) price as the price, or a price well off the store’s own. A store’s structured data, the machine-readable description of a product in a page’s code, can also contradict the store itself; whether agents take price or stock from it has not been shown<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+              <p class="case"><b>Observed cases (Gemini).</b> A card showed a $119.99 compare-at price for an item selling at $71.99 before and after the answer. Asked for a jacket under $200, an answer showed one at about $199; the store had charged $249 for every size the day before.</p>
+              <p class="meas"><b>Measured in answers.</b> Prices could be verified for only 28 offers, and 3 were wrong: cases, not a market rate.</p>
+              <p class="meas"><b>Measured in stores.</b> On 6.3% of the Shopify stores we examined (41 of 654), structured data disagreed with the store’s own catalog on availability, nearly always by marking sold-out variants in stock; on 1.4% (9 of 654), it carried a materially wrong price.</p>
+              <p class="ctl"><b>In the brand’s control:</b> the price and stock that its structured data and feeds state for each variant. More in <a href="/blog/price-and-stock">why agents quote the wrong price or stock</a>.</p>
+            </li>
+            <li>
+              <h3>Hidden page text can be read as the product’s state</h3>
+              <p>Many store themes keep a “Sold out” label or a “Notify me” button in every product page’s code and hide it until a size sells out. Shoppers never see it. A page reader that takes the text from a page’s code without rendering it, as a browser would, keeps that text and can report an in-stock product as sold out. ChatGPT’s page reader ran no scripts in controlled tests<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+              <p class="meas"><b>Measured in stores.</b> On product pages where every variant could be ordered, 30.7% of the Shopify stores we examined (225 of 732) still carried “Sold out”, “Out of stock” or “Notify me” text in the page’s code, mostly a hidden badge in common theme code; 7.7% (56 of 732) had a hidden sold-out button or back-in-stock form. These figures measure exposure, not how often agents act on it.</p>
+              <p class="ctl"><b>In the brand’s control:</b> theme elements that appear in the page’s code only when they are true.</p>
+            </li>
+            <li>
+              <h3>The deciding fact is missing or contradicted</h3>
+              <p>A request with a constraint (a weight limit, a shade, a pack size, a size 12) turns on one attribute. When that fact appears only in an image or inside a widget, or when two fields disagree, the product can drop out of contention<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+              <p class="meas"><b>Measured in controlled tests.</b> Removing a contending product’s specifications cut how often it was picked by 60.6 percentage points. A product whose page carried a second, conflicting weight was picked in 15 of 72 trials; with that field removed, in 68 of 72.</p>
+              <p class="meas"><b>Measured in stores.</b> In 65% of Shopify products that state a weight in both the catalog and the description (5,686 of 8,747), the two differ by more than 20%, nine times in ten with the catalog heavier. A third of the disagreeing catalog weights are whole pounds or kilos, which look like shipping weights or placeholders. Whether feeds pass that field to agents is unknown.</p>
+              <p class="ctl"><b>In the brand’s control:</b> the deciding facts in visible text, feed fields and titles, with no second field that disagrees.</p>
+            </li>
+            <li>
+              <h3>The sale goes to another seller, or stalls at checkout</h3>
+              <p>In ChatGPT, the default button goes to the offer that came through a merchant feed (<a href="#how">section 02</a>), so a brand outside that feed path appears, if at all, among the other sellers. Selling on a platform that passes products to AI channels by default does not settle it: in 5 cases, a brand’s own Shopify store lost the default for its own product to another store whose link carried a feed tag. In earlier tests, agents that operate a browser switched to another seller or brand at a minimum order, a sign-in wall or a failed add to cart<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+              <p class="meas"><b>Measured in answers.</b> Default rows never showed a shipping line (0 of 112), while brand-store rows that lost the default showed one in 24 of 26, which suggests the two kinds of row come from different sources. Where several sellers were listed, large retailers held 60 of 79 defaults.</p>
+              <p class="ctl"><b>In the brand’s control:</b> feed eligibility and channel settings on each platform, which partners may pass its products on, and a checkout an agent can complete.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="part" id="cost" aria-labelledby="cost-h">
+        <p class="rail"><span class="num" aria-hidden="true">04</span><span class="rail-t">What it costs</span></p>
+        <div class="body">
+          <h2 id="cost-h">What this costs a brand</h2>
+          <p>None of these failures has a measured effect on sales, and we do not claim one<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>. The costs are of three kinds.</p>
+          <ul class="costs">
+            <li>
+              <h3>Lost or misdirected sales</h3>
+              <p>A shopper told that a product is sold out, or shown the wrong size or price, can buy something else or nothing. A shopper sent to a retailer’s listing is likely to buy there: a brand that sells to that retailer earns at best its wholesale price, and the retail margin and the customer go to the retailer. In the ChatGPT panels above, the product’s own brand store was not listed in 77 of 112; where it was listed, it held the default in about a quarter to a third of its appearances<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+            </li>
+            <li>
+              <h3>Wrong orders</h3>
+              <p>When the agent completes the purchase itself, through a platform checkout or a browser on the brand’s site, a wrong variant on the card can become a wrong order<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+            </li>
+            <li>
+              <h3>Revenue credited to the wrong channel</h3>
+              <p>A UTM tag is a label in a link’s address that tells analytics where a visit came from. Of the assistants we observed, only ChatGPT tags its links as its own (<code>utm_source=chatgpt.com</code>). Perplexity tagged none of 1,288 links, Grok none of 1,105 and the Gemini app none of 121, so analytics can recognize their visits only by the referring site, when the browser passes it on. Most of Gemini’s links to brand stores carry a click ID, a code Google adds to its links, so they look like visits from Google’s unpaid product listings. A Muse card link carried a Meta catalog tag but no source tag, and clicks from AI Mode count as organic search. Orders placed inside Copilot, Meta and Google appear in Shopify under their own sales channel, but they do not load the store’s analytics tags or ad pixels in the shopper’s browser. A brand that reads AI’s share from analytics alone will undercount it<sup class="ref"><span class="sr-only">Source </span><a href="#src-16">16</a></sup>.</p>
+            </li>
+          </ul>
+          <p>The visible money is small today: across 10 Shopify stores, AI-referred visits brought 0.12% of revenue from January to August 2026, and the study’s most generous allowance for untagged ChatGPT visits lifts that only to 0.19%<sup class="ref"><span class="sr-only">Source </span><a href="#src-3">3</a></sup>. The stake lies elsewhere. At those stores, 85% of AI-referred revenue came from first-time customers, against 42% of their revenue overall<sup class="ref"><span class="sr-only">Source </span><a href="#src-3">3</a></sup>; part of AI’s influence carries no AI label, as above; and the channel is still growing fast, if more slowly than early in 2026, while catalog connections and platform checkouts switch on by default<sup class="ref"><span class="sr-only">Sources </span><a href="#src-4">4</a>,<a href="#src-10">10</a>,<a href="#src-13">13</a></sup>.</p>
+        </div>
+      </section>
+
+      <section class="part" id="work" aria-labelledby="work-h">
+        <p class="rail"><span class="num" aria-hidden="true">05</span><span class="rail-t">What we do</span></p>
+        <div class="body">
+          <h2 id="work-h">What Facing AI does for a brand</h2>
+          <p class="lead">Facing AI shows a brand where AI shopping agents misrepresent its products or send shoppers to other sellers, why each case happens, and what to change in the sources the brand controls: its catalog and feeds, its product pages and structured data, and the listings its partners pass on to AI platforms. It also shows which errors only the agent’s maker can fix. Once a change is live, we confirm that it holds in what the agents show.</p>
+          <dl class="gets">
+            <div><dt>Product and size</dt><dd>Which agents show another product or size in place of the brand’s own, and where the mix-up starts.</dd></div>
+            <div><dt>Price and stock</dt><dd>Where agents show a price or stock state the store does not, and which of the brand’s sources disagrees.</dd></div>
+            <div><dt>Hidden page text</dt><dd>Which pages show page readers a state that shoppers never see.</dd></div>
+            <div><dt>Deciding facts</dt><dd>Which facts each product needs to stay in contention, and where they are missing or contradicted.</dd></div>
+            <div><dt>Seller and checkout</dt><dd>Who holds the buy button for the brand’s products, and where an agent’s purchase stops.</dd></div>
+          </dl>
+          <p>On a shelf, a facing is the product turned toward the shopper. In an agent’s answer, it is the product, size and seller the agent puts forward.</p>
+          <p class="sig"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>We get your products facing AI.</p>
+        </div>
+      </section>
+
+      <section class="part" id="sources" aria-labelledby="sources-h">
+        <p class="rail"><span class="num" aria-hidden="true">06</span><span class="rail-t">Sources</span></p>
+        <div class="body">
+          <h2 id="sources-h" class="sr-only">Sources</h2>
+          <p class="src-note">Links accessed 6 October 2026, except sources 5, 6, 7 and 17–19 (7 October 2026).</p>
+          <ol class="sources">
+            <li id="src-1">Kaiser and Schulze, <a href="https://www.maximiliankaiser.org/publication/organic-llm-traffic/" target="_blank" rel="noopener">study of AI assistant referrals to 973 online stores</a>, <i>Marketing Science</i> 45(4): 699–715, 21 April 2026 (<a href="https://organicllm.org/" target="_blank" rel="noopener">study site</a>).</li>
+            <li id="src-2">Alhena, <a href="https://alhena.ai/blog/llm-traffic-online-stores-study/" target="_blank" rel="noopener">AI assistant traffic to 30 US online stores, May 2025 to April 2026</a>, 12 July 2026.</li>
+            <li id="src-3">Ethercycle, <a href="https://ethercycle.com/pages/state-of-ecommerce-2026" target="_blank" rel="noopener">State of Ecommerce 2026</a>, 10 Shopify stores, 23 July 2026, updated 20 September 2026.</li>
+            <li id="src-4">Adobe Digital Insights, <a href="https://s3.amazonaws.com/media.mediapost.com/uploads/2026-adobe-digital-insights-holiday-forecast.pdf" target="_blank" rel="noopener">2026 US holiday forecast</a> (copy hosted by MediaPost), September 2026, and <a href="https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record" target="_blank" rel="noopener">Adobe press release</a>, 28 September 2026.</li>
+            <li id="src-5">Alphabet, <a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/" target="_blank" rel="noopener">second-quarter 2026 results</a>, 22 July 2026.</li>
+            <li id="src-6">Bain &amp; Company, <a href="https://www.bain.com/insights/2030-forecast-how-agentic-ai-will-reshape-us-retail-snap-chart/" target="_blank" rel="noopener">2030 forecast of agentic AI in US retail</a>, 17 December 2025.</li>
+            <li id="src-7">Pew Research Center, <a href="https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/" target="_blank" rel="noopener">Americans and AI 2026: chatbots, smart devices and views on impact</a>, 17 June 2026 (survey of 5,119 US adults, 17–23 February 2026).</li>
+            <li id="src-8">Amazon, <a href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/" target="_blank" rel="noopener">fourth-quarter 2025 results</a>, 5 February 2026.</li>
+            <li id="src-9">Shopify, <a href="https://www.shopify.com/news/agentic-commerce-momentum" target="_blank" rel="noopener">“Millions of merchants can sell in AI chats”</a>, 24 March 2026.</li>
+            <li id="src-10">Shopify Help Center, <a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/chatgpt" target="_blank" rel="noopener">selling in ChatGPT</a> and <a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/ai-channels-with-built-in-checkout" target="_blank" rel="noopener">AI channels with built-in checkout</a>.</li>
+            <li id="src-11">TechCrunch, <a href="https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/" target="_blank" rel="noopener">AI traffic to US retailers in the first quarter of 2026</a>, 16 April 2026.</li>
+            <li id="src-12">Shopify, <a href="https://www.shopify.com/enterprise/blog/ai-search-insights" target="_blank" rel="noopener">AI search insights from first-quarter 2026 commerce data</a>, 11 May 2026.</li>
+            <li id="src-13">PYMNTS, <a href="https://www.pymnts.com/earnings/2026/shopifys-ai-traffic-triples-as-shoppers-skip-the-search-bar/" target="_blank" rel="noopener">report of Shopify’s second-quarter 2026 earnings call</a>, 5 August 2026.</li>
+            <li id="src-14">Modern Retail, <a href="https://www.modernretail.co/technology/what-went-wrong-with-chatgpts-instant-checkout/" target="_blank" rel="noopener">ChatGPT’s Instant Checkout</a>, 27 March 2026.</li>
+            <li id="src-15">Gartner, <a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-27-gartner-survey-finds-consumers-want-ai-shopping-help-but-not-ai-purchase-decisions" target="_blank" rel="noopener">consumer surveys on AI shopping help</a> (322 respondents in January 2026; 846 in November and December 2025), 27 May 2026. Gartner’s page could not be opened on 6 October 2026; a <a href="https://www.stocktitan.net/news/IT/gartner-survey-finds-consumers-want-ai-shopping-help-but-not-ai-od9l2o3m50af.html" target="_blank" rel="noopener">republished copy</a> was read.</li>
+            <li id="src-16">Facing AI research, September and October 2026: platform documentation (Shopify, Google, Microsoft, Meta, Perplexity, OpenAI and Amazon), our observations of consumer AI apps and of Shopify stores’ public pages, and controlled tests. The scope of each figure is stated with it.</li>
+            <li id="src-17">Morgan Stanley Research, <a href="https://www.morganstanley.com/insights/articles/agentic-commerce-market-impact-outlook" target="_blank" rel="noopener">agentic commerce outlook</a>, 8 December 2025, as reported by <a href="https://www.digitalcommerce360.com/2025/12/09/morgan-stanley-ai-agentic-shoppers-385-billion-online-sales/" target="_blank" rel="noopener">Digital Commerce 360</a>, 9 December 2025; Morgan Stanley’s page could not be opened.</li>
+            <li id="src-18">McKinsey QuantumBlack, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank" rel="noopener">the agentic commerce opportunity</a>, 17 October 2025, as reported by <a href="https://www.digitalcommerce360.com/2025/10/20/mckinsey-forecast-5-trillion-agentic-commerce-sales-2030/" target="_blank" rel="noopener">Digital Commerce 360</a>, 20 October 2025, and <a href="https://www.retaildive.com/news/agentic-commerce-us-one-trillion-2030/818936/" target="_blank" rel="noopener">Retail Dive</a>, 5 May 2026; McKinsey’s page could not be opened.</li>
+            <li id="src-19">Juniper Research, <a href="https://www.juniperresearch.com/press/agentic-commerce-set-to-generate-15-trillion-globally-by-2030-as-payments-infrastructure-leaders-revealed/" target="_blank" rel="noopener">agentic commerce forecast</a>, press release, 7 April 2026.</li>
+          </ol>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <section class="close" aria-labelledby="close-h">
+    <div class="wrap close-in">
+      <h2 id="close-h">See how AI agents present your products.</h2>
+      <div class="close-side">
+        <p>For brands that sell online, in any category.</p>
+        <a class="btn" href="mailto:hello@getfacing.ai?subject=Facing%20AI%20for%20%5Byour%20store%5D">Talk with us<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"></path></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="brand" href="/"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="46" width="52" height="8" rx="4"></rect><rect class="pick" x="6" y="10" width="11" height="32" rx="5.5"></rect><rect x="27" y="20" width="11" height="22" rx="5.5"></rect></svg>Facing AI</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/about" aria-current="page">About</a><a href="/blog">Blog</a></nav>
+    <span>© 2026 Facing AI</span>
+  </div>
+</footer>
+</body>
+</html>
